@@ -1,8 +1,10 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
+import RedditFeed from './RedditFeed'
 
 const App = () => (
   <div>
-    <h1>Howdy</h1>
+    <Route path='/' component={RedditFeed} />
   </div>
 )
 
