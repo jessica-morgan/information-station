@@ -39224,47 +39224,18 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(26);
 
-var _example = __webpack_require__(123);
+var _category = __webpack_require__(248);
 
-var _example2 = _interopRequireDefault(_example);
+var _category2 = _interopRequireDefault(_category);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
-  example: _example2.default
+  selectedCategory: _category2.default
 });
 
 /***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var example = function example() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments[1];
-
-  switch (action.type) {
-    case 'ADD_EXAMPLE':
-      return [].concat(_toConsumableArray(state), [{
-        example: action.example
-      }]);
-
-    default:
-      return state;
-  }
-};
-
-exports.default = example;
-
-/***/ }),
+/* 123 */,
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -45684,6 +45655,8 @@ var _reactRouterDom = __webpack_require__(27);
 
 var _reactRedux = __webpack_require__(41);
 
+var _category = __webpack_require__(247);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45692,10 +45665,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// nav component shows a list of available options:
-// reddit: list subreddits
-// news: list categories
-// astronomy pic of the day
 var Nav = function (_React$Component) {
   _inherits(Nav, _React$Component);
 
@@ -45704,15 +45673,15 @@ var Nav = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
 
-    _this.state = {
-      selectedCategory: ''
-    };
+    _this.state = {};
     return _this;
   }
 
   _createClass(Nav, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         { style: { display: 'block', width: '20vw', height: '100%', float: 'left', position: 'fixed' } },
@@ -45723,7 +45692,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/phFeed' },
+          { to: '/phFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('programmerHumor'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45732,7 +45703,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/rcFeed' },
+          { to: '/rcFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('retconned'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45741,7 +45714,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/bsFeed' },
+          { to: '/bsFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('itbs'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45750,7 +45725,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: 'tataFeed' },
+          { to: 'tataFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('tooAfraidToAsk'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45765,7 +45742,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/jsFeed' },
+          { to: '/jsFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('javascript'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45774,7 +45753,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/qcFeed' },
+          { to: '/qcFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('quantumComputing'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45783,7 +45764,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/qpFeed' },
+          { to: '/qpFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('quantumPhysics'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45792,7 +45775,9 @@ var Nav = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: 'spaceFeed' },
+          { to: 'spaceFeed', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('space'));
+            } },
           _react2.default.createElement(
             'h3',
             null,
@@ -45802,7 +45787,9 @@ var Nav = function (_React$Component) {
         _react2.default.createElement('br', null),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/apod' },
+          { to: '/apod', onClick: function onClick() {
+              _this2.props.dispatch((0, _category.categoryAction)('astronomyPicture'));
+            } },
           _react2.default.createElement(
             'h2',
             null,
@@ -45816,7 +45803,61 @@ var Nav = function (_React$Component) {
   return Nav;
 }(_react2.default.Component);
 
-exports.default = Nav;
+function mapStateToProps(state) {
+  return {
+    categorySelected: state.selectedCategory.categoryState
+  };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
+
+/***/ }),
+/* 245 */,
+/* 246 */,
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var categoryAction = exports.categoryAction = function categoryAction(category) {
+  return {
+    type: 'SELECTED_CATEGORY',
+    category: category
+  };
+};
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var initialCategoryState = { categoryState: '' };
+
+var selectedCategory = exports.selectedCategory = function selectedCategory() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialCategoryState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'SELECTED_CATEGORY':
+      return {
+        categoryState: action.category
+      };
+
+    default:
+      return state;
+  }
+};
+
+exports.default = selectedCategory;
 
 /***/ })
 /******/ ]);
