@@ -67,8 +67,8 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getTimezoneOffsetInMilliseconds = __webpack_require__(137)
-var isDate = __webpack_require__(30)
+var getTimezoneOffsetInMilliseconds = __webpack_require__(140)
+var isDate = __webpack_require__(31)
 
 var MILLISECONDS_IN_HOUR = 3600000
 var MILLISECONDS_IN_MINUTE = 60000
@@ -1107,7 +1107,7 @@ function warning(condition, message) {
 "use strict";
 
 
-var _superagent = __webpack_require__(29);
+var _superagent = __webpack_require__(30);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
@@ -1179,11 +1179,11 @@ module.exports = {
 "use strict";
 
 
-var _superagent = __webpack_require__(29);
+var _superagent = __webpack_require__(30);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
-var _dateFns = __webpack_require__(136);
+var _dateFns = __webpack_require__(139);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1325,7 +1325,7 @@ module.exports = differenceInCalendarDays
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var getDaysInMonth = __webpack_require__(31)
+var getDaysInMonth = __webpack_require__(32)
 
 /**
  * @category Month Helpers
@@ -1529,6 +1529,26 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Context__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__connect_connect__ = __webpack_require__(104);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ReactReduxContext", function() { return __WEBPACK_IMPORTED_MODULE_2__components_Context__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_3__connect_connect__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReactReduxContext; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
@@ -1537,7 +1557,7 @@ var ReactReduxContext = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createCont
 /* unused harmony default export */ var _unused_webpack_default_export = (ReactReduxContext);
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2214,7 +2234,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2244,7 +2264,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_tiny_warning__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_tiny_invariant__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_tiny_invariant__ = __webpack_require__(29);
 
 
 
@@ -2500,7 +2520,7 @@ if (process.env.NODE_ENV !== "production") {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2523,7 +2543,7 @@ function invariant(condition, message) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2548,17 +2568,17 @@ if (typeof window !== 'undefined') {
   root = self;
 }
 
-var Emitter = __webpack_require__(126);
+var Emitter = __webpack_require__(129);
 
-var safeStringify = __webpack_require__(127);
+var safeStringify = __webpack_require__(130);
 
-var RequestBase = __webpack_require__(128);
+var RequestBase = __webpack_require__(131);
 
 var isObject = __webpack_require__(50);
 
-var ResponseBase = __webpack_require__(129);
+var ResponseBase = __webpack_require__(132);
 
-var Agent = __webpack_require__(131);
+var Agent = __webpack_require__(134);
 /**
  * Noop.
  */
@@ -3548,7 +3568,7 @@ request.put = function (url, data, fn) {
 };
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 /**
@@ -3574,7 +3594,7 @@ module.exports = isDate
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -3608,7 +3628,7 @@ module.exports = getDaysInMonth
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addDays = __webpack_require__(10)
@@ -3639,7 +3659,7 @@ module.exports = addWeeks
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -3696,7 +3716,7 @@ module.exports = compareDesc
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -3740,7 +3760,7 @@ module.exports = differenceInMonths
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var differenceInMilliseconds = __webpack_require__(22)
@@ -3774,11 +3794,11 @@ module.exports = differenceInSeconds
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildDistanceInWordsLocale = __webpack_require__(150)
-var buildFormatLocale = __webpack_require__(151)
+var buildDistanceInWordsLocale = __webpack_require__(153)
+var buildFormatLocale = __webpack_require__(154)
 
 /**
  * @category Locales
@@ -3791,7 +3811,7 @@ module.exports = {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -3822,7 +3842,7 @@ module.exports = endOfDay
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -3862,7 +3882,7 @@ module.exports = getISOWeek
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfWeek = __webpack_require__(19)
@@ -3909,7 +3929,7 @@ module.exports = isSameWeek
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3922,26 +3942,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Context__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__connect_connect__ = __webpack_require__(104);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ReactReduxContext", function() { return __WEBPACK_IMPORTED_MODULE_2__components_Context__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_3__connect_connect__["a"]; });
-
-
-
-
-
 
 /***/ }),
 /* 42 */
@@ -3961,7 +3961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_is__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Context__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Context__ = __webpack_require__(26);
 
 
 
@@ -4445,7 +4445,7 @@ function warning(message) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_warning__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_history__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_tiny_invariant__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_tiny_invariant__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_path_to_regexp__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_path_to_regexp__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
@@ -5199,7 +5199,7 @@ if (process.env.NODE_ENV !== "production") {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_resolve_pathname__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_value_equal__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_tiny_warning__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_invariant__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_invariant__ = __webpack_require__(29);
 
 
 
@@ -6577,11 +6577,11 @@ module.exports = subISOYears
 /* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compareDesc = __webpack_require__(33)
+var compareDesc = __webpack_require__(34)
 var parse = __webpack_require__(0)
-var differenceInSeconds = __webpack_require__(35)
-var differenceInMonths = __webpack_require__(34)
-var enLocale = __webpack_require__(36)
+var differenceInSeconds = __webpack_require__(36)
+var differenceInMonths = __webpack_require__(35)
+var enLocale = __webpack_require__(37)
 
 var MINUTES_IN_DAY = 1440
 var MINUTES_IN_ALMOST_TWO_DAYS = 2520
@@ -6929,7 +6929,7 @@ module.exports = startOfYear
 /* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isDate = __webpack_require__(30)
+var isDate = __webpack_require__(31)
 
 /**
  * @category Common Helpers
@@ -7104,7 +7104,7 @@ module.exports = startOfHour
 /* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isSameWeek = __webpack_require__(39)
+var isSameWeek = __webpack_require__(40)
 
 /**
  * @category ISO Week Helpers
@@ -7492,7 +7492,7 @@ module.exports = lastDayOfWeek
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var getDaysInMonth = __webpack_require__(31)
+var getDaysInMonth = __webpack_require__(32)
 
 /**
  * @category Month Helpers
@@ -7542,11 +7542,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(89);
 
-var _reactRedux = __webpack_require__(41);
+var _reactRedux = __webpack_require__(25);
 
-var _redux = __webpack_require__(26);
+var _redux = __webpack_require__(27);
 
-var _reactRouterDom = __webpack_require__(27);
+var _reactRouterDom = __webpack_require__(28);
 
 var _reducers = __webpack_require__(122);
 
@@ -9910,7 +9910,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),m=__webpack_require__(7),q=__webpack_require__(40);function t(a){for(var b=a.message,c="https://reactjs.org/docs/error-decoder.html?invariant="+b,d=1;d<arguments.length;d++)c+="&args[]="+encodeURIComponent(arguments[d]);a.message="Minified React error #"+b+"; visit "+c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ";return a}if(!aa)throw t(Error(227));var ba=null,ca={};
+var aa=__webpack_require__(2),m=__webpack_require__(7),q=__webpack_require__(41);function t(a){for(var b=a.message,c="https://reactjs.org/docs/error-decoder.html?invariant="+b,d=1;d<arguments.length;d++)c+="&args[]="+encodeURIComponent(arguments[d]);a.message="Minified React error #"+b+"; visit "+c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ";return a}if(!aa)throw t(Error(227));var ba=null,ca={};
 function da(){if(ba)for(var a in ca){var b=ca[a],c=ba.indexOf(a);if(!(-1<c))throw t(Error(96),a);if(!ea[c]){if(!b.extractEvents)throw t(Error(97),a);ea[c]=b;c=b.eventTypes;for(var d in c){var e=void 0;var f=c[d],h=b,g=d;if(fa.hasOwnProperty(g))throw t(Error(99),g);fa[g]=f;var k=f.phasedRegistrationNames;if(k){for(e in k)k.hasOwnProperty(e)&&ha(k[e],h,g);e=!0}else f.registrationName?(ha(f.registrationName,h,g),e=!0):e=!1;if(!e)throw t(Error(98),d,a);}}}}
 function ha(a,b,c){if(ia[a])throw t(Error(100),a);ia[a]=b;ja[a]=b.eventTypes[c].dependencies}var ea=[],fa={},ia={},ja={};function ka(a,b,c,d,e,f,h,g,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l)}catch(n){this.onError(n)}}var la=!1,ma=null,na=!1,oa=null,pa={onError:function(a){la=!0;ma=a}};function qa(a,b,c,d,e,f,h,g,k){la=!1;ma=null;ka.apply(pa,arguments)}
 function ra(a,b,c,d,e,f,h,g,k){qa.apply(this,arguments);if(la){if(la){var l=ma;la=!1;ma=null}else throw t(Error(198));na||(na=!0,oa=l)}}var sa=null,ta=null,va=null;function wa(a,b,c){var d=a.type||"unknown-event";a.currentTarget=va(c);ra(d,b,void 0,a);a.currentTarget=null}function xa(a,b){if(null==b)throw t(Error(30));if(null==a)return b;if(Array.isArray(a)){if(Array.isArray(b))return a.push.apply(a,b),a;a.push(b);return a}return Array.isArray(b)?[a].concat(b):[a,b]}
@@ -11142,7 +11142,7 @@ if (process.env.NODE_ENV !== "production") {
 var React = __webpack_require__(2);
 var _assign = __webpack_require__(7);
 var checkPropTypes = __webpack_require__(23);
-var Scheduler = __webpack_require__(40);
+var Scheduler = __webpack_require__(41);
 var tracing = __webpack_require__(94);
 
 // Do not require this module directly! Use normal `invariant` calls with
@@ -36856,7 +36856,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Context__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Context__ = __webpack_require__(26);
 
 
 
@@ -38111,7 +38111,7 @@ function shallowEqual(objA, objB) {
 /* unused harmony export whenMapDispatchToPropsIsFunction */
 /* unused harmony export whenMapDispatchToPropsIsMissing */
 /* unused harmony export whenMapDispatchToPropsIsObject */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(45);
 
 
@@ -39222,21 +39222,170 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(26);
+var _redux = __webpack_require__(27);
 
-var _category = __webpack_require__(248);
+var _category = __webpack_require__(123);
 
 var _category2 = _interopRequireDefault(_category);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
-  selectedCategory: _category2.default
+  categorySelected: _category2.default
 });
 
 /***/ }),
-/* 123 */,
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var initialCategoryState = { categoryState: '' };
+
+var categorySelected = function categorySelected() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialCategoryState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'SELECTED_CATEGORY':
+      return {
+        categoryState: action.category
+      };
+
+    default:
+      return state;
+  }
+};
+
+exports.default = categorySelected;
+
+/***/ }),
 /* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(28);
+
+var _reactRedux = __webpack_require__(25);
+
+var _Welcome = __webpack_require__(125);
+
+var _Welcome2 = _interopRequireDefault(_Welcome);
+
+var _Nav = __webpack_require__(126);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _ProgrammerHumorRedditFeed = __webpack_require__(128);
+
+var _ProgrammerHumorRedditFeed2 = _interopRequireDefault(_ProgrammerHumorRedditFeed);
+
+var _RetconnedRedditFeed = __webpack_require__(135);
+
+var _RetconnedRedditFeed2 = _interopRequireDefault(_RetconnedRedditFeed);
+
+var _IsItBullshitRedditFeed = __webpack_require__(136);
+
+var _IsItBullshitRedditFeed2 = _interopRequireDefault(_IsItBullshitRedditFeed);
+
+var _TooAfraidToAskFeed = __webpack_require__(137);
+
+var _TooAfraidToAskFeed2 = _interopRequireDefault(_TooAfraidToAskFeed);
+
+var _QuantumPhysicsFeed = __webpack_require__(138);
+
+var _QuantumPhysicsFeed2 = _interopRequireDefault(_QuantumPhysicsFeed);
+
+var _QuantumComputingFeed = __webpack_require__(242);
+
+var _QuantumComputingFeed2 = _interopRequireDefault(_QuantumComputingFeed);
+
+var _JavascriptFeed = __webpack_require__(243);
+
+var _JavascriptFeed2 = _interopRequireDefault(_JavascriptFeed);
+
+var _SpaceFeed = __webpack_require__(244);
+
+var _SpaceFeed2 = _interopRequireDefault(_SpaceFeed);
+
+var _AstronomyPicOfTheDay = __webpack_require__(245);
+
+var _AstronomyPicOfTheDay2 = _interopRequireDefault(_AstronomyPicOfTheDay);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Nav2.default, null),
+        this.props.isCategorySelected ? _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/phFeed', component: _ProgrammerHumorRedditFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/rcFeed', component: _RetconnedRedditFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/bsFeed', component: _IsItBullshitRedditFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/tataFeed', component: _TooAfraidToAskFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/qpFeed', component: _QuantumPhysicsFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/qcFeed', component: _QuantumComputingFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/jsFeed', component: _JavascriptFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/spaceFeed', component: _SpaceFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/apod', component: _AstronomyPicOfTheDay2.default })
+        ) : _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_Welcome2.default, null)
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.Component);
+
+function mapStateToProps(state) {
+  return {
+    isCategorySelected: state.categorySelected.categoryState
+  };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
+
+/***/ }),
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39250,75 +39399,211 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(27);
-
-var _ProgrammerHumorRedditFeed = __webpack_require__(125);
-
-var _ProgrammerHumorRedditFeed2 = _interopRequireDefault(_ProgrammerHumorRedditFeed);
-
-var _RetconnedRedditFeed = __webpack_require__(132);
-
-var _RetconnedRedditFeed2 = _interopRequireDefault(_RetconnedRedditFeed);
-
-var _IsItBullshitRedditFeed = __webpack_require__(133);
-
-var _IsItBullshitRedditFeed2 = _interopRequireDefault(_IsItBullshitRedditFeed);
-
-var _TooAfraidToAskFeed = __webpack_require__(134);
-
-var _TooAfraidToAskFeed2 = _interopRequireDefault(_TooAfraidToAskFeed);
-
-var _QuantumPhysicsFeed = __webpack_require__(135);
-
-var _QuantumPhysicsFeed2 = _interopRequireDefault(_QuantumPhysicsFeed);
-
-var _QuantumComputingFeed = __webpack_require__(239);
-
-var _QuantumComputingFeed2 = _interopRequireDefault(_QuantumComputingFeed);
-
-var _JavascriptFeed = __webpack_require__(240);
-
-var _JavascriptFeed2 = _interopRequireDefault(_JavascriptFeed);
-
-var _SpaceFeed = __webpack_require__(241);
-
-var _SpaceFeed2 = _interopRequireDefault(_SpaceFeed);
-
-var _AstronomyPicOfTheDay = __webpack_require__(242);
-
-var _AstronomyPicOfTheDay2 = _interopRequireDefault(_AstronomyPicOfTheDay);
-
-var _Nav = __webpack_require__(244);
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App() {
+var Welcome = function Welcome() {
   return _react2.default.createElement(
     'div',
-    null,
-    _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_Nav2.default, null)
-    ),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/phFeed', component: _ProgrammerHumorRedditFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/rcFeed', component: _RetconnedRedditFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/bsFeed', component: _IsItBullshitRedditFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/tataFeed', component: _TooAfraidToAskFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/qpFeed', component: _QuantumPhysicsFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/qcFeed', component: _QuantumComputingFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/jsFeed', component: _JavascriptFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/spaceFeed', component: _SpaceFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/apod', component: _AstronomyPicOfTheDay2.default })
+    { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+    'Welcome'
   );
 };
 
-exports.default = App;
+exports.default = Welcome;
 
 /***/ }),
-/* 125 */
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(25);
+
+var _reactRouterDom = __webpack_require__(28);
+
+var _category = __webpack_require__(127);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Nav = function (_React$Component) {
+  _inherits(Nav, _React$Component);
+
+  function Nav() {
+    _classCallCheck(this, Nav);
+
+    return _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).apply(this, arguments));
+  }
+
+  _createClass(Nav, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { style: { display: 'block', width: '20vw', height: '100%', float: 'left', position: 'fixed' } },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Reddit'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/phFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Programmer Humor'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/rcFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Retconned'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/bsFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Is It Bullshit'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: 'tataFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Too Afraid To Ask'
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'h2',
+          null,
+          'News'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/jsFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Javascript'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/qcFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Quantum Computing'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/qpFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Quantum Physics'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: 'spaceFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Space'
+          )
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/apod', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Astronomy Picture of the Day'
+          )
+        )
+      );
+    }
+  }]);
+
+  return Nav;
+}(_react2.default.Component);
+
+function mapStateToProps(state) {
+  return {
+    isCategorySelected: state.categorySelected.categoryState
+  };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var categoryAction = exports.categoryAction = function categoryAction(category) {
+  return {
+    type: 'SELECTED_CATEGORY',
+    category: category
+  };
+};
+
+/***/ }),
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39377,7 +39662,7 @@ var ProgrammerHumorRedditFeed = function (_React$Component) {
       console.log(this.state.programmerHumorPosts);
       return this.state.programmerHumorPosts.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.programmerHumorPosts.map(function (post, idx) {
           return _react2.default.createElement(
             'div',
@@ -39389,7 +39674,7 @@ var ProgrammerHumorRedditFeed = function (_React$Component) {
             )
           );
         })
-      ) : _react2.default.createElement('div', null);
+      ) : _react2.default.createElement('div', { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } });
     }
   }]);
 
@@ -39399,7 +39684,7 @@ var ProgrammerHumorRedditFeed = function (_React$Component) {
 exports.default = ProgrammerHumorRedditFeed;
 
 /***/ }),
-/* 126 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -39580,7 +39865,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 127 */
+/* 130 */
 /***/ (function(module, exports) {
 
 module.exports = stringify
@@ -39689,7 +39974,7 @@ function deterministicDecirc (val, k, stack, parent) {
 
 
 /***/ }),
-/* 128 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40441,7 +40726,7 @@ RequestBase.prototype._setTimeouts = function () {
 };
 
 /***/ }),
-/* 129 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40450,7 +40735,7 @@ RequestBase.prototype._setTimeouts = function () {
 /**
  * Module dependencies.
  */
-var utils = __webpack_require__(130);
+var utils = __webpack_require__(133);
 /**
  * Expose `ResponseBase`.
  */
@@ -40577,7 +40862,7 @@ ResponseBase.prototype._setStatusProperties = function (status) {
 };
 
 /***/ }),
-/* 130 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40653,7 +40938,7 @@ exports.cleanHeader = function (header, changesOrigin) {
 };
 
 /***/ }),
-/* 131 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40696,7 +40981,7 @@ Agent.prototype._setDefaults = function (req) {
 module.exports = Agent;
 
 /***/ }),
-/* 132 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40755,7 +41040,7 @@ var RetconnedRedditFeed = function (_React$Component) {
       console.log(this.state.retconnedPosts);
       return this.state.retconnedPosts.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.retconnedPosts.map(function (post, idx) {
           return _react2.default.createElement(
             'div',
@@ -40767,7 +41052,7 @@ var RetconnedRedditFeed = function (_React$Component) {
             )
           );
         })
-      ) : _react2.default.createElement('div', null);
+      ) : _react2.default.createElement('div', { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } });
     }
   }]);
 
@@ -40777,7 +41062,7 @@ var RetconnedRedditFeed = function (_React$Component) {
 exports.default = RetconnedRedditFeed;
 
 /***/ }),
-/* 133 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40835,7 +41120,7 @@ var IsItBullshitRedditFeed = function (_React$Component) {
     value: function render() {
       return this.state.isItBullshitPosts.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.isItBullshitPosts.map(function (post, idx) {
           return _react2.default.createElement(
             'div',
@@ -40847,7 +41132,7 @@ var IsItBullshitRedditFeed = function (_React$Component) {
             )
           );
         })
-      ) : _react2.default.createElement('div', null);
+      ) : _react2.default.createElement('div', { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } });
     }
   }]);
 
@@ -40857,7 +41142,7 @@ var IsItBullshitRedditFeed = function (_React$Component) {
 exports.default = IsItBullshitRedditFeed;
 
 /***/ }),
-/* 134 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40915,7 +41200,7 @@ var TooAfraidToAskRedditFeed = function (_React$Component) {
     value: function render() {
       return this.state.tataPosts.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.tataPosts.map(function (post, idx) {
           return _react2.default.createElement(
             'div',
@@ -40927,7 +41212,7 @@ var TooAfraidToAskRedditFeed = function (_React$Component) {
             )
           );
         })
-      ) : _react2.default.createElement('div', null);
+      ) : _react2.default.createElement('div', { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } });
     }
   }]);
 
@@ -40937,7 +41222,7 @@ var TooAfraidToAskRedditFeed = function (_React$Component) {
 exports.default = TooAfraidToAskRedditFeed;
 
 /***/ }),
-/* 135 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40995,7 +41280,7 @@ var QuantumPhysicsFeed = function (_React$Component) {
     value: function render() {
       return this.state.quantumPhysicsNews.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.quantumPhysicsNews.map(function (article, idx) {
           return _react2.default.createElement(
             'div',
@@ -41009,7 +41294,7 @@ var QuantumPhysicsFeed = function (_React$Component) {
         })
       ) : _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         'loading component'
       );
     }
@@ -41021,7 +41306,7 @@ var QuantumPhysicsFeed = function (_React$Component) {
 exports.default = QuantumPhysicsFeed;
 
 /***/ }),
-/* 136 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
@@ -41033,78 +41318,78 @@ module.exports = {
   addMonths: __webpack_require__(21),
   addQuarters: __webpack_require__(55),
   addSeconds: __webpack_require__(56),
-  addWeeks: __webpack_require__(32),
+  addWeeks: __webpack_require__(33),
   addYears: __webpack_require__(57),
-  areRangesOverlapping: __webpack_require__(138),
-  closestIndexTo: __webpack_require__(139),
-  closestTo: __webpack_require__(140),
+  areRangesOverlapping: __webpack_require__(141),
+  closestIndexTo: __webpack_require__(142),
+  closestTo: __webpack_require__(143),
   compareAsc: __webpack_require__(13),
-  compareDesc: __webpack_require__(33),
+  compareDesc: __webpack_require__(34),
   differenceInCalendarDays: __webpack_require__(20),
-  differenceInCalendarISOWeeks: __webpack_require__(141),
+  differenceInCalendarISOWeeks: __webpack_require__(144),
   differenceInCalendarISOYears: __webpack_require__(58),
   differenceInCalendarMonths: __webpack_require__(59),
-  differenceInCalendarQuarters: __webpack_require__(142),
-  differenceInCalendarWeeks: __webpack_require__(143),
+  differenceInCalendarQuarters: __webpack_require__(145),
+  differenceInCalendarWeeks: __webpack_require__(146),
   differenceInCalendarYears: __webpack_require__(61),
   differenceInDays: __webpack_require__(62),
-  differenceInHours: __webpack_require__(144),
-  differenceInISOYears: __webpack_require__(145),
+  differenceInHours: __webpack_require__(147),
+  differenceInISOYears: __webpack_require__(148),
   differenceInMilliseconds: __webpack_require__(22),
-  differenceInMinutes: __webpack_require__(146),
-  differenceInMonths: __webpack_require__(34),
-  differenceInQuarters: __webpack_require__(147),
-  differenceInSeconds: __webpack_require__(35),
-  differenceInWeeks: __webpack_require__(148),
-  differenceInYears: __webpack_require__(149),
+  differenceInMinutes: __webpack_require__(149),
+  differenceInMonths: __webpack_require__(35),
+  differenceInQuarters: __webpack_require__(150),
+  differenceInSeconds: __webpack_require__(36),
+  differenceInWeeks: __webpack_require__(151),
+  differenceInYears: __webpack_require__(152),
   distanceInWords: __webpack_require__(64),
-  distanceInWordsStrict: __webpack_require__(153),
-  distanceInWordsToNow: __webpack_require__(154),
-  eachDay: __webpack_require__(155),
-  endOfDay: __webpack_require__(37),
-  endOfHour: __webpack_require__(156),
-  endOfISOWeek: __webpack_require__(157),
-  endOfISOYear: __webpack_require__(158),
-  endOfMinute: __webpack_require__(159),
+  distanceInWordsStrict: __webpack_require__(156),
+  distanceInWordsToNow: __webpack_require__(157),
+  eachDay: __webpack_require__(158),
+  endOfDay: __webpack_require__(38),
+  endOfHour: __webpack_require__(159),
+  endOfISOWeek: __webpack_require__(160),
+  endOfISOYear: __webpack_require__(161),
+  endOfMinute: __webpack_require__(162),
   endOfMonth: __webpack_require__(66),
-  endOfQuarter: __webpack_require__(160),
-  endOfSecond: __webpack_require__(161),
-  endOfToday: __webpack_require__(162),
-  endOfTomorrow: __webpack_require__(163),
+  endOfQuarter: __webpack_require__(163),
+  endOfSecond: __webpack_require__(164),
+  endOfToday: __webpack_require__(165),
+  endOfTomorrow: __webpack_require__(166),
   endOfWeek: __webpack_require__(65),
-  endOfYear: __webpack_require__(164),
-  endOfYesterday: __webpack_require__(165),
-  format: __webpack_require__(166),
-  getDate: __webpack_require__(167),
-  getDay: __webpack_require__(168),
+  endOfYear: __webpack_require__(167),
+  endOfYesterday: __webpack_require__(168),
+  format: __webpack_require__(169),
+  getDate: __webpack_require__(170),
+  getDay: __webpack_require__(171),
   getDayOfYear: __webpack_require__(67),
-  getDaysInMonth: __webpack_require__(31),
-  getDaysInYear: __webpack_require__(169),
-  getHours: __webpack_require__(170),
+  getDaysInMonth: __webpack_require__(32),
+  getDaysInYear: __webpack_require__(172),
+  getHours: __webpack_require__(173),
   getISODay: __webpack_require__(71),
-  getISOWeek: __webpack_require__(38),
-  getISOWeeksInYear: __webpack_require__(171),
+  getISOWeek: __webpack_require__(39),
+  getISOWeeksInYear: __webpack_require__(174),
   getISOYear: __webpack_require__(3),
-  getMilliseconds: __webpack_require__(172),
-  getMinutes: __webpack_require__(173),
-  getMonth: __webpack_require__(174),
-  getOverlappingDaysInRanges: __webpack_require__(175),
+  getMilliseconds: __webpack_require__(175),
+  getMinutes: __webpack_require__(176),
+  getMonth: __webpack_require__(177),
+  getOverlappingDaysInRanges: __webpack_require__(178),
   getQuarter: __webpack_require__(60),
-  getSeconds: __webpack_require__(176),
-  getTime: __webpack_require__(177),
-  getYear: __webpack_require__(178),
-  isAfter: __webpack_require__(179),
-  isBefore: __webpack_require__(180),
-  isDate: __webpack_require__(30),
-  isEqual: __webpack_require__(181),
-  isFirstDayOfMonth: __webpack_require__(182),
-  isFriday: __webpack_require__(183),
-  isFuture: __webpack_require__(184),
-  isLastDayOfMonth: __webpack_require__(185),
+  getSeconds: __webpack_require__(179),
+  getTime: __webpack_require__(180),
+  getYear: __webpack_require__(181),
+  isAfter: __webpack_require__(182),
+  isBefore: __webpack_require__(183),
+  isDate: __webpack_require__(31),
+  isEqual: __webpack_require__(184),
+  isFirstDayOfMonth: __webpack_require__(185),
+  isFriday: __webpack_require__(186),
+  isFuture: __webpack_require__(187),
+  isLastDayOfMonth: __webpack_require__(188),
   isLeapYear: __webpack_require__(70),
-  isMonday: __webpack_require__(186),
-  isPast: __webpack_require__(187),
-  isSameDay: __webpack_require__(188),
+  isMonday: __webpack_require__(189),
+  isPast: __webpack_require__(190),
+  isSameDay: __webpack_require__(191),
   isSameHour: __webpack_require__(72),
   isSameISOWeek: __webpack_require__(74),
   isSameISOYear: __webpack_require__(75),
@@ -41112,78 +41397,78 @@ module.exports = {
   isSameMonth: __webpack_require__(78),
   isSameQuarter: __webpack_require__(79),
   isSameSecond: __webpack_require__(81),
-  isSameWeek: __webpack_require__(39),
+  isSameWeek: __webpack_require__(40),
   isSameYear: __webpack_require__(83),
-  isSaturday: __webpack_require__(189),
-  isSunday: __webpack_require__(190),
-  isThisHour: __webpack_require__(191),
-  isThisISOWeek: __webpack_require__(192),
-  isThisISOYear: __webpack_require__(193),
-  isThisMinute: __webpack_require__(194),
-  isThisMonth: __webpack_require__(195),
-  isThisQuarter: __webpack_require__(196),
-  isThisSecond: __webpack_require__(197),
-  isThisWeek: __webpack_require__(198),
-  isThisYear: __webpack_require__(199),
-  isThursday: __webpack_require__(200),
-  isToday: __webpack_require__(201),
-  isTomorrow: __webpack_require__(202),
-  isTuesday: __webpack_require__(203),
+  isSaturday: __webpack_require__(192),
+  isSunday: __webpack_require__(193),
+  isThisHour: __webpack_require__(194),
+  isThisISOWeek: __webpack_require__(195),
+  isThisISOYear: __webpack_require__(196),
+  isThisMinute: __webpack_require__(197),
+  isThisMonth: __webpack_require__(198),
+  isThisQuarter: __webpack_require__(199),
+  isThisSecond: __webpack_require__(200),
+  isThisWeek: __webpack_require__(201),
+  isThisYear: __webpack_require__(202),
+  isThursday: __webpack_require__(203),
+  isToday: __webpack_require__(204),
+  isTomorrow: __webpack_require__(205),
+  isTuesday: __webpack_require__(206),
   isValid: __webpack_require__(69),
-  isWednesday: __webpack_require__(204),
-  isWeekend: __webpack_require__(205),
-  isWithinRange: __webpack_require__(206),
-  isYesterday: __webpack_require__(207),
-  lastDayOfISOWeek: __webpack_require__(208),
-  lastDayOfISOYear: __webpack_require__(209),
-  lastDayOfMonth: __webpack_require__(210),
-  lastDayOfQuarter: __webpack_require__(211),
+  isWednesday: __webpack_require__(207),
+  isWeekend: __webpack_require__(208),
+  isWithinRange: __webpack_require__(209),
+  isYesterday: __webpack_require__(210),
+  lastDayOfISOWeek: __webpack_require__(211),
+  lastDayOfISOYear: __webpack_require__(212),
+  lastDayOfMonth: __webpack_require__(213),
+  lastDayOfQuarter: __webpack_require__(214),
   lastDayOfWeek: __webpack_require__(84),
-  lastDayOfYear: __webpack_require__(212),
-  max: __webpack_require__(213),
-  min: __webpack_require__(214),
+  lastDayOfYear: __webpack_require__(215),
+  max: __webpack_require__(216),
+  min: __webpack_require__(217),
   parse: __webpack_require__(0),
-  setDate: __webpack_require__(215),
-  setDay: __webpack_require__(216),
-  setDayOfYear: __webpack_require__(217),
-  setHours: __webpack_require__(218),
-  setISODay: __webpack_require__(219),
-  setISOWeek: __webpack_require__(220),
+  setDate: __webpack_require__(218),
+  setDay: __webpack_require__(219),
+  setDayOfYear: __webpack_require__(220),
+  setHours: __webpack_require__(221),
+  setISODay: __webpack_require__(222),
+  setISOWeek: __webpack_require__(223),
   setISOYear: __webpack_require__(53),
-  setMilliseconds: __webpack_require__(221),
-  setMinutes: __webpack_require__(222),
+  setMilliseconds: __webpack_require__(224),
+  setMinutes: __webpack_require__(225),
   setMonth: __webpack_require__(85),
-  setQuarter: __webpack_require__(223),
-  setSeconds: __webpack_require__(224),
-  setYear: __webpack_require__(225),
+  setQuarter: __webpack_require__(226),
+  setSeconds: __webpack_require__(227),
+  setYear: __webpack_require__(228),
   startOfDay: __webpack_require__(5),
   startOfHour: __webpack_require__(73),
   startOfISOWeek: __webpack_require__(4),
   startOfISOYear: __webpack_require__(12),
   startOfMinute: __webpack_require__(77),
-  startOfMonth: __webpack_require__(226),
+  startOfMonth: __webpack_require__(229),
   startOfQuarter: __webpack_require__(80),
   startOfSecond: __webpack_require__(82),
-  startOfToday: __webpack_require__(227),
-  startOfTomorrow: __webpack_require__(228),
+  startOfToday: __webpack_require__(230),
+  startOfTomorrow: __webpack_require__(231),
   startOfWeek: __webpack_require__(19),
   startOfYear: __webpack_require__(68),
-  startOfYesterday: __webpack_require__(229),
-  subDays: __webpack_require__(230),
-  subHours: __webpack_require__(231),
+  startOfYesterday: __webpack_require__(232),
+  subDays: __webpack_require__(233),
+  subHours: __webpack_require__(234),
   subISOYears: __webpack_require__(63),
-  subMilliseconds: __webpack_require__(232),
-  subMinutes: __webpack_require__(233),
-  subMonths: __webpack_require__(234),
-  subQuarters: __webpack_require__(235),
-  subSeconds: __webpack_require__(236),
-  subWeeks: __webpack_require__(237),
-  subYears: __webpack_require__(238)
+  subMilliseconds: __webpack_require__(235),
+  subMinutes: __webpack_require__(236),
+  subMonths: __webpack_require__(237),
+  subQuarters: __webpack_require__(238),
+  subSeconds: __webpack_require__(239),
+  subWeeks: __webpack_require__(240),
+  subYears: __webpack_require__(241)
 }
 
 
 /***/ }),
-/* 137 */
+/* 140 */
 /***/ (function(module, exports) {
 
 var MILLISECONDS_IN_MINUTE = 60000
@@ -41210,7 +41495,7 @@ module.exports = function getTimezoneOffsetInMilliseconds (dirtyDate) {
 
 
 /***/ }),
-/* 138 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -41260,7 +41545,7 @@ module.exports = areRangesOverlapping
 
 
 /***/ }),
-/* 139 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -41315,7 +41600,7 @@ module.exports = closestIndexTo
 
 
 /***/ }),
-/* 140 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -41368,7 +41653,7 @@ module.exports = closestTo
 
 
 /***/ }),
-/* 141 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfISOWeek = __webpack_require__(4)
@@ -41416,7 +41701,7 @@ module.exports = differenceInCalendarISOWeeks
 
 
 /***/ }),
-/* 142 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getQuarter = __webpack_require__(60)
@@ -41455,7 +41740,7 @@ module.exports = differenceInCalendarQuarters
 
 
 /***/ }),
-/* 143 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfWeek = __webpack_require__(19)
@@ -41513,7 +41798,7 @@ module.exports = differenceInCalendarWeeks
 
 
 /***/ }),
-/* 144 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var differenceInMilliseconds = __webpack_require__(22)
@@ -41548,7 +41833,7 @@ module.exports = differenceInHours
 
 
 /***/ }),
-/* 145 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -41596,7 +41881,7 @@ module.exports = differenceInISOYears
 
 
 /***/ }),
-/* 146 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var differenceInMilliseconds = __webpack_require__(22)
@@ -41631,10 +41916,10 @@ module.exports = differenceInMinutes
 
 
 /***/ }),
-/* 147 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var differenceInMonths = __webpack_require__(34)
+var differenceInMonths = __webpack_require__(35)
 
 /**
  * @category Quarter Helpers
@@ -41664,7 +41949,7 @@ module.exports = differenceInQuarters
 
 
 /***/ }),
-/* 148 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var differenceInDays = __webpack_require__(62)
@@ -41697,7 +41982,7 @@ module.exports = differenceInWeeks
 
 
 /***/ }),
-/* 149 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -41741,7 +42026,7 @@ module.exports = differenceInYears
 
 
 /***/ }),
-/* 150 */
+/* 153 */
 /***/ (function(module, exports) {
 
 function buildDistanceInWordsLocale () {
@@ -41846,10 +42131,10 @@ module.exports = buildDistanceInWordsLocale
 
 
 /***/ }),
-/* 151 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var buildFormattingTokensRegExp = __webpack_require__(152)
+var buildFormattingTokensRegExp = __webpack_require__(155)
 
 function buildFormatLocale () {
   // Note: in English, the names of days of the week and months are capitalized.
@@ -41940,7 +42225,7 @@ module.exports = buildFormatLocale
 
 
 /***/ }),
-/* 152 */
+/* 155 */
 /***/ (function(module, exports) {
 
 var commonFormatterKeys = [
@@ -41974,13 +42259,13 @@ module.exports = buildFormattingTokensRegExp
 
 
 /***/ }),
-/* 153 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var compareDesc = __webpack_require__(33)
+var compareDesc = __webpack_require__(34)
 var parse = __webpack_require__(0)
-var differenceInSeconds = __webpack_require__(35)
-var enLocale = __webpack_require__(36)
+var differenceInSeconds = __webpack_require__(36)
+var enLocale = __webpack_require__(37)
 
 var MINUTES_IN_DAY = 1440
 var MINUTES_IN_MONTH = 43200
@@ -42156,7 +42441,7 @@ module.exports = distanceInWordsStrict
 
 
 /***/ }),
-/* 154 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var distanceInWords = __webpack_require__(64)
@@ -42247,7 +42532,7 @@ module.exports = distanceInWordsToNow
 
 
 /***/ }),
-/* 155 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42307,7 +42592,7 @@ module.exports = eachDay
 
 
 /***/ }),
-/* 156 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42338,7 +42623,7 @@ module.exports = endOfHour
 
 
 /***/ }),
-/* 157 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var endOfWeek = __webpack_require__(65)
@@ -42369,7 +42654,7 @@ module.exports = endOfISOWeek
 
 
 /***/ }),
-/* 158 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getISOYear = __webpack_require__(3)
@@ -42408,7 +42693,7 @@ module.exports = endOfISOYear
 
 
 /***/ }),
-/* 159 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42439,7 +42724,7 @@ module.exports = endOfMinute
 
 
 /***/ }),
-/* 160 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42473,7 +42758,7 @@ module.exports = endOfQuarter
 
 
 /***/ }),
-/* 161 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42504,10 +42789,10 @@ module.exports = endOfSecond
 
 
 /***/ }),
-/* 162 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var endOfDay = __webpack_require__(37)
+var endOfDay = __webpack_require__(38)
 
 /**
  * @category Day Helpers
@@ -42531,7 +42816,7 @@ module.exports = endOfToday
 
 
 /***/ }),
-/* 163 */
+/* 166 */
 /***/ (function(module, exports) {
 
 /**
@@ -42564,7 +42849,7 @@ module.exports = endOfTomorrow
 
 
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42597,7 +42882,7 @@ module.exports = endOfYear
 
 
 /***/ }),
-/* 165 */
+/* 168 */
 /***/ (function(module, exports) {
 
 /**
@@ -42630,15 +42915,15 @@ module.exports = endOfYesterday
 
 
 /***/ }),
-/* 166 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getDayOfYear = __webpack_require__(67)
-var getISOWeek = __webpack_require__(38)
+var getISOWeek = __webpack_require__(39)
 var getISOYear = __webpack_require__(3)
 var parse = __webpack_require__(0)
 var isValid = __webpack_require__(69)
-var enLocale = __webpack_require__(36)
+var enLocale = __webpack_require__(37)
 
 /**
  * @category Common Helpers
@@ -42964,7 +43249,7 @@ module.exports = format
 
 
 /***/ }),
-/* 167 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -42994,7 +43279,7 @@ module.exports = getDate
 
 
 /***/ }),
-/* 168 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43024,7 +43309,7 @@ module.exports = getDay
 
 
 /***/ }),
-/* 169 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isLeapYear = __webpack_require__(70)
@@ -43052,7 +43337,7 @@ module.exports = getDaysInYear
 
 
 /***/ }),
-/* 170 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43082,11 +43367,11 @@ module.exports = getHours
 
 
 /***/ }),
-/* 171 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfISOYear = __webpack_require__(12)
-var addWeeks = __webpack_require__(32)
+var addWeeks = __webpack_require__(33)
 
 var MILLISECONDS_IN_WEEK = 604800000
 
@@ -43121,7 +43406,7 @@ module.exports = getISOWeeksInYear
 
 
 /***/ }),
-/* 172 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43151,7 +43436,7 @@ module.exports = getMilliseconds
 
 
 /***/ }),
-/* 173 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43181,7 +43466,7 @@ module.exports = getMinutes
 
 
 /***/ }),
-/* 174 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43211,7 +43496,7 @@ module.exports = getMonth
 
 
 /***/ }),
-/* 175 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43279,7 +43564,7 @@ module.exports = getOverlappingDaysInRanges
 
 
 /***/ }),
-/* 176 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43309,7 +43594,7 @@ module.exports = getSeconds
 
 
 /***/ }),
-/* 177 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43339,7 +43624,7 @@ module.exports = getTime
 
 
 /***/ }),
-/* 178 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43369,7 +43654,7 @@ module.exports = getYear
 
 
 /***/ }),
-/* 179 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43400,7 +43685,7 @@ module.exports = isAfter
 
 
 /***/ }),
-/* 180 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43431,7 +43716,7 @@ module.exports = isBefore
 
 
 /***/ }),
-/* 181 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43465,7 +43750,7 @@ module.exports = isEqual
 
 
 /***/ }),
-/* 182 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43493,7 +43778,7 @@ module.exports = isFirstDayOfMonth
 
 
 /***/ }),
-/* 183 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43521,7 +43806,7 @@ module.exports = isFriday
 
 
 /***/ }),
-/* 184 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43549,11 +43834,11 @@ module.exports = isFuture
 
 
 /***/ }),
-/* 185 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var endOfDay = __webpack_require__(37)
+var endOfDay = __webpack_require__(38)
 var endOfMonth = __webpack_require__(66)
 
 /**
@@ -43580,7 +43865,7 @@ module.exports = isLastDayOfMonth
 
 
 /***/ }),
-/* 186 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43608,7 +43893,7 @@ module.exports = isMonday
 
 
 /***/ }),
-/* 187 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43636,7 +43921,7 @@ module.exports = isPast
 
 
 /***/ }),
-/* 188 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfDay = __webpack_require__(5)
@@ -43671,7 +43956,7 @@ module.exports = isSameDay
 
 
 /***/ }),
-/* 189 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43699,7 +43984,7 @@ module.exports = isSaturday
 
 
 /***/ }),
-/* 190 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -43727,7 +44012,7 @@ module.exports = isSunday
 
 
 /***/ }),
-/* 191 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameHour = __webpack_require__(72)
@@ -43756,7 +44041,7 @@ module.exports = isThisHour
 
 
 /***/ }),
-/* 192 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameISOWeek = __webpack_require__(74)
@@ -43786,7 +44071,7 @@ module.exports = isThisISOWeek
 
 
 /***/ }),
-/* 193 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameISOYear = __webpack_require__(75)
@@ -43817,7 +44102,7 @@ module.exports = isThisISOYear
 
 
 /***/ }),
-/* 194 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameMinute = __webpack_require__(76)
@@ -43846,7 +44131,7 @@ module.exports = isThisMinute
 
 
 /***/ }),
-/* 195 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameMonth = __webpack_require__(78)
@@ -43874,7 +44159,7 @@ module.exports = isThisMonth
 
 
 /***/ }),
-/* 196 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameQuarter = __webpack_require__(79)
@@ -43902,7 +44187,7 @@ module.exports = isThisQuarter
 
 
 /***/ }),
-/* 197 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameSecond = __webpack_require__(81)
@@ -43931,10 +44216,10 @@ module.exports = isThisSecond
 
 
 /***/ }),
-/* 198 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isSameWeek = __webpack_require__(39)
+var isSameWeek = __webpack_require__(40)
 
 /**
  * @category Week Helpers
@@ -43967,7 +44252,7 @@ module.exports = isThisWeek
 
 
 /***/ }),
-/* 199 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isSameYear = __webpack_require__(83)
@@ -43995,7 +44280,7 @@ module.exports = isThisYear
 
 
 /***/ }),
-/* 200 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44023,7 +44308,7 @@ module.exports = isThursday
 
 
 /***/ }),
-/* 201 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfDay = __webpack_require__(5)
@@ -44051,7 +44336,7 @@ module.exports = isToday
 
 
 /***/ }),
-/* 202 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfDay = __webpack_require__(5)
@@ -44081,7 +44366,7 @@ module.exports = isTomorrow
 
 
 /***/ }),
-/* 203 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44109,7 +44394,7 @@ module.exports = isTuesday
 
 
 /***/ }),
-/* 204 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44137,7 +44422,7 @@ module.exports = isWednesday
 
 
 /***/ }),
-/* 205 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44167,7 +44452,7 @@ module.exports = isWeekend
 
 
 /***/ }),
-/* 206 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44215,7 +44500,7 @@ module.exports = isWithinRange
 
 
 /***/ }),
-/* 207 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfDay = __webpack_require__(5)
@@ -44245,7 +44530,7 @@ module.exports = isYesterday
 
 
 /***/ }),
-/* 208 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var lastDayOfWeek = __webpack_require__(84)
@@ -44276,7 +44561,7 @@ module.exports = lastDayOfISOWeek
 
 
 /***/ }),
-/* 209 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getISOYear = __webpack_require__(3)
@@ -44315,7 +44600,7 @@ module.exports = lastDayOfISOYear
 
 
 /***/ }),
-/* 210 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44348,7 +44633,7 @@ module.exports = lastDayOfMonth
 
 
 /***/ }),
-/* 211 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44382,7 +44667,7 @@ module.exports = lastDayOfQuarter
 
 
 /***/ }),
-/* 212 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44415,7 +44700,7 @@ module.exports = lastDayOfYear
 
 
 /***/ }),
-/* 213 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44453,7 +44738,7 @@ module.exports = max
 
 
 /***/ }),
-/* 214 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44491,7 +44776,7 @@ module.exports = min
 
 
 /***/ }),
-/* 215 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44523,7 +44808,7 @@ module.exports = setDate
 
 
 /***/ }),
-/* 216 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44569,7 +44854,7 @@ module.exports = setDay
 
 
 /***/ }),
-/* 217 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44602,7 +44887,7 @@ module.exports = setDayOfYear
 
 
 /***/ }),
-/* 218 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44634,7 +44919,7 @@ module.exports = setHours
 
 
 /***/ }),
-/* 219 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44671,11 +44956,11 @@ module.exports = setISODay
 
 
 /***/ }),
-/* 220 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var getISOWeek = __webpack_require__(38)
+var getISOWeek = __webpack_require__(39)
 
 /**
  * @category ISO Week Helpers
@@ -44707,7 +44992,7 @@ module.exports = setISOWeek
 
 
 /***/ }),
-/* 221 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44739,7 +45024,7 @@ module.exports = setMilliseconds
 
 
 /***/ }),
-/* 222 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44771,7 +45056,7 @@ module.exports = setMinutes
 
 
 /***/ }),
-/* 223 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44805,7 +45090,7 @@ module.exports = setQuarter
 
 
 /***/ }),
-/* 224 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44837,7 +45122,7 @@ module.exports = setSeconds
 
 
 /***/ }),
-/* 225 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44869,7 +45154,7 @@ module.exports = setYear
 
 
 /***/ }),
-/* 226 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -44901,7 +45186,7 @@ module.exports = startOfMonth
 
 
 /***/ }),
-/* 227 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var startOfDay = __webpack_require__(5)
@@ -44928,7 +45213,7 @@ module.exports = startOfToday
 
 
 /***/ }),
-/* 228 */
+/* 231 */
 /***/ (function(module, exports) {
 
 /**
@@ -44961,7 +45246,7 @@ module.exports = startOfTomorrow
 
 
 /***/ }),
-/* 229 */
+/* 232 */
 /***/ (function(module, exports) {
 
 /**
@@ -44994,7 +45279,7 @@ module.exports = startOfYesterday
 
 
 /***/ }),
-/* 230 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addDays = __webpack_require__(10)
@@ -45024,7 +45309,7 @@ module.exports = subDays
 
 
 /***/ }),
-/* 231 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addHours = __webpack_require__(51)
@@ -45054,7 +45339,7 @@ module.exports = subHours
 
 
 /***/ }),
-/* 232 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addMilliseconds = __webpack_require__(11)
@@ -45084,7 +45369,7 @@ module.exports = subMilliseconds
 
 
 /***/ }),
-/* 233 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addMinutes = __webpack_require__(54)
@@ -45114,7 +45399,7 @@ module.exports = subMinutes
 
 
 /***/ }),
-/* 234 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addMonths = __webpack_require__(21)
@@ -45144,7 +45429,7 @@ module.exports = subMonths
 
 
 /***/ }),
-/* 235 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addQuarters = __webpack_require__(55)
@@ -45174,7 +45459,7 @@ module.exports = subQuarters
 
 
 /***/ }),
-/* 236 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addSeconds = __webpack_require__(56)
@@ -45204,10 +45489,10 @@ module.exports = subSeconds
 
 
 /***/ }),
-/* 237 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addWeeks = __webpack_require__(32)
+var addWeeks = __webpack_require__(33)
 
 /**
  * @category Week Helpers
@@ -45234,7 +45519,7 @@ module.exports = subWeeks
 
 
 /***/ }),
-/* 238 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var addYears = __webpack_require__(57)
@@ -45264,7 +45549,7 @@ module.exports = subYears
 
 
 /***/ }),
-/* 239 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45322,7 +45607,7 @@ var QuantumComputingFeed = function (_React$Component) {
     value: function render() {
       return this.state.quantumComputingNews.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.quantumComputingNews.map(function (article, idx) {
           return _react2.default.createElement(
             'div',
@@ -45336,7 +45621,7 @@ var QuantumComputingFeed = function (_React$Component) {
         })
       ) : _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         'loading component'
       );
     }
@@ -45348,7 +45633,7 @@ var QuantumComputingFeed = function (_React$Component) {
 exports.default = QuantumComputingFeed;
 
 /***/ }),
-/* 240 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45406,7 +45691,7 @@ var JavascriptFeed = function (_React$Component) {
     value: function render() {
       return this.state.javascriptNews.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.javascriptNews.map(function (article, idx) {
           return _react2.default.createElement(
             'div',
@@ -45420,7 +45705,7 @@ var JavascriptFeed = function (_React$Component) {
         })
       ) : _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         'loading component'
       );
     }
@@ -45432,7 +45717,7 @@ var JavascriptFeed = function (_React$Component) {
 exports.default = JavascriptFeed;
 
 /***/ }),
-/* 241 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45490,7 +45775,7 @@ var SpaceFeed = function (_React$Component) {
     value: function render() {
       return this.state.spaceNews.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         this.state.spaceNews.map(function (article, idx) {
           return _react2.default.createElement(
             'div',
@@ -45504,7 +45789,7 @@ var SpaceFeed = function (_React$Component) {
         })
       ) : _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         'loading component'
       );
     }
@@ -45516,7 +45801,7 @@ var SpaceFeed = function (_React$Component) {
 exports.default = SpaceFeed;
 
 /***/ }),
-/* 242 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45532,7 +45817,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _nasaApi = __webpack_require__(243);
+var _nasaApi = __webpack_require__(246);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45578,13 +45863,13 @@ var AstronomyPicOfTheDay = function (_React$Component) {
     value: function render() {
       return this.state.title.length ? _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         _react2.default.createElement(
           'h1',
           null,
           this.state.title
         ),
-        _react2.default.createElement('img', { src: this.state.image }),
+        _react2.default.createElement('img', { style: { width: '80%', height: '80%' }, src: this.state.image }),
         _react2.default.createElement(
           'h3',
           null,
@@ -45597,7 +45882,7 @@ var AstronomyPicOfTheDay = function (_React$Component) {
         )
       ) : _react2.default.createElement(
         'div',
-        null,
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
         'loading component'
       );
     }
@@ -45609,7 +45894,7 @@ var AstronomyPicOfTheDay = function (_React$Component) {
 exports.default = AstronomyPicOfTheDay;
 
 /***/ }),
-/* 243 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45620,7 +45905,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getApod = getApod;
 
-var _superagent = __webpack_require__(29);
+var _superagent = __webpack_require__(30);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
@@ -45633,231 +45918,6 @@ function getApod() {
     return apodres.body;
   });
 }
-
-/***/ }),
-/* 244 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(27);
-
-var _reactRedux = __webpack_require__(41);
-
-var _category = __webpack_require__(247);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Nav = function (_React$Component) {
-  _inherits(Nav, _React$Component);
-
-  function Nav(props) {
-    _classCallCheck(this, Nav);
-
-    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
-
-    _this.state = {};
-    return _this;
-  }
-
-  _createClass(Nav, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'div',
-        { style: { display: 'block', width: '20vw', height: '100%', float: 'left', position: 'fixed' } },
-        _react2.default.createElement(
-          'h2',
-          null,
-          'Reddit'
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/phFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('programmerHumor'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Programmer Humor'
-          )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/rcFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('retconned'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Retconned'
-          )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/bsFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('itbs'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Is It Bullshit'
-          )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: 'tataFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('tooAfraidToAsk'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Too Afraid To Ask'
-          )
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'h2',
-          null,
-          'News'
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/jsFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('javascript'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Javascript'
-          )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/qcFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('quantumComputing'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Quantum Computing'
-          )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/qpFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('quantumPhysics'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Quantum Physics'
-          )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: 'spaceFeed', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('space'));
-            } },
-          _react2.default.createElement(
-            'h3',
-            null,
-            'Space'
-          )
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/apod', onClick: function onClick() {
-              _this2.props.dispatch((0, _category.categoryAction)('astronomyPicture'));
-            } },
-          _react2.default.createElement(
-            'h2',
-            null,
-            'Astronomy Picture of the Day'
-          )
-        )
-      );
-    }
-  }]);
-
-  return Nav;
-}(_react2.default.Component);
-
-function mapStateToProps(state) {
-  return {
-    categorySelected: state.selectedCategory.categoryState
-  };
-}
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
-
-/***/ }),
-/* 245 */,
-/* 246 */,
-/* 247 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var categoryAction = exports.categoryAction = function categoryAction(category) {
-  return {
-    type: 'SELECTED_CATEGORY',
-    category: category
-  };
-};
-
-/***/ }),
-/* 248 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var initialCategoryState = { categoryState: '' };
-
-var selectedCategory = exports.selectedCategory = function selectedCategory() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialCategoryState;
-  var action = arguments[1];
-
-  switch (action.type) {
-    case 'SELECTED_CATEGORY':
-      return {
-        categoryState: action.category
-      };
-
-    default:
-      return state;
-  }
-};
-
-exports.default = selectedCategory;
 
 /***/ })
 /******/ ]);
