@@ -39300,10 +39300,6 @@ var _TooAfraidToAskFeed = __webpack_require__(193);
 
 var _TooAfraidToAskFeed2 = _interopRequireDefault(_TooAfraidToAskFeed);
 
-var _AliensNewsFeed = __webpack_require__(194);
-
-var _AliensNewsFeed2 = _interopRequireDefault(_AliensNewsFeed);
-
 var _QuantumPhysicsFeed = __webpack_require__(342);
 
 var _QuantumPhysicsFeed2 = _interopRequireDefault(_QuantumPhysicsFeed);
@@ -39320,21 +39316,34 @@ var _SpaceFeed = __webpack_require__(346);
 
 var _SpaceFeed2 = _interopRequireDefault(_SpaceFeed);
 
+var _AstronomyPicOfTheDay = __webpack_require__(347);
+
+var _AstronomyPicOfTheDay2 = _interopRequireDefault(_AstronomyPicOfTheDay);
+
+var _Nav = __webpack_require__(349);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
   return _react2.default.createElement(
     'div',
     null,
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_Nav2.default, null)
+    ),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/phFeed', component: _ProgrammerHumorRedditFeed2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/rcFeed', component: _RetconnedRedditFeed2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/bsFeed', component: _IsItBullshitRedditFeed2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/tataFeed', component: _TooAfraidToAskFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/aliensFeed', component: _AliensNewsFeed2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/qpFeed', component: _QuantumPhysicsFeed2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/qcFeed', component: _QuantumComputingFeed2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/jsFeed', component: _JavascriptFeed2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { path: '/spaceFeed', component: _SpaceFeed2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/spaceFeed', component: _SpaceFeed2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/apod', component: _AstronomyPicOfTheDay2.default })
   );
 };
 
@@ -40960,90 +40969,7 @@ var TooAfraidToAskRedditFeed = function (_React$Component) {
 exports.default = TooAfraidToAskRedditFeed;
 
 /***/ }),
-/* 194 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _newsApi = __webpack_require__(195);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// this component should display a list of alien articles (just the title)
-// create seperate componet for individual articles
-var AliensNewsFeed = function (_React$Component) {
-  _inherits(AliensNewsFeed, _React$Component);
-
-  function AliensNewsFeed(props) {
-    _classCallCheck(this, AliensNewsFeed);
-
-    var _this = _possibleConstructorReturn(this, (AliensNewsFeed.__proto__ || Object.getPrototypeOf(AliensNewsFeed)).call(this, props));
-
-    _this.state = {
-      alienNews: []
-    };
-    return _this;
-  }
-
-  _createClass(AliensNewsFeed, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      (0, _newsApi.getAlienNewsFeed)().then(function (articles) {
-        _this2.setState({
-          alienNews: articles
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return this.state.alienNews.length ? _react2.default.createElement(
-        'div',
-        null,
-        this.state.alienNews.map(function (article, idx) {
-          return _react2.default.createElement(
-            'div',
-            { key: idx },
-            _react2.default.createElement(
-              'h1',
-              { key: article.title },
-              article.title
-            )
-          );
-        })
-      ) : _react2.default.createElement(
-        'div',
-        null,
-        'loading component'
-      );
-    }
-  }]);
-
-  return AliensNewsFeed;
-}(_react2.default.Component);
-
-exports.default = AliensNewsFeed;
-
-/***/ }),
+/* 194 */,
 /* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41060,18 +40986,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var date = (0, _dateFns.format)(new Date(), 'YYYY-MM');
 var apiKey = '6b54422930be418da308df921864490f';
-var alienArticlesApi = 'https://newsapi.org/v2/everything?q=alien&from=' + date + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey;
-var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + date + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey;
-var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + date + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey;
-var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + date + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey;
-var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + date + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey;
-
-function getAlienNewsFeed() {
-  return _superagent2.default.get('' + alienArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
+var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
+var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
+var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
+var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
 
 function getQuatumPhysicsNewsFeed() {
   return _superagent2.default.get('' + quantumPhysicsArticlesApi).then(function (res) {
@@ -41102,7 +41020,6 @@ function getSpaceNewsFeed() {
 }
 
 module.exports = {
-  getAlienNewsFeed: getAlienNewsFeed,
   getQuatumPhysicsNewsFeed: getQuatumPhysicsNewsFeed,
   getQuatumComputingNewsFeed: getQuatumComputingNewsFeed,
   getJavascriptNewsFeed: getJavascriptNewsFeed,
@@ -45675,7 +45592,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// this component should display a list of js (just the title)
+// this component should display a list of space (just the title)
 // create seperate componet for individual articles
 var SpaceFeed = function (_React$Component) {
   _inherits(SpaceFeed, _React$Component);
@@ -45731,6 +45648,250 @@ var SpaceFeed = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = SpaceFeed;
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _nasaApi = __webpack_require__(348);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AstronomyPicOfTheDay = function (_React$Component) {
+  _inherits(AstronomyPicOfTheDay, _React$Component);
+
+  function AstronomyPicOfTheDay(props) {
+    _classCallCheck(this, AstronomyPicOfTheDay);
+
+    var _this = _possibleConstructorReturn(this, (AstronomyPicOfTheDay.__proto__ || Object.getPrototypeOf(AstronomyPicOfTheDay)).call(this, props));
+
+    _this.state = {
+      title: ' ',
+      image: ' ',
+      explaination: ' ',
+      date: ' '
+    };
+    return _this;
+  }
+
+  _createClass(AstronomyPicOfTheDay, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      (0, _nasaApi.getApod)().then(function (apodInfo) {
+        _this2.setState({
+          title: apodInfo.title,
+          image: apodInfo.url,
+          explanation: apodInfo.explanation,
+          date: apodInfo.date
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.state.title.length ? _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          this.state.title
+        ),
+        _react2.default.createElement('img', { src: this.state.image }),
+        _react2.default.createElement(
+          'h3',
+          null,
+          this.state.date
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          this.state.explanation
+        )
+      ) : _react2.default.createElement(
+        'div',
+        null,
+        'loading component'
+      );
+    }
+  }]);
+
+  return AstronomyPicOfTheDay;
+}(_react2.default.Component);
+
+exports.default = AstronomyPicOfTheDay;
+
+/***/ }),
+/* 348 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getApod = getApod;
+
+var _superagent = __webpack_require__(83);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var apodApi = 'https://api.nasa.gov/planetary/apod?api_key=UQFDU8qGbafUolXayLU0J4Xwtu2T5rrQn8ztn8Fg';
+
+function getApod() {
+  return _superagent2.default.get('' + apodApi).then(function (apodres) {
+    return apodres.body;
+  });
+}
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(80);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// nav component shows a list of available options:
+// reddit: list subreddits
+// news: list categories
+// astronomy pic of the day
+var Nav = function Nav() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h2',
+      null,
+      'Reddit'
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/phFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Programmer Humor'
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/rcFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Retconned'
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/bsFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Is It Bullshit'
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: 'tataFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Too Afraid To Ask'
+      )
+    ),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement(
+      'h2',
+      null,
+      'News'
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/jsFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Javascript'
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/qcFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Quantum Computing'
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/qpFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Quantum Physics'
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: 'spaceFeed' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Space'
+      )
+    ),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/apod' },
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Astronomy Picture of the Day'
+      )
+    )
+  );
+};
+
+exports.default = Nav;
 
 /***/ })
 /******/ ]);

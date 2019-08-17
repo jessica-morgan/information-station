@@ -1,7 +1,7 @@
 import React from 'react'
 import { getSpaceNewsFeed } from '../newsApi'
 
-// this component should display a list of js (just the title)
+// this component should display a list of space (just the title)
 // create seperate componet for individual articles
 class SpaceFeed extends React.Component {
   constructor (props) {
