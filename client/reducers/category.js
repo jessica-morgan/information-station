@@ -1,6 +1,6 @@
 const initialCategoryState = { categoryState: '' }
 
-export const selectedCategory = (state = initialCategoryState, action) => {
+const categorySelected = (state = initialCategoryState, action) => {
   switch (action.type) {
     case 'SELECTED_CATEGORY':
       return {
@@ -12,4 +12,4 @@ export const selectedCategory = (state = initialCategoryState, action) => {
   }
 }
 
-export default selectedCategory
+export default categorySelected
