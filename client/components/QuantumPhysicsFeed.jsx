@@ -1,29 +1,29 @@
 import React from 'react'
-import { getAlienNewsFeed } from '../newsApi'
+import { getQuatumPhysicsNewsFeed } from '../newsApi'
 
-// this component should display a list of alien articles (just the title)
+// this component should display a list of q-p (just the title)
 // create seperate componet for individual articles
-class AliensNewsFeed extends React.Component {
+class QuantumPhysicsFeed extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      alienNews: []
+      quantumPhysicsNews: []
     }
   }
   componentDidMount () {
-    getAlienNewsFeed()
+    getQuatumPhysicsNewsFeed()
       .then(articles => {
         this.setState({
-          alienNews: articles
+          quantumPhysicsNews: articles
         }
         )
       })
   }
   render () {
     return (
-      this.state.alienNews.length
+      this.state.quantumPhysicsNews.length
         ? <div>
-          {this.state.alienNews.map((article, idx) => {
+          {this.state.quantumPhysicsNews.map((article, idx) => {
             return (
               <div key={idx}>
                 <h1 key={article.title}>{article.title}</h1>
@@ -37,4 +37,4 @@ class AliensNewsFeed extends React.Component {
   }
 }
 
-export default AliensNewsFeed
+export default QuantumPhysicsFeed

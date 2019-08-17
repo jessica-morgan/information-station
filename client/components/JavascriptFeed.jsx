@@ -1,29 +1,29 @@
 import React from 'react'
-import { getAlienNewsFeed } from '../newsApi'
+import { getJavascriptNewsFeed } from '../newsApi'
 
-// this component should display a list of alien articles (just the title)
+// this component should display a list of js (just the title)
 // create seperate componet for individual articles
-class AliensNewsFeed extends React.Component {
+class JavascriptFeed extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      alienNews: []
+      javascriptNews: []
     }
   }
   componentDidMount () {
-    getAlienNewsFeed()
+    getJavascriptNewsFeed()
       .then(articles => {
         this.setState({
-          alienNews: articles
+          javascriptNews: articles
         }
         )
       })
   }
   render () {
     return (
-      this.state.alienNews.length
+      this.state.javascriptNews.length
         ? <div>
-          {this.state.alienNews.map((article, idx) => {
+          {this.state.javascriptNews.map((article, idx) => {
             return (
               <div key={idx}>
                 <h1 key={article.title}>{article.title}</h1>
@@ -37,4 +37,4 @@ class AliensNewsFeed extends React.Component {
   }
 }
 
-export default AliensNewsFeed
+export default JavascriptFeed
