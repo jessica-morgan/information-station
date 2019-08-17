@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import selectedCategory from './category'
+import categorySelected from './category'
 
 export default combineReducers({
-  selectedCategory
+  categorySelected
 })
