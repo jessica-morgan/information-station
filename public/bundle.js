@@ -1189,10 +1189,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var date = (0, _dateFns.format)(new Date(), 'YYYY-MM');
 var apiKey = '6b54422930be418da308df921864490f';
-var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
-var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
-var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
-var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + date + '&pageSize=30&sortBy=publishedAt&apiKey=' + apiKey;
+var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
 
 function getQuatumPhysicsNewsFeed() {
   return _superagent2.default.get('' + quantumPhysicsArticlesApi).then(function (res) {
