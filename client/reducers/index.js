@@ -1,8 +1,6 @@
-
-import {combineReducers} from 'redux'
-
-import example from './example'
+import { combineReducers } from 'redux'
+import selectedCategory from './category'
 
 export default combineReducers({
-  example
+  selectedCategory
 })
