@@ -22,7 +22,7 @@ class QuantumPhysicsFeed extends React.Component {
   render () {
     return (
       this.state.quantumPhysicsNews.length
-        ? <div>
+        ? <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
           {this.state.quantumPhysicsNews.map((article, idx) => {
             return (
               <div key={idx}>
@@ -30,7 +30,7 @@ class QuantumPhysicsFeed extends React.Component {
               </div>
             )
           })}
-        </div> : <div>
+        </div> : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
         loading component
         </div>
     )

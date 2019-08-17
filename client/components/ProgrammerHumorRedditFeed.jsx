@@ -24,7 +24,7 @@ class ProgrammerHumorRedditFeed extends React.Component {
     console.log(this.state.programmerHumorPosts)
     return (
       this.state.programmerHumorPosts.length
-        ? <div>
+        ? <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
           {this.state.programmerHumorPosts.map((post, idx) => {
             return (
               <div key={idx}>
@@ -34,7 +34,7 @@ class ProgrammerHumorRedditFeed extends React.Component {
               </div>
             )
           })}
-        </div> : <div>
+        </div> : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
           {/* loading component */}
         </div>
     )

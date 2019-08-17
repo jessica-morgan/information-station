@@ -26,12 +26,12 @@ class AstronomyPicOfTheDay extends React.Component {
   render () {
     return (
       this.state.title.length
-        ? <div>
+        ? <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
           <h1>{this.state.title}</h1>
-          <img src={this.state.image}></img>
+          <img style={{ width: '80%', height: '80%' }} src={this.state.image}></img>
           <h3>{this.state.date}</h3>
           <h2>{this.state.explanation}</h2>
-        </div> : <div>
+        </div> : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
         loading component
         </div>
     )

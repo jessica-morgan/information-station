@@ -22,7 +22,7 @@ class IsItBullshitRedditFeed extends React.Component {
   render () {
     return (
       this.state.isItBullshitPosts.length
-        ? <div>
+        ? <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
           {this.state.isItBullshitPosts.map((post, idx) => {
             return (
               <div key={idx}>
@@ -32,7 +32,7 @@ class IsItBullshitRedditFeed extends React.Component {
               </div>
             )
           })}
-        </div> : <div>
+        </div> : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
           {/* loading component */}
         </div>
     )
