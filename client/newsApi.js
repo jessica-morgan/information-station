@@ -1,102 +1,70 @@
 import request from 'superagent'
 import { format } from 'date-fns'
 
-const date = format(new Date(), 'YYYY-MM-DD')
+const date = format(new Date(), 'YYYY-MM')
+const apiKey = '6b54422930be418da308df921864490f'
+const alienArticlesApi = `https://newsapi.org/v2/everything?q=alien&from=${date}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}`
+const quantumPhysicsArticlesApi = `https://newsapi.org/v2/everything?q=quantum-physics&from=${date}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}`
+const quantumComputingArticlesApi = `https://newsapi.org/v2/everything?q=quantum-computing&from=${date}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}`
+const javascriptArticlesApi = `https://newsapi.org/v2/everything?q=javascript&from=${date}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}`
+const spaceArticlesApi = `https://newsapi.org/v2/everything?q=space&from=${date}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}`
 
-const aliensNewsSearch = `https://newsapi.org/v2/everything?q=aliens&from=${date}&sortBy=publishedAt&apiKey=6b54422930be418da308df921864490f`
-
-const quatumPhysicsNewsSearch = `https://newsapi.org/v2/everything?q=quantum-physics&from=${date}&sortBy=publishedAt&apiKey=6b54422930be418da308df921864490f`
-
-const quatumComputingNewsSearch = `https://newsapi.org/v2/everything?q=quantum-computing&from=${date}&sortBy=publishedAt&apiKey=6b54422930be418da308df921864490f`
-
-const javascriptNewsSearch = `https://newsapi.org/v2/everything?q=javascript&from=${date}&sortBy=publishedAt&apiKey=6b54422930be418da308df921864490f`
-
-const spaceNewsSearch = `https://newsapi.org/v2/everything?q=space&from=${date}&sortBy=publishedAt&apiKey=6b54422930be418da308df921864490f`
-
-function getAliensNewsFeed () {
+function getAlienNewsFeed () {
   return (
-    request.get(`${aliensNewsSearch}`)
-      .then(
-      //   posts => {
-      //   let newPHPostsArray = []
-      //   posts.body.data.children.map(post => {
-      //     newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url })
-      //     return newPHPostsArray
-      //   })
-      //   return newPHPostsArray
-      // }
-      )
+    request.get(`${alienArticlesApi}`)
+      .then(res => {
+        console.log(res.body.articles)
+        return res.body.articles
+      })
   )
 }
 
 function getQuatumPhysicsNewsFeed () {
   return (
-    request.get(`${quatumPhysicsNewsSearch}`)
-      .then(
-      //   posts => {
-      //   let newPHPostsArray = []
-      //   posts.body.data.children.map(post => {
-      //     newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url })
-      //     return newPHPostsArray
-      //   })
-      //   return newPHPostsArray
-      // }
-      )
+    request.get(`${quantumPhysicsArticlesApi}`)
+      .then(res => {
+        console.log(res.body.articles)
+        return res.body.articles
+      })
   )
 }
 
 function getQuatumComputingNewsFeed () {
   return (
-    request.get(`${quatumComputingNewsSearch}`)
-      .then(
-      //   posts => {
-      //   let newPHPostsArray = []
-      //   posts.body.data.children.map(post => {
-      //     newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url })
-      //     return newPHPostsArray
-      //   })
-      //   return newPHPostsArray
-      // }
+    request.get(`${quantumComputingArticlesApi}`)
+      .then(res => {
+        console.log(res.body.articles)
+        return res.body.articles
+      }
+
       )
   )
 }
 
 function getJavascriptNewsFeed () {
   return (
-    request.get(`${javascriptNewsSearch}`)
-      .then(
-      //   posts => {
-      //   let newPHPostsArray = []
-      //   posts.body.data.children.map(post => {
-      //     newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url })
-      //     return newPHPostsArray
-      //   })
-      //   return newPHPostsArray
-      // }
-      )
+    request.get(`${javascriptArticlesApi}`)
+      .then(res => {
+        console.log(res.body.articles)
+        return res.body.articles
+      })
   )
 }
 
 function getSpaceNewsFeed () {
   return (
-    request.get(`${spaceNewsSearch}`)
-      .then(
-      //   posts => {
-      //   let newPHPostsArray = []
-      //   posts.body.data.children.map(post => {
-      //     newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url })
-      //     return newPHPostsArray
-      //   })
-      //   return newPHPostsArray
-      // }
-      )
+    request.get(`${spaceArticlesApi}`)
+      .then(res => {
+        console.log(res.body.articles)
+        return res.body.articles
+      })
   )
 }
 
-module.expoerts = {
-  getAliensNewsFeed,
+module.exports = {
+  getAlienNewsFeed,
   getQuatumPhysicsNewsFeed,
   getQuatumComputingNewsFeed,
-  getSpaceNewsFeed,
-  getJavascriptNewsFeed
+  getJavascriptNewsFeed,
+  getSpaceNewsFeed
 }
