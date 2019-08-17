@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getProgrammerHumorFeed } from '../redditApi'
+import { getProgrammerHumorFeed } from '../api/redditApi'
 
 // this component should display a list of programmerHumor posts (just the title)
 // create seperate componet for individual posts

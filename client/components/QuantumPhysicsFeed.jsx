@@ -1,5 +1,5 @@
 import React from 'react'
-import { getQuatumPhysicsNewsFeed } from '../newsApi'
+import { getQuatumPhysicsNewsFeed } from '../api/newsApi'
 
 // this component should display a list of q-p (just the title)
 // create seperate componet for individual articles

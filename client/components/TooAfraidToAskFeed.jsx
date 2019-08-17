@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getTooAfraidFeed } from '../redditApi'
+import { getTooAfraidFeed } from '../api/redditApi'
 
 // this component should display a list of tata posts (just the title)
 // create seperate componet for individual posts

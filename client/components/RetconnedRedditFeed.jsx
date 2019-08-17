@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getRetconnedFeed } from '../redditApi'
+import { getRetconnedFeed } from '../api/redditApi'
 
 // this component should display a list of retconned posts (just the title)
 // create seperate componet for individual posts

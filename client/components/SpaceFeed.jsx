@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSpaceNewsFeed } from '../newsApi'
+import { getSpaceNewsFeed } from '../api/newsApi'
 
 // this component should display a list of space (just the title)
 // create seperate componet for individual articles

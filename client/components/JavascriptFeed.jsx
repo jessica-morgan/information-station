@@ -1,5 +1,5 @@
 import React from 'react'
-import { getJavascriptNewsFeed } from '../newsApi'
+import { getJavascriptNewsFeed } from '../api/newsApi'
 
 // this component should display a list of js (just the title)
 // create seperate componet for individual articles

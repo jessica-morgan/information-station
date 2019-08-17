@@ -1,5 +1,5 @@
 import React from 'react'
-import { getApod } from '../nasaApi'
+import { getApod } from '../api/nasaApi'
 
 class AstronomyPicOfTheDay extends React.Component {
   constructor (props) {

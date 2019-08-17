@@ -1,5 +1,5 @@
 import React from 'react'
-import { getIsItBullshitFeed } from '../redditApi'
+import { getIsItBullshitFeed } from '../api/redditApi'
 
 // this component should display a list of itbs posts (just the title)
 // create seperate componet for individual posts
