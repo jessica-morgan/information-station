@@ -12,6 +12,8 @@ import QuantumComputingFeed from './QuantumComputingFeed'
 import JavascriptFeed from './JavascriptFeed'
 import SpaceFeed from './SpaceFeed'
 import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
+import NZScienceTechnologyFeed from './NZScienceTechnologyFeed'
+import NZGeneralFeed from './NZGeneralFeed'
 
 class App extends React.Component {
   render () {
@@ -29,6 +31,9 @@ class App extends React.Component {
             <Route path='/jsFeed' component={JavascriptFeed} />
             <Route path='/spaceFeed' component={SpaceFeed} />
             <Route path='/apod' component={AstronomyPicOfTheDay} />
+            <Route path='/nzstFeed' component={NZScienceTechnologyFeed} />
+            <Route path='/nzgFeed' component={NZGeneralFeed} />
+
           </div>
           : <div>
             <Welcome />
