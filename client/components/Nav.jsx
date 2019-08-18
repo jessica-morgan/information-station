@@ -7,6 +7,10 @@ class Nav extends React.Component {
   render () {
     return (
       <div style={{ display: 'block', width: '20vw', height: '100%', float: 'left', position: 'fixed' }}>
+        <h2>New Zealand</h2>
+        <Link to='/nzgFeed' onClick={() => this.props.dispatch(categoryAction(true))}><h2>General</h2></Link>
+        <Link to='/nzstFeed' onClick={() => this.props.dispatch(categoryAction(true))}><h2>Science and Technology</h2></Link>
+        <br/>
         <h2>Reddit</h2>
         <Link to='/phFeed' onClick={() => this.props.dispatch(categoryAction(true))}><h3>Programmer Humor</h3></Link>
         <Link to='/rcFeed' onClick={() => this.props.dispatch(categoryAction(true))}><h3>Retconned</h3></Link>
