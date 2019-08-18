@@ -880,6 +880,82 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+var _superagent = __webpack_require__(30);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+var _dateFns = __webpack_require__(139);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var dateMonthYear = (0, _dateFns.format)(new Date(), 'YYYY-MM');
+var dateToday = (0, _dateFns.format)(new Date(), 'YYYY-MM-DD');
+var apiKey = '6b54422930be418da308df921864490f';
+var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var nzScienceTechnologyHeadlinesApi = 'https://newsapi.org/v2/top-headlines?country=nz&from=' + dateToday + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey + '&language=en&category=science&technology';
+var nzGeneralHeadlinesApi = 'https://newsapi.org/v2/top-headlines?country=nz&from=' + dateToday + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey + '&language=en&category=general';
+
+function getQuatumPhysicsNewsFeed() {
+  return _superagent2.default.get('' + quantumPhysicsArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getQuatumComputingNewsFeed() {
+  return _superagent2.default.get('' + quantumComputingArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getJavascriptNewsFeed() {
+  return _superagent2.default.get('' + javascriptArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getSpaceNewsFeed() {
+  return _superagent2.default.get('' + spaceArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getNZScienceTechnologyHeadlines() {
+  return _superagent2.default.get('' + nzScienceTechnologyHeadlinesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getNZGeneralHeadlines() {
+  return _superagent2.default.get('' + nzGeneralHeadlinesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+module.exports = {
+  getQuatumPhysicsNewsFeed: getQuatumPhysicsNewsFeed,
+  getQuatumComputingNewsFeed: getQuatumComputingNewsFeed,
+  getJavascriptNewsFeed: getJavascriptNewsFeed,
+  getSpaceNewsFeed: getSpaceNewsFeed,
+  getNZScienceTechnologyHeadlines: getNZScienceTechnologyHeadlines,
+  getNZGeneralHeadlines: getNZGeneralHeadlines
+};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var parse = __webpack_require__(0)
 
 /**
@@ -909,7 +985,7 @@ module.exports = addDays
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -940,7 +1016,7 @@ module.exports = addMilliseconds
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getISOYear = __webpack_require__(3)
@@ -978,7 +1054,7 @@ module.exports = startOfISOYear
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -1035,7 +1111,7 @@ module.exports = compareAsc
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1047,7 +1123,7 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -1073,7 +1149,7 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1101,7 +1177,7 @@ function warning(condition, message) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1170,63 +1246,6 @@ module.exports = {
   getRetconnedFeed: getRetconnedFeed,
   getIsItBullshitFeed: getIsItBullshitFeed,
   getTooAfraidFeed: getTooAfraidFeed
-};
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _superagent = __webpack_require__(30);
-
-var _superagent2 = _interopRequireDefault(_superagent);
-
-var _dateFns = __webpack_require__(139);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var date = (0, _dateFns.format)(new Date(), 'YYYY-MM');
-var apiKey = '6b54422930be418da308df921864490f';
-var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + date + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-
-function getQuatumPhysicsNewsFeed() {
-  return _superagent2.default.get('' + quantumPhysicsArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getQuatumComputingNewsFeed() {
-  return _superagent2.default.get('' + quantumComputingArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getJavascriptNewsFeed() {
-  return _superagent2.default.get('' + javascriptArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getSpaceNewsFeed() {
-  return _superagent2.default.get('' + spaceArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-module.exports = {
-  getQuatumPhysicsNewsFeed: getQuatumPhysicsNewsFeed,
-  getQuatumComputingNewsFeed: getQuatumComputingNewsFeed,
-  getJavascriptNewsFeed: getJavascriptNewsFeed,
-  getSpaceNewsFeed: getSpaceNewsFeed
 };
 
 /***/ }),
@@ -2243,7 +2262,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return HashRouter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return Link; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return NavLink; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router__ = __webpack_require__(48);
@@ -2259,9 +2278,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_2_react_router__["k"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "__RouterContext", function() { return __WEBPACK_IMPORTED_MODULE_2_react_router__["h"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_tiny_warning__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_tiny_warning__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_tiny_invariant__ = __webpack_require__(29);
@@ -3631,7 +3650,7 @@ module.exports = getDaysInMonth
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addDays = __webpack_require__(10)
+var addDays = __webpack_require__(11)
 
 /**
  * @category Week Helpers
@@ -3721,7 +3740,7 @@ module.exports = compareDesc
 
 var parse = __webpack_require__(0)
 var differenceInCalendarMonths = __webpack_require__(59)
-var compareAsc = __webpack_require__(13)
+var compareAsc = __webpack_require__(14)
 
 /**
  * @category Month Helpers
@@ -3847,7 +3866,7 @@ module.exports = endOfDay
 
 var parse = __webpack_require__(0)
 var startOfISOWeek = __webpack_require__(4)
-var startOfISOYear = __webpack_require__(12)
+var startOfISOYear = __webpack_require__(13)
 
 var MILLISECONDS_IN_WEEK = 604800000
 
@@ -3950,7 +3969,7 @@ if (process.env.NODE_ENV === 'production') {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = connectAdvanced;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_assertThisInitialized__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics__ = __webpack_require__(43);
@@ -4438,12 +4457,12 @@ function warning(message) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return withRouter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return context; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mini_create_react_context__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_warning__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_warning__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_history__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_tiny_invariant__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_path_to_regexp__ = __webpack_require__(120);
@@ -5198,7 +5217,7 @@ if (process.env.NODE_ENV !== "production") {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_resolve_pathname__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_value_equal__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_tiny_warning__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_tiny_warning__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_invariant__ = __webpack_require__(29);
 
 
@@ -6133,7 +6152,7 @@ module.exports = isObject;
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(11)
+var addMilliseconds = __webpack_require__(12)
 
 var MILLISECONDS_IN_HOUR = 3600000
 
@@ -6199,7 +6218,7 @@ module.exports = addISOYears
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var startOfISOYear = __webpack_require__(12)
+var startOfISOYear = __webpack_require__(13)
 var differenceInCalendarDays = __webpack_require__(20)
 
 /**
@@ -6240,7 +6259,7 @@ module.exports = setISOYear
 /* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(11)
+var addMilliseconds = __webpack_require__(12)
 
 var MILLISECONDS_IN_MINUTE = 60000
 
@@ -6303,7 +6322,7 @@ module.exports = addQuarters
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(11)
+var addMilliseconds = __webpack_require__(12)
 
 /**
  * @category Second Helpers
@@ -6502,7 +6521,7 @@ module.exports = differenceInCalendarYears
 
 var parse = __webpack_require__(0)
 var differenceInCalendarDays = __webpack_require__(20)
-var compareAsc = __webpack_require__(13)
+var compareAsc = __webpack_require__(14)
 
 /**
  * @category Day Helpers
@@ -7138,7 +7157,7 @@ module.exports = isSameISOWeek
 /* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfISOYear = __webpack_require__(12)
+var startOfISOYear = __webpack_require__(13)
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -36851,10 +36870,10 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Context__ = __webpack_require__(26);
 
@@ -38439,11 +38458,11 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_inheritsLoose__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_inheritsLoose___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_inheritsLoose__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_gud__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_gud___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_gud__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_warning__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_tiny_warning__ = __webpack_require__(17);
 
 
 
@@ -39328,6 +39347,14 @@ var _AstronomyPicOfTheDay = __webpack_require__(245);
 
 var _AstronomyPicOfTheDay2 = _interopRequireDefault(_AstronomyPicOfTheDay);
 
+var _NZScienceTechnologyFeed = __webpack_require__(248);
+
+var _NZScienceTechnologyFeed2 = _interopRequireDefault(_NZScienceTechnologyFeed);
+
+var _NZGeneralFeed = __webpack_require__(249);
+
+var _NZGeneralFeed2 = _interopRequireDefault(_NZGeneralFeed);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39363,7 +39390,9 @@ var App = function (_React$Component) {
           _react2.default.createElement(_reactRouterDom.Route, { path: '/qcFeed', component: _QuantumComputingFeed2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/jsFeed', component: _JavascriptFeed2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/spaceFeed', component: _SpaceFeed2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/apod', component: _AstronomyPicOfTheDay2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/apod', component: _AstronomyPicOfTheDay2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/nzstFeed', component: _NZScienceTechnologyFeed2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/nzgFeed', component: _NZGeneralFeed2.default })
         ) : _react2.default.createElement(
           'div',
           null,
@@ -39459,6 +39488,34 @@ var Nav = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { style: { display: 'block', width: '20vw', height: '100%', float: 'left', position: 'fixed' } },
+        _react2.default.createElement(
+          'h2',
+          null,
+          'New Zealand'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/nzgFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'General'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/nzstFeed', onClick: function onClick() {
+              return _this2.props.dispatch((0, _category.categoryAction)(true));
+            } },
+          _react2.default.createElement(
+            'h2',
+            null,
+            'Science and Technology'
+          )
+        ),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           'h2',
           null,
@@ -39619,7 +39676,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _redditApi = __webpack_require__(17);
+var _redditApi = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40997,7 +41054,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _redditApi = __webpack_require__(17);
+var _redditApi = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41078,7 +41135,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _redditApi = __webpack_require__(17);
+var _redditApi = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41158,7 +41215,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _redditApi = __webpack_require__(17);
+var _redditApi = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41238,7 +41295,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(18);
+var _newsApi = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41310,10 +41367,10 @@ exports.default = QuantumPhysicsFeed;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  addDays: __webpack_require__(10),
+  addDays: __webpack_require__(11),
   addHours: __webpack_require__(51),
   addISOYears: __webpack_require__(52),
-  addMilliseconds: __webpack_require__(11),
+  addMilliseconds: __webpack_require__(12),
   addMinutes: __webpack_require__(54),
   addMonths: __webpack_require__(21),
   addQuarters: __webpack_require__(55),
@@ -41323,7 +41380,7 @@ module.exports = {
   areRangesOverlapping: __webpack_require__(141),
   closestIndexTo: __webpack_require__(142),
   closestTo: __webpack_require__(143),
-  compareAsc: __webpack_require__(13),
+  compareAsc: __webpack_require__(14),
   compareDesc: __webpack_require__(34),
   differenceInCalendarDays: __webpack_require__(20),
   differenceInCalendarISOWeeks: __webpack_require__(144),
@@ -41444,7 +41501,7 @@ module.exports = {
   startOfDay: __webpack_require__(5),
   startOfHour: __webpack_require__(73),
   startOfISOWeek: __webpack_require__(4),
-  startOfISOYear: __webpack_require__(12),
+  startOfISOYear: __webpack_require__(13),
   startOfMinute: __webpack_require__(77),
   startOfMonth: __webpack_require__(229),
   startOfQuarter: __webpack_require__(80),
@@ -41838,7 +41895,7 @@ module.exports = differenceInHours
 
 var parse = __webpack_require__(0)
 var differenceInCalendarISOYears = __webpack_require__(58)
-var compareAsc = __webpack_require__(13)
+var compareAsc = __webpack_require__(14)
 var subISOYears = __webpack_require__(63)
 
 /**
@@ -41987,7 +42044,7 @@ module.exports = differenceInWeeks
 
 var parse = __webpack_require__(0)
 var differenceInCalendarYears = __webpack_require__(61)
-var compareAsc = __webpack_require__(13)
+var compareAsc = __webpack_require__(14)
 
 /**
  * @category Year Helpers
@@ -43370,7 +43427,7 @@ module.exports = getHours
 /* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfISOYear = __webpack_require__(12)
+var startOfISOYear = __webpack_require__(13)
 var addWeeks = __webpack_require__(33)
 
 var MILLISECONDS_IN_WEEK = 604800000
@@ -44812,7 +44869,7 @@ module.exports = setDate
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var addDays = __webpack_require__(10)
+var addDays = __webpack_require__(11)
 
 /**
  * @category Weekday Helpers
@@ -44923,7 +44980,7 @@ module.exports = setHours
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var addDays = __webpack_require__(10)
+var addDays = __webpack_require__(11)
 var getISODay = __webpack_require__(71)
 
 /**
@@ -45282,7 +45339,7 @@ module.exports = startOfYesterday
 /* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addDays = __webpack_require__(10)
+var addDays = __webpack_require__(11)
 
 /**
  * @category Day Helpers
@@ -45342,7 +45399,7 @@ module.exports = subHours
 /* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(11)
+var addMilliseconds = __webpack_require__(12)
 
 /**
  * @category Millisecond Helpers
@@ -45565,7 +45622,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(18);
+var _newsApi = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45649,7 +45706,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(18);
+var _newsApi = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45733,7 +45790,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(18);
+var _newsApi = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45918,6 +45975,171 @@ function getApod() {
     return apodres.body;
   });
 }
+
+/***/ }),
+/* 247 */,
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _newsApi = __webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NZScienceTechnologyFeed = function (_React$Component) {
+  _inherits(NZScienceTechnologyFeed, _React$Component);
+
+  function NZScienceTechnologyFeed(props) {
+    _classCallCheck(this, NZScienceTechnologyFeed);
+
+    var _this = _possibleConstructorReturn(this, (NZScienceTechnologyFeed.__proto__ || Object.getPrototypeOf(NZScienceTechnologyFeed)).call(this, props));
+
+    _this.state = {
+      nzHeadlines: []
+    };
+    return _this;
+  }
+
+  _createClass(NZScienceTechnologyFeed, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      (0, _newsApi.getNZScienceTechnologyHeadlines)().then(function (headlines) {
+        _this2.setState({
+          nzHeadlines: headlines
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.state.nzHeadlines.length ? _react2.default.createElement(
+        'div',
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+        this.state.nzHeadlines.map(function (headline, idx) {
+          return _react2.default.createElement(
+            'div',
+            { key: idx },
+            _react2.default.createElement(
+              'h1',
+              { key: headline.title },
+              headline.title
+            )
+          );
+        })
+      ) : _react2.default.createElement(
+        'div',
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+        'loading component'
+      );
+    }
+  }]);
+
+  return NZScienceTechnologyFeed;
+}(_react2.default.Component);
+
+exports.default = NZScienceTechnologyFeed;
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _newsApi = __webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NZGeneralFeed = function (_React$Component) {
+  _inherits(NZGeneralFeed, _React$Component);
+
+  function NZGeneralFeed(props) {
+    _classCallCheck(this, NZGeneralFeed);
+
+    var _this = _possibleConstructorReturn(this, (NZGeneralFeed.__proto__ || Object.getPrototypeOf(NZGeneralFeed)).call(this, props));
+
+    _this.state = {
+      nzHeadlines: []
+    };
+    return _this;
+  }
+
+  _createClass(NZGeneralFeed, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      (0, _newsApi.getNZGeneralHeadlines)().then(function (headlines) {
+        _this2.setState({
+          nzHeadlines: headlines
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.state.nzHeadlines.length ? _react2.default.createElement(
+        'div',
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+        this.state.nzHeadlines.map(function (headline, idx) {
+          return _react2.default.createElement(
+            'div',
+            { key: idx },
+            _react2.default.createElement(
+              'h1',
+              { key: headline.title },
+              headline.title
+            )
+          );
+        })
+      ) : _react2.default.createElement(
+        'div',
+        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+        'loading component'
+      );
+    }
+  }]);
+
+  return NZGeneralFeed;
+}(_react2.default.Component);
+
+exports.default = NZGeneralFeed;
 
 /***/ })
 /******/ ]);
