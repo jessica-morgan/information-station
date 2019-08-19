@@ -748,6 +748,82 @@ function _extends() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+var _superagent = __webpack_require__(30);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+var _dateFns = __webpack_require__(139);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var dateMonthYear = (0, _dateFns.format)(new Date(), 'YYYY-MM');
+var dateToday = (0, _dateFns.format)(new Date(), 'YYYY-MM-DD');
+var apiKey = '6b54422930be418da308df921864490f';
+var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
+var nzScienceTechnologyHeadlinesApi = 'https://newsapi.org/v2/top-headlines?country=nz&from=' + dateToday + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey + '&language=en&category=science&technology';
+var nzGeneralHeadlinesApi = 'https://newsapi.org/v2/top-headlines?country=nz&from=' + dateToday + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey + '&language=en&category=general';
+
+function getQuatumPhysicsNewsFeed() {
+  return _superagent2.default.get('' + quantumPhysicsArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getQuatumComputingNewsFeed() {
+  return _superagent2.default.get('' + quantumComputingArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getJavascriptNewsFeed() {
+  return _superagent2.default.get('' + javascriptArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getSpaceNewsFeed() {
+  return _superagent2.default.get('' + spaceArticlesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getNZScienceTechnologyHeadlines() {
+  return _superagent2.default.get('' + nzScienceTechnologyHeadlinesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+function getNZGeneralHeadlines() {
+  return _superagent2.default.get('' + nzGeneralHeadlinesApi).then(function (res) {
+    console.log(res.body.articles);
+    return res.body.articles;
+  });
+}
+
+module.exports = {
+  getQuatumPhysicsNewsFeed: getQuatumPhysicsNewsFeed,
+  getQuatumComputingNewsFeed: getQuatumComputingNewsFeed,
+  getJavascriptNewsFeed: getJavascriptNewsFeed,
+  getSpaceNewsFeed: getSpaceNewsFeed,
+  getNZScienceTechnologyHeadlines: getNZScienceTechnologyHeadlines,
+  getNZGeneralHeadlines: getNZGeneralHeadlines
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -841,7 +917,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -856,7 +932,7 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -875,82 +951,6 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
   return target;
 }
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _superagent = __webpack_require__(30);
-
-var _superagent2 = _interopRequireDefault(_superagent);
-
-var _dateFns = __webpack_require__(139);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var dateMonthYear = (0, _dateFns.format)(new Date(), 'YYYY-MM');
-var dateToday = (0, _dateFns.format)(new Date(), 'YYYY-MM-DD');
-var apiKey = '6b54422930be418da308df921864490f';
-var quantumPhysicsArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-physics&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var quantumComputingArticlesApi = 'https://newsapi.org/v2/everything?q=quantum-computing&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var javascriptArticlesApi = 'https://newsapi.org/v2/everything?q=javascript&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var spaceArticlesApi = 'https://newsapi.org/v2/everything?q=space&from=' + dateMonthYear + '&pageSize=30&sortBy=publishedAt&language=en&apiKey=' + apiKey;
-var nzScienceTechnologyHeadlinesApi = 'https://newsapi.org/v2/top-headlines?country=nz&from=' + dateToday + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey + '&language=en&category=science&technology';
-var nzGeneralHeadlinesApi = 'https://newsapi.org/v2/top-headlines?country=nz&from=' + dateToday + '&pageSize=50&sortBy=publishedAt&apiKey=' + apiKey + '&language=en&category=general';
-
-function getQuatumPhysicsNewsFeed() {
-  return _superagent2.default.get('' + quantumPhysicsArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getQuatumComputingNewsFeed() {
-  return _superagent2.default.get('' + quantumComputingArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getJavascriptNewsFeed() {
-  return _superagent2.default.get('' + javascriptArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getSpaceNewsFeed() {
-  return _superagent2.default.get('' + spaceArticlesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getNZScienceTechnologyHeadlines() {
-  return _superagent2.default.get('' + nzScienceTechnologyHeadlinesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-function getNZGeneralHeadlines() {
-  return _superagent2.default.get('' + nzGeneralHeadlinesApi).then(function (res) {
-    console.log(res.body.articles);
-    return res.body.articles;
-  });
-}
-
-module.exports = {
-  getQuatumPhysicsNewsFeed: getQuatumPhysicsNewsFeed,
-  getQuatumComputingNewsFeed: getQuatumComputingNewsFeed,
-  getJavascriptNewsFeed: getJavascriptNewsFeed,
-  getSpaceNewsFeed: getSpaceNewsFeed,
-  getNZScienceTechnologyHeadlines: getNZScienceTechnologyHeadlines,
-  getNZGeneralHeadlines: getNZGeneralHeadlines
-};
 
 /***/ }),
 /* 11 */
@@ -1134,7 +1134,7 @@ function _inheritsLoose(subClass, superClass) {
  */
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = __webpack_require__(8);
+  var ReactIs = __webpack_require__(9);
 
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
@@ -1200,6 +1200,7 @@ var tooAfraidToAsk = 'http://www.reddit.com/r/TooAfraidToAsk.json';
 function getProgrammerHumorFeed() {
   return _superagent2.default.get('' + programmerHumor).then(function (posts) {
     var newPHPostsArray = [];
+    console.log(posts.body.data.children);
     posts.body.data.children.map(function (post) {
       newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url });
       return newPHPostsArray;
@@ -2282,7 +2283,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_tiny_warning__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_tiny_invariant__ = __webpack_require__(29);
 
 
@@ -3971,14 +3972,14 @@ if (process.env.NODE_ENV === 'production') {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_assertThisInitialized__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_is__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Context__ = __webpack_require__(26);
 
@@ -4192,7 +4193,7 @@ _ref) {
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
-var ReactIs = __webpack_require__(8);
+var ReactIs = __webpack_require__(9);
 var REACT_STATICS = {
     childContextTypes: true,
     contextType: true,
@@ -4468,9 +4469,9 @@ function warning(message) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_path_to_regexp__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_path_to_regexp__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_is__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_is__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_is___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react_is__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_hoist_non_react_statics__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_hoist_non_react_statics__);
 
@@ -7605,7 +7606,7 @@ document.addEventListener('DOMContentLoaded', function () {
  * LICENSE file in the root directory of this source tree.
  */
 
-var h=__webpack_require__(7),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,aa=n?Symbol.for("react.suspense_list"):60120,ba=n?Symbol.for("react.memo"):
+var h=__webpack_require__(8),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,aa=n?Symbol.for("react.suspense_list"):60120,ba=n?Symbol.for("react.memo"):
 60115,ca=n?Symbol.for("react.lazy"):60116;n&&Symbol.for("react.fundamental");n&&Symbol.for("react.responder");var z="function"===typeof Symbol&&Symbol.iterator;
 function A(a){for(var b=a.message,d="https://reactjs.org/docs/error-decoder.html?invariant="+b,c=1;c<arguments.length;c++)d+="&args[]="+encodeURIComponent(arguments[c]);a.message="Minified React error #"+b+"; visit "+d+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ";return a}var B={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},C={};
 function D(a,b,d){this.props=a;this.context=b;this.refs=C;this.updater=d||B}D.prototype.isReactComponent={};D.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw A(Error(85));this.updater.enqueueSetState(this,a,b,"setState")};D.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};function E(){}E.prototype=D.prototype;function F(a,b,d){this.props=a;this.context=b;this.refs=C;this.updater=d||B}var G=F.prototype=new E;
@@ -7645,7 +7646,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(7);
+var _assign = __webpack_require__(8);
 var checkPropTypes = __webpack_require__(23);
 
 // TODO: this is special because it gets imported during build.
@@ -9929,7 +9930,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),m=__webpack_require__(7),q=__webpack_require__(41);function t(a){for(var b=a.message,c="https://reactjs.org/docs/error-decoder.html?invariant="+b,d=1;d<arguments.length;d++)c+="&args[]="+encodeURIComponent(arguments[d]);a.message="Minified React error #"+b+"; visit "+c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ";return a}if(!aa)throw t(Error(227));var ba=null,ca={};
+var aa=__webpack_require__(2),m=__webpack_require__(8),q=__webpack_require__(41);function t(a){for(var b=a.message,c="https://reactjs.org/docs/error-decoder.html?invariant="+b,d=1;d<arguments.length;d++)c+="&args[]="+encodeURIComponent(arguments[d]);a.message="Minified React error #"+b+"; visit "+c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ";return a}if(!aa)throw t(Error(227));var ba=null,ca={};
 function da(){if(ba)for(var a in ca){var b=ca[a],c=ba.indexOf(a);if(!(-1<c))throw t(Error(96),a);if(!ea[c]){if(!b.extractEvents)throw t(Error(97),a);ea[c]=b;c=b.eventTypes;for(var d in c){var e=void 0;var f=c[d],h=b,g=d;if(fa.hasOwnProperty(g))throw t(Error(99),g);fa[g]=f;var k=f.phasedRegistrationNames;if(k){for(e in k)k.hasOwnProperty(e)&&ha(k[e],h,g);e=!0}else f.registrationName?(ha(f.registrationName,h,g),e=!0):e=!1;if(!e)throw t(Error(98),d,a);}}}}
 function ha(a,b,c){if(ia[a])throw t(Error(100),a);ia[a]=b;ja[a]=b.eventTypes[c].dependencies}var ea=[],fa={},ia={},ja={};function ka(a,b,c,d,e,f,h,g,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l)}catch(n){this.onError(n)}}var la=!1,ma=null,na=!1,oa=null,pa={onError:function(a){la=!0;ma=a}};function qa(a,b,c,d,e,f,h,g,k){la=!1;ma=null;ka.apply(pa,arguments)}
 function ra(a,b,c,d,e,f,h,g,k){qa.apply(this,arguments);if(la){if(la){var l=ma;la=!1;ma=null}else throw t(Error(198));na||(na=!0,oa=l)}}var sa=null,ta=null,va=null;function wa(a,b,c){var d=a.type||"unknown-event";a.currentTarget=va(c);ra(d,b,void 0,a);a.currentTarget=null}function xa(a,b){if(null==b)throw t(Error(30));if(null==a)return b;if(Array.isArray(a)){if(Array.isArray(b))return a.push.apply(a,b),a;a.push(b);return a}return Array.isArray(b)?[a].concat(b):[a,b]}
@@ -11159,7 +11160,7 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(2);
-var _assign = __webpack_require__(7);
+var _assign = __webpack_require__(8);
 var checkPropTypes = __webpack_require__(23);
 var Scheduler = __webpack_require__(41);
 var tracing = __webpack_require__(94);
@@ -37246,8 +37247,8 @@ exports.isSuspense = isSuspense;
 
 
 
-var ReactIs = __webpack_require__(8);
-var assign = __webpack_require__(7);
+var ReactIs = __webpack_require__(9);
+var assign = __webpack_require__(8);
 
 var ReactPropTypesSecret = __webpack_require__(24);
 var checkPropTypes = __webpack_require__(23);
@@ -37980,7 +37981,7 @@ module.exports = invariant;
 "use strict";
 /* unused harmony export createConnect */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_connectAdvanced__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_shallowEqual__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapDispatchToProps__ = __webpack_require__(106);
@@ -38333,7 +38334,7 @@ function whenMergePropsIsOmitted(mergeProps) {
 /* WEBPACK VAR INJECTION */(function(process) {/* unused harmony export impureFinalPropsSelectorFactory */
 /* unused harmony export pureFinalPropsSelectorFactory */
 /* harmony export (immutable) */ __webpack_exports__["a"] = finalPropsSelectorFactory;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__verifySubselectors__ = __webpack_require__(114);
 
 
@@ -39347,11 +39348,11 @@ var _AstronomyPicOfTheDay = __webpack_require__(245);
 
 var _AstronomyPicOfTheDay2 = _interopRequireDefault(_AstronomyPicOfTheDay);
 
-var _NZScienceTechnologyFeed = __webpack_require__(248);
+var _NZScienceTechnologyFeed = __webpack_require__(247);
 
 var _NZScienceTechnologyFeed2 = _interopRequireDefault(_NZScienceTechnologyFeed);
 
-var _NZGeneralFeed = __webpack_require__(249);
+var _NZGeneralFeed = __webpack_require__(248);
 
 var _NZGeneralFeed2 = _interopRequireDefault(_NZGeneralFeed);
 
@@ -41295,7 +41296,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(10);
+var _newsApi = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45622,7 +45623,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(10);
+var _newsApi = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45706,7 +45707,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(10);
+var _newsApi = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45790,7 +45791,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(10);
+var _newsApi = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45867,86 +45868,59 @@ exports.default = SpaceFeed;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.AstronomyPicOfTheDay = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _nasaApi = __webpack_require__(246);
 
 var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _nasaApi = __webpack_require__(246);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var AstronomyPicOfTheDay = exports.AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
+  var _useState = (0, _react.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      apod = _useState2[0],
+      setApod = _useState2[1];
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AstronomyPicOfTheDay = function (_React$Component) {
-  _inherits(AstronomyPicOfTheDay, _React$Component);
-
-  function AstronomyPicOfTheDay(props) {
-    _classCallCheck(this, AstronomyPicOfTheDay);
-
-    var _this = _possibleConstructorReturn(this, (AstronomyPicOfTheDay.__proto__ || Object.getPrototypeOf(AstronomyPicOfTheDay)).call(this, props));
-
-    _this.state = {
-      title: ' ',
-      image: ' ',
-      explaination: ' ',
-      date: ' '
-    };
-    return _this;
-  }
-
-  _createClass(AstronomyPicOfTheDay, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      (0, _nasaApi.getApod)().then(function (apodInfo) {
-        _this2.setState({
-          title: apodInfo.title,
-          image: apodInfo.url,
-          explanation: apodInfo.explanation,
-          date: apodInfo.date
-        });
+  (0, _react.useEffect)(function () {
+    (0, _nasaApi.getApod)().then(function (apodInfo) {
+      setApod({
+        title: apodInfo.title,
+        image: apodInfo.url,
+        description: apodInfo.explanation,
+        date: apodInfo.date
       });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return this.state.title.length ? _react2.default.createElement(
-        'div',
-        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
-        _react2.default.createElement(
-          'h1',
-          null,
-          this.state.title
-        ),
-        _react2.default.createElement('img', { style: { width: '80%', height: '80%' }, src: this.state.image }),
-        _react2.default.createElement(
-          'h3',
-          null,
-          this.state.date
-        ),
-        _react2.default.createElement(
-          'h2',
-          null,
-          this.state.explanation
-        )
-      ) : _react2.default.createElement(
-        'div',
-        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
-        'loading component'
-      );
-    }
-  }]);
-
-  return AstronomyPicOfTheDay;
-}(_react2.default.Component);
+    });
+  }, []);
+  return apod ? _react2.default.createElement(
+    'div',
+    { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+    _react2.default.createElement(
+      'h1',
+      null,
+      apod.title
+    ),
+    _react2.default.createElement('img', { style: { width: '80%', height: '80%' }, src: apod.image }),
+    _react2.default.createElement(
+      'h3',
+      null,
+      apod.date
+    ),
+    _react2.default.createElement(
+      'h2',
+      null,
+      apod.description
+    )
+  ) : _react2.default.createElement(
+    'div',
+    { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+    'loading component'
+  );
+};
 
 exports.default = AstronomyPicOfTheDay;
 
@@ -45972,13 +45946,13 @@ var apodApi = 'https://api.nasa.gov/planetary/apod?api_key=UQFDU8qGbafUolXayLU0J
 
 function getApod() {
   return _superagent2.default.get('' + apodApi).then(function (apodres) {
+    console.log(apodres.body);
     return apodres.body;
   });
 }
 
 /***/ }),
-/* 247 */,
-/* 248 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45994,7 +45968,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(10);
+var _newsApi = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46060,7 +46034,7 @@ var NZScienceTechnologyFeed = function (_React$Component) {
 exports.default = NZScienceTechnologyFeed;
 
 /***/ }),
-/* 249 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46076,7 +46050,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _newsApi = __webpack_require__(10);
+var _newsApi = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

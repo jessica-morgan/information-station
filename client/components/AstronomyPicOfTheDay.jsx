@@ -1,41 +1,28 @@
-import React from 'react'
 import { getApod } from '../api/nasaApi'
+import React, { useState, useEffect } from 'react'
 
-class AstronomyPicOfTheDay extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      title: ' ',
-      image: ' ',
-      explaination: ' ',
-      date: ' '
-    }
-  }
-  componentDidMount () {
+export const AstronomyPicOfTheDay = () => {
+  const [apod, setApod] = useState()
+  useEffect(() => {
     getApod()
       .then(apodInfo => {
-        this.setState({
+        setApod({
           title: apodInfo.title,
           image: apodInfo.url,
-          explanation: apodInfo.explanation,
+          description: apodInfo.explanation,
           date: apodInfo.date
-        }
-        )
+        })
       })
-  }
-  render () {
-    return (
-      this.state.title.length
-        ? <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-          <h1>{this.state.title}</h1>
-          <img style={{ width: '80%', height: '80%' }} src={this.state.image}></img>
-          <h3>{this.state.date}</h3>
-          <h2>{this.state.explanation}</h2>
-        </div> : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-        loading component
-        </div>
-    )
-  }
+  }, [])
+  return apod ? (
+    <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+      <h1>{apod.title}</h1>
+      <img style={{ width: '80%', height: '80%' }} src={apod.image}></img>
+      <h3>{apod.date}</h3>
+      <h2>{apod.description}</h2>
+    </div>) : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+  loading component
+  </div>
 }
 
 export default AstronomyPicOfTheDay
