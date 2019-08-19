@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 
 import { getSpaceNewsFeed } from '../api/newsApi'
 
@@ -16,6 +16,7 @@ const SpaceFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
 
   return spaceFeed ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>

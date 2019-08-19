@@ -1,4 +1,4 @@
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 import { useState, useEffect } from 'react'
 import { getProgrammerHumorFeed } from '../api/redditApi'
 
@@ -15,6 +15,7 @@ const ProgrammerHumorRedditFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
 
   return programmerHumorFeed ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>

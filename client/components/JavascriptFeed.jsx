@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 import { getJavascriptNewsFeed } from '../api/newsApi'
 
 // this component should display a list of js (just the title)
@@ -15,6 +15,8 @@ const JavascriptFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
+
   return jsFeed ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       {jsFeed.javascriptNews.map((article, idx) => {

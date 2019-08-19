@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 
 import { getQuatumComputingNewsFeed } from '../api/newsApi'
 
@@ -16,6 +16,7 @@ const QuantumComputingFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
 
   return quantumComputingFeed ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>

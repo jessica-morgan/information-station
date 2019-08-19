@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getQuatumPhysicsNewsFeed } from '../api/newsApi'
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 
 // this component should display a list of q-p (just the title)
 // create seperate componet for individual articles
@@ -15,6 +15,7 @@ const QuantumPhysicsFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
 
   return quantumPhysicsFeed ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>

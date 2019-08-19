@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 import { getTooAfraidFeed } from '../api/redditApi'
 
 // this component should display a list of tata posts (just the title)
@@ -15,6 +15,7 @@ const TooAfraidToAskRedditFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
 
   return tataFeed ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>

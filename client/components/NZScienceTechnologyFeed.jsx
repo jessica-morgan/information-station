@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getNZScienceTechnologyHeadlines } from '../api/newsApi'
-import React from 'reactn'
+import React, { useGlobal } from 'reactn'
 
 // this component should display a list of nzst headlines (just the title)
 // create seperate componet for individual articles
@@ -15,6 +15,8 @@ const NZScienceTechnologyFeed = () => {
         })
       })
   }, [])
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
+
   return nzScienceTechnologyHeadlines ? (
     <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       {nzScienceTechnologyHeadlines.headlines.map((headline, idx) => {
