@@ -1,8 +1,9 @@
 import { getApod } from '../api/nasaApi'
 import React, { useState, useEffect } from 'react'
 
-export const AstronomyPicOfTheDay = () => {
+const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()
+
   useEffect(() => {
     getApod()
       .then(apodInfo => {
