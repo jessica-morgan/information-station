@@ -1,5 +1,6 @@
 import { getApod } from '../api/nasaApi'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import React from 'reactn'
 
 const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()

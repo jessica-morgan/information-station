@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import React from 'reactn'
+
 import { getSpaceNewsFeed } from '../api/newsApi'
 
 // this component should display a list of space (just the title)

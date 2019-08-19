@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import React from 'reactn'
 import { getTooAfraidFeed } from '../api/redditApi'
 
 // this component should display a list of tata posts (just the title)
@@ -29,7 +30,7 @@ const TooAfraidToAskRedditFeed = () => {
     </div>
   )
     : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-      {/* loading component */}
+      loading component
     </div>
 }
 

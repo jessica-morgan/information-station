@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'reactn'
+import { useState, useEffect } from 'react'
 import { getProgrammerHumorFeed } from '../api/redditApi'
 
 // this component should display a list of programmerHumor posts (just the title)

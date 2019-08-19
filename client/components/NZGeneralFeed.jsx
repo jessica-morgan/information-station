@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { getNZGeneralHeadlines } from '../api/newsApi'
+import React from 'reactn'
+
 
 // this component should display a list of nzg headlines (just the title)
 // create seperate componet for individual articles
