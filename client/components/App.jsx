@@ -1,5 +1,4 @@
-import React from 'react'
-import { useGlobal } from 'reactn'
+import React, { useGlobal } from 'reactn'
 import { Route } from 'react-router-dom'
 import Welcome from './Welcome'
 import Nav from './Nav'
@@ -16,8 +15,9 @@ import NZScienceTechnologyFeed from './NZScienceTechnologyFeed'
 import NZGeneralFeed from './NZGeneralFeed'
 
 const App = () => {
-  const [isCategorySelected, setIsCategorySelected] = useGlobal()
-  return isCategorySelected ? (
+  const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
+
+  return categorySelected ? (
     <div>
       <Nav />
       <div>
@@ -36,7 +36,10 @@ const App = () => {
     </div>
   )
     : <div>
-      <Welcome />
+      <Nav />
+      <div>
+        <Welcome />
+      </div>
     </div>
 }
 
