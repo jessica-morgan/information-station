@@ -1200,7 +1200,6 @@ var tooAfraidToAsk = 'http://www.reddit.com/r/TooAfraidToAsk.json';
 function getProgrammerHumorFeed() {
   return _superagent2.default.get('' + programmerHumor).then(function (posts) {
     var newPHPostsArray = [];
-    console.log(posts.body.data.children);
     posts.body.data.children.map(function (post) {
       newPHPostsArray.push({ title: post.data.title, body: post.data.selftext, image: post.data.url });
       return newPHPostsArray;
@@ -41129,8 +41128,9 @@ exports.default = RetconnedRedditFeed;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.IsItBullshitRedditFeed = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 var _react = __webpack_require__(2);
 
@@ -41140,62 +41140,37 @@ var _redditApi = __webpack_require__(18);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 // this component should display a list of itbs posts (just the title)
 // create seperate componet for individual posts
-var IsItBullshitRedditFeed = function (_React$Component) {
-  _inherits(IsItBullshitRedditFeed, _React$Component);
+var IsItBullshitRedditFeed = exports.IsItBullshitRedditFeed = function IsItBullshitRedditFeed() {
+  var _useState = (0, _react.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      isItBullshit = _useState2[0],
+      setIsItBullshit = _useState2[1];
 
-  function IsItBullshitRedditFeed(props) {
-    _classCallCheck(this, IsItBullshitRedditFeed);
-
-    var _this = _possibleConstructorReturn(this, (IsItBullshitRedditFeed.__proto__ || Object.getPrototypeOf(IsItBullshitRedditFeed)).call(this, props));
-
-    _this.state = {
-      isItBullshitPosts: []
-    };
-    return _this;
-  }
-
-  _createClass(IsItBullshitRedditFeed, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      (0, _redditApi.getIsItBullshitFeed)().then(function (posts) {
-        _this2.setState({
-          isItBullshitPosts: posts
-        });
+  (0, _react.useEffect)(function () {
+    (0, _redditApi.getIsItBullshitFeed)().then(function (posts) {
+      setIsItBullshit({
+        bsPosts: posts
       });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return this.state.isItBullshitPosts.length ? _react2.default.createElement(
+    });
+  }, []);
+  return isItBullshit ? _react2.default.createElement(
+    'div',
+    { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
+    isItBullshit.bsPosts.map(function (post, idx) {
+      return _react2.default.createElement(
         'div',
-        { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } },
-        this.state.isItBullshitPosts.map(function (post, idx) {
-          return _react2.default.createElement(
-            'div',
-            { key: idx },
-            _react2.default.createElement(
-              'h1',
-              { key: post.title },
-              post.title
-            )
-          );
-        })
-      ) : _react2.default.createElement('div', { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } });
-    }
-  }]);
-
-  return IsItBullshitRedditFeed;
-}(_react2.default.Component);
+        { key: idx },
+        _react2.default.createElement(
+          'h1',
+          { key: post.title },
+          post.title
+        )
+      );
+    })
+  ) : _react2.default.createElement('div', { style: { display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' } });
+};
 
 exports.default = IsItBullshitRedditFeed;
 
@@ -45946,7 +45921,6 @@ var apodApi = 'https://api.nasa.gov/planetary/apod?api_key=UQFDU8qGbafUolXayLU0J
 
 function getApod() {
   return _superagent2.default.get('' + apodApi).then(function (apodres) {
-    console.log(apodres.body);
     return apodres.body;
   });
 }
