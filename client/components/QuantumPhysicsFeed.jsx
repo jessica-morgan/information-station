@@ -1,40 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { getQuatumPhysicsNewsFeed } from '../api/newsApi'
 
 // this component should display a list of q-p (just the title)
 // create seperate componet for individual articles
-class QuantumPhysicsFeed extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      quantumPhysicsNews: []
-    }
-  }
-  componentDidMount () {
+const QuantumPhysicsFeed = () => {
+  const [quantumPhysicsFeed, setQuantumPhysicsFeed] = useState()
+
+  useEffect(() => {
     getQuatumPhysicsNewsFeed()
       .then(articles => {
-        this.setState({
+        setQuantumPhysicsFeed({
           quantumPhysicsNews: articles
-        }
-        )
+        })
       })
-  }
-  render () {
-    return (
-      this.state.quantumPhysicsNews.length
-        ? <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-          {this.state.quantumPhysicsNews.map((article, idx) => {
-            return (
-              <div key={idx}>
-                <h1 key={article.title}>{article.title}</h1>
-              </div>
-            )
-          })}
-        </div> : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+  }, [])
+
+  return quantumPhysicsFeed ? (
+    <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+      {quantumPhysicsFeed.quantumPhysicsNews.map((article, idx) => {
+        return (
+          <div key={idx}>
+            <h1 key={article.title}>{article.title}</h1>
+          </div>
+        )
+      })}
+    </div>
+
+  )
+    : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
         loading component
-        </div>
-    )
-  }
+    </div>
 }
 
 export default QuantumPhysicsFeed
