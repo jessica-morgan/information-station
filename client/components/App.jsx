@@ -17,7 +17,6 @@ import NZGeneralFeed from './NZGeneralFeed'
 
 const App = () => {
   const [isCategorySelected, setIsCategorySelected] = useGlobal()
-  console.log(isCategorySelected)
   return isCategorySelected ? (
     <div>
       <Nav />
