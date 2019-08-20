@@ -16,9 +16,9 @@ import NZGeneralFeed from './NZGeneralFeed'
 
 const App = () => {
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
-
-  return categorySelected ? (
-    <div>
+  const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
+  if (categorySelected || titleSelected) {
+    return <div>
       <Nav />
       <div>
         <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
@@ -34,13 +34,14 @@ const App = () => {
         <Route path='/nzgFeed' component={NZGeneralFeed} />
       </div>
     </div>
-  )
-    : <div>
+  } else {
+    return <div>
       <Nav />
       <div>
         <Welcome />
       </div>
     </div>
+  }
 }
 
 export default App

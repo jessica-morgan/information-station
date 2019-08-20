@@ -2,13 +2,15 @@ import { setGlobal } from 'reactn'
 
 const selectCategory = () => {
   setGlobal({
-    categorySelected: true
+    categorySelected: true,
+    titleSelected: false
   })
 }
 
-const selectTitle = () => {
+const selectTitle = (param) => {
   setGlobal({
-    titleSelected: true
+    categorySelected: false,
+    titleSelected: param
   })
 }
 
