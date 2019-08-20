@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import React, { useGlobal } from 'reactn'
+import { selectTitle } from '../utils'
 
 import { getQuatumComputingNewsFeed } from '../api/newsApi'
 
@@ -17,22 +18,24 @@ const QuantumComputingFeed = () => {
       })
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
-
-  return quantumComputingFeed ? (
-    <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+  const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
+  if (quantumComputingFeed && categorySelected) {
+    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       {quantumComputingFeed.quantumComputingNews.map((article, idx) => {
         return (
           <div key={idx}>
-            <h1 key={article.title}>{article.title}</h1>
+            <h1 key={article.title} onClick={() => { selectTitle(true) }}>{article.title}</h1>
           </div>
         )
       })}
     </div>
-
-  )
-    : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+  } if (quantumComputingFeed && titleSelected) {
+    return <p style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>hi</p>
+  } else {
+    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
         loading component
     </div>
+  }
 }
 
 export default QuantumComputingFeed
