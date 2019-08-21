@@ -1,36 +1,39 @@
 import { useState, useEffect } from 'react'
 import React, { useGlobal } from 'reactn'
 import { getJavascriptNewsFeed } from '../api/newsApi'
-import { selectTitle } from '../utils'
+import { selectTitle, currentTitleSelected } from '../utils'
+import SingleNewsArticle from './SingleNewsArticle'
 
-// this component should display a list of js (just the title)
-// create seperate componet for individual articles
 const JavascriptFeed = () => {
-  const [jsFeed, setJsFeed] = useState()
+  const [allArticles, setArticles] = useState()
 
   useEffect(() => {
     getJavascriptNewsFeed()
       .then(articles => {
-        setJsFeed({
-          javascriptNews: articles
+        setArticles({
+          articles
         })
+        console.log(allArticles.articles)
       })
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
+  const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
 
-  if (jsFeed && categorySelected) {
+  if (allArticles && categorySelected) {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-      {jsFeed.javascriptNews.map((article, idx) => {
+      {allArticles.articles.map((article, idx) => {
         return (
           <div key={idx}>
-            <h1 key={article.title} onClick={() => { selectTitle(true) }}>{article.title}</h1>
+            <h1 key={article.title} onClick={() => { selectTitle(true); currentTitleSelected(article.title) }}>{article.title}</h1>
           </div>
         )
       })}
     </div>
-  } if (jsFeed && titleSelected) {
-    return <p style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>hi</p>
+  } if (allArticles && titleSelected) {
+    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+      <SingleNewsArticle articles={allArticles.articles} key={currentTitle} />
+    </div>
   } else {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       loading component

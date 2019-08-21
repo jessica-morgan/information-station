@@ -1,37 +1,40 @@
 import { useState, useEffect } from 'react'
 import React, { useGlobal } from 'reactn'
 import { getIsItBullshitFeed } from '../api/redditApi'
-import { selectTitle } from '../utils'
-import SinglePost from './SinglePost'
+import { selectTitle, currentTitleSelected } from '../utils'
+import SingleRedditPost from './SingleRedditPost'
 
-// this component should display a list of itbs posts (just the title)
-// create seperate componet for individual posts
 export const IsItBullshitRedditFeed = () => {
-  const [isItBullshit, setIsItBullshit] = useState()
+  const [posts, setPosts] = useState()
+
   useEffect(() => {
     getIsItBullshitFeed()
       .then(posts => {
-        setIsItBullshit({
-          bsPosts: posts
+        let postsArray = []
+        postsArray.push(posts)
+        setPosts({
+          allPosts: postsArray
         })
       })
   }, [])
-  // use titleSelected to check if the article/post component should render
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
+  const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
 
-  if (isItBullshit && categorySelected) {
+  if (posts && categorySelected) {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-      {isItBullshit.bsPosts.map((post, idx) => {
+      {posts.allPosts[0].map((singlePost, idx) => {
         return (
           <div key={idx}>
-            <h1 key={post.title} onClick={() => { selectTitle(true) }}>{post.title}</h1>
+            <h1 key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title}</h1>
           </div>
         )
       })}
     </div>
-  } if (isItBullshit && titleSelected) {
-    return <p style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>hi</p>
+  } if (posts && titleSelected) {
+    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+      <SingleRedditPost posts={posts.allPosts[0]} key={currentTitle} />
+    </div>
   } else {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       loading component

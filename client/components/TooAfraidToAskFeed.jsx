@@ -1,36 +1,40 @@
 import { useState, useEffect } from 'react'
 import React, { useGlobal } from 'reactn'
 import { getTooAfraidFeed } from '../api/redditApi'
-import { selectTitle } from '../utils'
+import { selectTitle, currentTitleSelected } from '../utils'
+import SingleRedditPost from './SingleRedditPost'
 
-// this component should display a list of tata posts (just the title)
-// create seperate componet for individual posts
 const TooAfraidToAskRedditFeed = () => {
-  const [tataFeed, setTataFeed] = useState()
+  const [posts, setPosts] = useState()
 
   useEffect(() => {
     getTooAfraidFeed()
       .then(posts => {
-        setTataFeed({
-          tataPosts: posts
+        let postsArray = []
+        postsArray.push(posts)
+        setPosts({
+          allPosts: postsArray
         })
       })
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
+  const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
 
-  if (tataFeed && categorySelected) {
+  if (posts && categorySelected) {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-      {tataFeed.tataPosts.map((post, idx) => {
+      {posts.allPosts[0].map((singlePost, idx) => {
         return (
           <div key={idx}>
-            <h1 key={post.title} onClick={() => { selectTitle(true) }}>{post.title}</h1>
+            <h1 key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title)  }}>{singlePost.title}</h1>
           </div>
         )
       })}
     </div>
-  } if (tataFeed && titleSelected) {
-    return <p style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>hi</p>
+  } if (posts && titleSelected) {
+    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+      <SingleRedditPost posts={posts.allPosts[0]} key={currentTitle} />
+    </div>
   } else {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       loading component
