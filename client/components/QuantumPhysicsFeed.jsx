@@ -4,8 +4,6 @@ import React, { useGlobal } from 'reactn'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleNewsArticle from './SingleNewsArticle'
 
-// this component should display a list of q-p (just the title)
-// create seperate componet for individual articles
 const QuantumPhysicsFeed = () => {
   const [allArticles, setArticles] = useState()
 

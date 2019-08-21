@@ -4,8 +4,6 @@ import { selectTitle, currentTitleSelected } from '../utils'
 import { getSpaceNewsFeed } from '../api/newsApi'
 import SingleNewsArticle from './SingleNewsArticle'
 
-// this component should display a list of space (just the title)
-// create seperate componet for individual articles
 const SpaceFeed = () => {
   const [allArticles, setArticles] = useState()
 

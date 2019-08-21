@@ -4,8 +4,6 @@ import { getProgrammerHumorFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
 
-// this component should display a list of programmerHumor posts (just the title)
-// create seperate componet for individual posts
 const ProgrammerHumorRedditFeed = () => {
   const [posts, setPosts] = useState()
 

@@ -13,7 +13,6 @@ const JavascriptFeed = () => {
         setArticles({
           articles
         })
-        console.log(allArticles.articles)
       })
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
