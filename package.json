@@ -5,21 +5,22 @@
   "main": "server/index.js",
   "scripts": {
     "start": "webpack && node server",
-    "dev": "nodemon --watch server & webpack --watch"
+    "dev": "nodemon --watch server & webpack --watch",
+    "test": "jest --watchAll --noStackTrace"
   },
   "author": "Jessica Morgan",
   "license": "ISC",
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ]
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.2.2",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
     "date-fns": "^1.30.1",
     "nodemon": "^1.18.10",
     "react": "^16.8.5",
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jest": "^24.9.0"
   }
 }
