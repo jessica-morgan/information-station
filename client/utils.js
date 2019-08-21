@@ -9,10 +9,10 @@ const selectCategory = () => {
   })
 }
 
-const selectTitle = (param) => {
+const selectTitle = (bool) => {
   setGlobal({
     categorySelected: false,
-    titleSelected: param
+    titleSelected: bool
   })
 }
 
