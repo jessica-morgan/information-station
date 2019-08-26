@@ -4,7 +4,7 @@ import { getIsItBullshitFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
 
-export const IsItBullshitRedditFeed = () => {
+const IsItBullshitRedditFeed = () => {
   const [posts, setPosts] = useState()
 
   useEffect(() => {
