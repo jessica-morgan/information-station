@@ -1,7 +1,5 @@
 import { setGlobal } from 'reactn'
 
-// const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
-
 const selectCategory = () => {
   setGlobal({
     categorySelected: true,
