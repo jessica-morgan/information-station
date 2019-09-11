@@ -1,20 +1,20 @@
 import { setGlobal } from 'reactn'
 
-const selectCategory = () => {
+export const selectCategory = () => {
   setGlobal({
     categorySelected: true,
     titleSelected: false
   })
 }
 
-const selectTitle = (bool) => {
+export const selectTitle = (bool) => {
   setGlobal({
     categorySelected: false,
     titleSelected: bool
   })
 }
 
-const currentTitleSelected = (title) => {
+export const currentTitleSelected = (title) => {
   setGlobal({
     categorySelected: false,
     titleSelected: true,
@@ -22,8 +22,3 @@ const currentTitleSelected = (title) => {
   })
 }
 
-module.exports = {
-  selectTitle,
-  selectCategory,
-  currentTitleSelected
-}
