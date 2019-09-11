@@ -15,7 +15,6 @@ export function getQuatumPhysicsNewsFeed () {
   return (
     request.get(`${quantumPhysicsArticlesApi}`)
       .then(res => {
-        console.log(res.body.articles)
         return res.body.articles
       })
   )
@@ -25,7 +24,6 @@ export function getQuatumComputingNewsFeed () {
   return (
     request.get(`${quantumComputingArticlesApi}`)
       .then(res => {
-        console.log(res.body.articles)
         return res.body.articles
       }
 
@@ -37,7 +35,6 @@ export function getJavascriptNewsFeed () {
   return (
     request.get(`${javascriptArticlesApi}`)
       .then(res => {
-        console.log(res.body.articles)
         return res.body.articles
       })
   )
@@ -47,7 +44,6 @@ export function getSpaceNewsFeed () {
   return (
     request.get(`${spaceArticlesApi}`)
       .then(res => {
-        console.log(res.body.articles)
         return res.body.articles
       })
   )
@@ -57,7 +53,6 @@ export function getNZScienceTechnologyHeadlines () {
   return (
     request.get(`${nzScienceTechnologyHeadlinesApi}`)
       .then(res => {
-        console.log(res.body.articles)
         return res.body.articles
       })
   )
@@ -67,7 +62,6 @@ export function getNZGeneralHeadlines () {
   return (
     request.get(`${nzGeneralHeadlinesApi}`)
       .then(res => {
-        console.log(res.body.articles)
         return res.body.articles
       })
   )
