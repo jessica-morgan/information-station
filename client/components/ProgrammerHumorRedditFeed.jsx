@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getProgrammerHumorFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
+import LoadingIndicator from './LoadingIndicator'
 
 const ProgrammerHumorRedditFeed = () => {
   const [posts, setPosts] = useState()
@@ -36,8 +37,8 @@ const ProgrammerHumorRedditFeed = () => {
       <SingleRedditPost posts={posts.allPosts[0]} key={currentTitle} />
     </div>
   } else {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-      loading component
+    return <div>
+      <LoadingIndicator />
     </div>
   }
 }

@@ -3,6 +3,7 @@ import React, { useGlobal } from 'reactn'
 import { getIsItBullshitFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
+import LoadingIndicator from './LoadingIndicator'
 
 const IsItBullshitRedditFeed = () => {
   const [posts, setPosts] = useState()
@@ -22,22 +23,23 @@ const IsItBullshitRedditFeed = () => {
   const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
 
   if (posts && categorySelected) {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+    return <div id='titles' style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       {posts.allPosts[0].map((singlePost, idx) => {
         return (
           <div key={idx}>
-            <h1 key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title}</h1>
+            <h1 id="list" key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title}</h1>
           </div>
         )
       })}
     </div>
   } if (posts && titleSelected) {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+    return <div id='singlePost' style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       <SingleRedditPost posts={posts.allPosts[0]} key={currentTitle} />
     </div>
   } else {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-      loading component
+    return <div>
+      {/* style this div */}
+      <LoadingIndicator />
     </div>
   }
 }

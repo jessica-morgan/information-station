@@ -3,6 +3,7 @@ import React, { useGlobal } from 'reactn'
 import { selectTitle, currentTitleSelected } from '../utils'
 import { getSpaceNewsFeed } from '../api/newsApi'
 import SingleNewsArticle from './SingleNewsArticle'
+import LoadingIndicator from './LoadingIndicator'
 
 const SpaceFeed = () => {
   const [allArticles, setArticles] = useState()
@@ -34,8 +35,8 @@ const SpaceFeed = () => {
       <SingleNewsArticle articles={allArticles.articles} key={currentTitle} />
     </div>
   } else {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-        loading component
+    return <div>
+      <LoadingIndicator />
     </div>
   }
 }
