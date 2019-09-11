@@ -2,21 +2,27 @@ import React from 'react'
 import IsItBullshitRedditFeed from '../client/components/IsItBullshitRedditFeed'
 import { mount, shallow } from 'enzyme'
 
-// test that use global fns are called with correct properties
-// figure out how to test useeffect and that it calls the api?
-// test that setPosts sets 'posts' state with returned data?
-// test that the expected number of h1s are rendered (check api fetch limit for expected number)
-// test that component passes correct props down to SingleRedditPost
+// import ReactTestRenderer from 'react-test-renderer'
+// import retry from '@skidding/async-retry'
 
-it('h1 should call selectTitle and currentTitleSelected onClick', () => {
-  const selectTitleMock = jest.fn()
-  const currentTitleSelectedMock = jest.fn()
-  const wrapper = mount(<h1 onClick={() => { selectTitleMock(); currentTitleSelectedMock() }}/>)
-  wrapper.find('h1').simulate('click')
-  expect(selectTitleMock).toBeCalled()
-  expect(currentTitleSelectedMock).toBeCalled()
-})
+// TESTING THAT USEGLOBAL IS CALLED WITH CORRECT VALUE ON BUTTON CLICK
+// import {useGlobal} from 'reactn';
+// // IsItBs isn't actually calling useGlobal functions its just using properties of global state
+// describe('Testing a Test', () => {
+//   it('Calling SetSomething', () => {
+//     const something = 'some-value';
+//     const setSomething = jest.fn();
+//     useGlobal.mockImplementationOnce(() => [something, setSomething]);
+//     const wrapper = shallow(<SomeComponent />);
+//     const somethingButton = wrapper.find('#somethingButton').simulate('click', {});
+//     expect(setSomething).toBeCalledWith('foo-bar');
+//     expect(useGlobal).toBeCalledWith(['something']);
+//     expect(useGlobal.mock.calls.map(call => call[0])).toEqual(['something']);
+//   });
+// });
 
+// TESTING THAT HANDLECHANGE USES SETSTATE CORRECTLY- THAT AFTER HANDLECHANGE
+// IS CALLED EXPECT THE STATE TO BE THIS
 // it('handleChange changes state of the component', () => {
 //   // assign wrapper to mount AddFood
 //   const wrapper = mount(
@@ -32,57 +38,59 @@ it('h1 should call selectTitle and currentTitleSelected onClick', () => {
 //   expect(app.state.carbon_output).toBe(555)
 // })
 
-const video = {
-  play() {
-    return true;
-  },
-};
+// const video = {
+//   play() {
+//     return true;
+//   },
+// };
 
-module.exports = video;
+// module.exports = video;
 
-Example test:
+// Example test:
 
-const video = require('./video');
+// const video = require('./video');
 
-test('plays video', () => {
-  // assign spy to jest.spyOn video (the object) and 'play' the method name
-  const spy = jest.spyOn(video, 'play');
-  // assign isPlaying to be the video object grabbing the play property
-  const isPlaying = video.play();
-  // expect spy to have been called
-  expect(spy).toHaveBeenCalled()
-  // and expect isPlaying to be true
-  expect(isPlaying).toBe(true);
-  // restores the original (non-mocked) implementation.
-  spy.mockRestore();
-});
+// test('plays video', () => {
+//   // assign spy to jest.spyOn video (the object) and 'play' the method name
+//   const spy = jest.spyOn(video, 'play');
+//   // assign isPlaying to be the video object grabbing the play property
+//   const isPlaying = video.play();
+//   // expect spy to have been called
+//   expect(spy).toHaveBeenCalled()
+//   // and expect isPlaying to be true
+//   expect(isPlaying).toBe(true);
+//   // restores the original (non-mocked) implementation.
+//   spy.mockRestore();
+// });
 
-describe('onclick function is called ...', () => {
-  it.only('spyOn', () => {
-    const wrapper = mount(
-      <Keyboard
-        _getData = { () => {} }
-        _erase = { () => {} }
-        _get_letters = { () => {} }
-        _createWord = { () => {} }
-        _modeSwitch = { () => {} }
-      />
-    )
+// describe('onclick function is called ...', () => {
+//   it.only('spyOn', () => {
+//     const wrapper = mount(
+//       <Keyboard
+//         _getData = { () => {} }
+//         _erase = { () => {} }
+//         _get_letters = { () => {} }
+//         _createWord = { () => {} }
+//         _modeSwitch = { () => {} }
+//       />
+//     )
 
-    const spy = jest.spyOn(wrapper.instance(), '_handleClick')
-    wrapper.instance().forceUpdate()
+//     const spy = jest.spyOn(wrapper.instance(), '_handleClick')
+//     wrapper.instance().forceUpdate()
 
-    wrapper.find('#keyboard_clickable').simulate('click', {
-      target: {
-        parentElement: { id: 5 },
-        id: 6
-      }
-    })
-    expect(spy).toHaveBeenCalled()
+//     wrapper.find('#keyboard_clickable').simulate('click', {
+//       target: {
+//         parentElement: { id: 5 },
+//         id: 6
+//       }
+//     })
+//     expect(spy).toHaveBeenCalled()
 
-  })
-})
+//   })
+// })
 
+// TESTING THAT A SPECIFIC CLASSNAME IS ABSENT BEFORE SETTING STATE
+// AND THAT IT IS PRESENT AFTER SETTING STATE
 // test('Shows widget details', () => {
 //   // assigning data to widgets
 //   const widgets = [{ name: 'red', id: 1 }, { name: 'blue', id: 2 }]
@@ -100,6 +108,8 @@ describe('onclick function is called ...', () => {
 //   expect(wrapper.find('.widget-details').exists()).toBeTruthy()
 // })
 
+// TESTING THAT A CLASSNAME IS ABSENT BEFORE A BUTTON ONCLICK EVENT
+// THEN TESTING THAT IT IS PRESENT AFTER ONCLICK EVENT
 // test('Renders add form when clicked', () => {
 //   // assign wrapper to mount <App />
 //   const wrapper = mount(<App />)
@@ -111,6 +121,23 @@ describe('onclick function is called ...', () => {
 //   expect(wrapper.find('.add-widget').exists()).toBeTruthy()
 // })
 
+// import { act } from 'jest'
+
+// it('component conditional rendering', () => {
+//   test('act works in this case', async () => {
+//     await act(async () => {
+//       const posts = true
+//       const titleSelected = true
+//       const wrapper = mount(<IsItBullshitRedditFeed posts={posts} titleSelected={titleSelected}/>)
+//       expect(wrapper.find('#titles').exists()).toBeTrue()
+
+//       wrapper.find('#list').simulate('click')
+//       expect(wrapper.find('#singlePost').exists()).toBeTruthy()
+//     })
+//   })
+// })
+
+// TESTING THAT A COMPONENT IS PASSING THE CORRECT PROPS TO CHILD
 // test('<Food /> passes correct props down to <Label />', () => {
 //   // assign data to props data
 //   const data = {
@@ -135,6 +162,7 @@ describe('onclick function is called ...', () => {
 //   expect(waterUsage).toBe(322)
 // })
 
+// TESTING THAT WHILE PENDING IS TRUE THE WAIT INDICATOR CAN BE FOUND
 // describe('FoodDetails', () => {
 //   it('has <WaitIndicator /> if pending is true', () => {
 
@@ -147,9 +175,33 @@ describe('onclick function is called ...', () => {
 //         <FoodDetails match={match}/>
 //       </Provider>
 //     )
-//     // assign actual to find an instance of WaitIndicator in the FoodDetails component and get it length
+//     // assign actual to find an instance of WaitIndicator in the FoodDetails component and get its length
 //     const actual = wrapper.find('WaitIndicator').length
 //     // and expect the length of actual to be one- I guess checking that there is one WaitIndicator present?? why not
 //     // just check that it's true?
 //     expect(actual).toBe(1)
 //   })
+
+// TEST THAT IF POSTS AND CATEGORYSELECTED IS TRUE DIV ID 'TITLES' IS PRESENT
+// it('renders a list of titles if posts and categorySelected are true', () => {
+//   const posts = true
+//   const categorySelected = true
+//   const wrapper = mount(<IsItBullshitRedditFeed posts={posts} categorySelected={categorySelected} />)
+//   const actual = wrapper.find('#titles')
+//   expect(actual).toBe(true)
+// })
+
+// figure out how to test useeffect and that it calls the api?
+// test that setPosts sets 'posts' state with returned data?
+// test that the expected number of h1s are rendered (check api fetch limit for expected number)
+// test that component passes correct props down to SingleRedditPost
+
+// PASSING
+it('h1 should call selectTitle and currentTitleSelected onClick', () => {
+  const selectTitleMock = jest.fn()
+  const currentTitleSelectedMock = jest.fn()
+  const wrapper = mount(<h1 onClick={() => { selectTitleMock(); currentTitleSelectedMock() }}/>)
+  wrapper.find('h1').simulate('click')
+  expect(selectTitleMock).toBeCalled()
+  expect(currentTitleSelectedMock).toBeCalled()
+})
