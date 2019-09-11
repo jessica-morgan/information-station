@@ -8,7 +8,7 @@ const isItBullshit = 'http://www.reddit.com/r/IsItBullshit.json'
 
 const tooAfraidToAsk = 'http://www.reddit.com/r/TooAfraidToAsk.json'
 
-function getProgrammerHumorFeed () {
+export function getProgrammerHumorFeed () {
   return (
     request.get(`${programmerHumor}`)
       .then(posts => {
@@ -31,7 +31,7 @@ function getProgrammerHumorFeed () {
   )
 }
 
-function getRetconnedFeed () {
+export function getRetconnedFeed () {
   return (
     request.get(`${retconned}`)
       .then(
@@ -56,7 +56,7 @@ function getRetconnedFeed () {
   )
 }
 
-function getIsItBullshitFeed () {
+export function getIsItBullshitFeed () {
   return (
     request.get(`${isItBullshit}`)
       .then(
@@ -82,7 +82,7 @@ function getIsItBullshitFeed () {
   )
 }
 
-function getTooAfraidFeed () {
+export function getTooAfraidFeed () {
   return (
     request.get(`${tooAfraidToAsk}`)
       .then(
@@ -105,11 +105,4 @@ function getTooAfraidFeed () {
         }
       )
   )
-}
-
-module.exports = {
-  getProgrammerHumorFeed,
-  getRetconnedFeed,
-  getIsItBullshitFeed,
-  getTooAfraidFeed
 }

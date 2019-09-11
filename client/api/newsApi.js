@@ -11,7 +11,7 @@ const spaceArticlesApi = `https://newsapi.org/v2/everything?q=space&from=${dateM
 const nzScienceTechnologyHeadlinesApi = `https://newsapi.org/v2/top-headlines?country=nz&from=${dateToday}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}&language=en&category=science&technology`
 const nzGeneralHeadlinesApi = `https://newsapi.org/v2/top-headlines?country=nz&from=${dateToday}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}&language=en&category=general`
 
-function getQuatumPhysicsNewsFeed () {
+export function getQuatumPhysicsNewsFeed () {
   return (
     request.get(`${quantumPhysicsArticlesApi}`)
       .then(res => {
@@ -21,7 +21,7 @@ function getQuatumPhysicsNewsFeed () {
   )
 }
 
-function getQuatumComputingNewsFeed () {
+export function getQuatumComputingNewsFeed () {
   return (
     request.get(`${quantumComputingArticlesApi}`)
       .then(res => {
@@ -33,7 +33,7 @@ function getQuatumComputingNewsFeed () {
   )
 }
 
-function getJavascriptNewsFeed () {
+export function getJavascriptNewsFeed () {
   return (
     request.get(`${javascriptArticlesApi}`)
       .then(res => {
@@ -43,7 +43,7 @@ function getJavascriptNewsFeed () {
   )
 }
 
-function getSpaceNewsFeed () {
+export function getSpaceNewsFeed () {
   return (
     request.get(`${spaceArticlesApi}`)
       .then(res => {
@@ -53,7 +53,7 @@ function getSpaceNewsFeed () {
   )
 }
 
-function getNZScienceTechnologyHeadlines () {
+export function getNZScienceTechnologyHeadlines () {
   return (
     request.get(`${nzScienceTechnologyHeadlinesApi}`)
       .then(res => {
@@ -63,7 +63,7 @@ function getNZScienceTechnologyHeadlines () {
   )
 }
 
-function getNZGeneralHeadlines () {
+export function getNZGeneralHeadlines () {
   return (
     request.get(`${nzGeneralHeadlinesApi}`)
       .then(res => {
@@ -71,13 +71,4 @@ function getNZGeneralHeadlines () {
         return res.body.articles
       })
   )
-}
-
-module.exports = {
-  getQuatumPhysicsNewsFeed,
-  getQuatumComputingNewsFeed,
-  getJavascriptNewsFeed,
-  getSpaceNewsFeed,
-  getNZScienceTechnologyHeadlines,
-  getNZGeneralHeadlines
 }
