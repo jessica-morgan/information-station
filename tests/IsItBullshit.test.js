@@ -191,11 +191,6 @@ import { mount, shallow } from 'enzyme'
 //   expect(actual).toBe(true)
 // })
 
-// figure out how to test useeffect and that it calls the api?
-// test that setPosts sets 'posts' state with returned data?
-// test that the expected number of h1s are rendered (check api fetch limit for expected number)
-// test that component passes correct props down to SingleRedditPost
-
 // PASSING
 it('h1 should call selectTitle and currentTitleSelected onClick', () => {
   const selectTitleMock = jest.fn()
