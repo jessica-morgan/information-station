@@ -1,6 +1,18 @@
-import React from 'react'
+import React from 'reactn'
+import { MemoryRouter } from 'react-router-dom'
+import renderer from 'react-test-renderer'
 import IsItBullshitRedditFeed from '../client/components/IsItBullshitRedditFeed'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'enzyme'
+
+test('IsItBullshit renders correctly', () => {
+  const component = renderer.create(
+    <MemoryRouter>
+      <IsItBullshitRedditFeed />
+    </MemoryRouter>
+  )
+  const tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
+})
 
 // import ReactTestRenderer from 'react-test-renderer'
 // import retry from '@skidding/async-retry'
@@ -36,57 +48,6 @@ import { mount, shallow } from 'enzyme'
 //   }
 //   app.handleChange()
 //   expect(app.state.carbon_output).toBe(555)
-// })
-
-// const video = {
-//   play() {
-//     return true;
-//   },
-// };
-
-// module.exports = video;
-
-// Example test:
-
-// const video = require('./video');
-
-// test('plays video', () => {
-//   // assign spy to jest.spyOn video (the object) and 'play' the method name
-//   const spy = jest.spyOn(video, 'play');
-//   // assign isPlaying to be the video object grabbing the play property
-//   const isPlaying = video.play();
-//   // expect spy to have been called
-//   expect(spy).toHaveBeenCalled()
-//   // and expect isPlaying to be true
-//   expect(isPlaying).toBe(true);
-//   // restores the original (non-mocked) implementation.
-//   spy.mockRestore();
-// });
-
-// describe('onclick function is called ...', () => {
-//   it.only('spyOn', () => {
-//     const wrapper = mount(
-//       <Keyboard
-//         _getData = { () => {} }
-//         _erase = { () => {} }
-//         _get_letters = { () => {} }
-//         _createWord = { () => {} }
-//         _modeSwitch = { () => {} }
-//       />
-//     )
-
-//     const spy = jest.spyOn(wrapper.instance(), '_handleClick')
-//     wrapper.instance().forceUpdate()
-
-//     wrapper.find('#keyboard_clickable').simulate('click', {
-//       target: {
-//         parentElement: { id: 5 },
-//         id: 6
-//       }
-//     })
-//     expect(spy).toHaveBeenCalled()
-
-//   })
 // })
 
 // TESTING THAT A SPECIFIC CLASSNAME IS ABSENT BEFORE SETTING STATE
@@ -191,7 +152,6 @@ import { mount, shallow } from 'enzyme'
 //   expect(actual).toBe(true)
 // })
 
-// PASSING
 it('h1 should call selectTitle and currentTitleSelected onClick', () => {
   const selectTitleMock = jest.fn()
   const currentTitleSelectedMock = jest.fn()
