@@ -1,9 +1,9 @@
 import React from 'reactn'
 import { MemoryRouter } from 'react-router-dom'
 import renderer from 'react-test-renderer'
-import IsItBullshitRedditFeed from '../client/components/IsItBullshitRedditFeed'
+import IsItBullshitRedditFeed from '../../client/components/IsItBullshitRedditFeed'
 import { mount } from 'enzyme'
-import LoadingIndicator from '../client/components/LoadingIndicator'
+import LoadingIndicator from '../../client/components/LoadingIndicator'
 
 test('IsItBullshit renders correctly', () => {
   const component = renderer.create(

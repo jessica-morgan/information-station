@@ -1,4 +1,4 @@
-const redditApi = require('../client/api/redditApi')
+const redditApi = require('../../client/api/redditApi')
 
 test('fetches results from getProgrammerHumorFeed', () => {
   return redditApi.getProgrammerHumorFeed().then(response => {

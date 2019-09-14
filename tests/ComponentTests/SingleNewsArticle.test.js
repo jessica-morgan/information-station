@@ -1,8 +1,8 @@
 import React from 'reactn'
 import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
-import SingleNewsArticle from '../client/components/SingleRedditPost'
-const newsApi = require('../client/api/newsApi')
+import SingleNewsArticle from '../../client/components/SingleRedditPost'
+const newsApi = require('../../client/api/newsApi')
 
 test('<SingleNewsArticle /> recieves correct data as props', () => {
   return newsApi.getQuatumPhysicsNewsFeed().then(response => {

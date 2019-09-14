@@ -1,5 +1,5 @@
 import React from 'reactn'
-import LoadingIndicator from '../client/components/LoadingIndicator'
+import LoadingIndicator from '../../client/components/LoadingIndicator'
 import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'

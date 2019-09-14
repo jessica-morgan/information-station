@@ -1,4 +1,4 @@
-const newsApi = require('../client/api/newsApi')
+const newsApi = require('../../client/api/newsApi')
 
 test('fetches results from getQuatumPhysicsNewsFeed', () => {
   return newsApi.getQuatumPhysicsNewsFeed().then(response => {

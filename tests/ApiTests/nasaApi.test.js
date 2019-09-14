@@ -1,4 +1,4 @@
-const nasaApi = require('../client/api/nasaApi')
+const nasaApi = require('../../client/api/nasaApi')
 
 test('fetches results from getApod', () => {
   return nasaApi.getApod().then(response => {

@@ -1,5 +1,5 @@
 import React from 'reactn'
-import Nav from '../client/components/Nav'
+import Nav from '../../client/components/Nav'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
 import { shallow } from 'enzyme'

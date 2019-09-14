@@ -1,8 +1,8 @@
 import React from 'reactn'
 import { shallow, mount } from 'enzyme'
 import { MemoryRouter } from 'react-router-dom'
-import SingleRedditPost from '../client/components/SingleRedditPost'
-const redditApi = require('../client/api/redditApi')
+import SingleRedditPost from '../../client/components/SingleRedditPost'
+const redditApi = require('../../client/api/redditApi')
 
 test('<SingleRedditPost /> recieves correct data as props', () => {
   return redditApi.getProgrammerHumorFeed().then(response => {
