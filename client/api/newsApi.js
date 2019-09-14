@@ -8,7 +8,6 @@ const quantumPhysicsArticlesApi = `https://newsapi.org/v2/everything?q=quantum-p
 const quantumComputingArticlesApi = `https://newsapi.org/v2/everything?q=quantum-computing&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
 const javascriptArticlesApi = `https://newsapi.org/v2/everything?q=javascript&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
 const spaceArticlesApi = `https://newsapi.org/v2/everything?q=space&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
-const nzScienceTechnologyHeadlinesApi = `https://newsapi.org/v2/top-headlines?country=nz&from=${dateToday}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}&language=en&category=science&technology`
 const nzGeneralHeadlinesApi = `https://newsapi.org/v2/top-headlines?country=nz&from=${dateToday}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}&language=en&category=general`
 
 export function getQuatumPhysicsNewsFeed () {
@@ -43,15 +42,6 @@ export function getJavascriptNewsFeed () {
 export function getSpaceNewsFeed () {
   return (
     request.get(`${spaceArticlesApi}`)
-      .then(res => {
-        return res.body.articles
-      })
-  )
-}
-
-export function getNZScienceTechnologyHeadlines () {
-  return (
-    request.get(`${nzScienceTechnologyHeadlinesApi}`)
       .then(res => {
         return res.body.articles
       })
