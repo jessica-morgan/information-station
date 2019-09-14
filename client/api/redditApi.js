@@ -63,7 +63,6 @@ export function getIsItBullshitFeed () {
         posts => {
           let newBSPostsArray = []
           posts.body.data.children.map(post => {
-            console.log(post)
             newBSPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,

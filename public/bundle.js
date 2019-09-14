@@ -140,37 +140,31 @@ var nzScienceTechnologyHeadlinesApi = "https://newsapi.org/v2/top-headlines?coun
 var nzGeneralHeadlinesApi = "https://newsapi.org/v2/top-headlines?country=nz&from=".concat(dateToday, "&pageSize=50&sortBy=publishedAt&apiKey=").concat(apiKey, "&language=en&category=general");
 function getQuatumPhysicsNewsFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(quantumPhysicsArticlesApi)).then(function (res) {
-    console.log(res.body.articles);
     return res.body.articles;
   });
 }
 function getQuatumComputingNewsFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(quantumComputingArticlesApi)).then(function (res) {
-    console.log(res.body.articles);
     return res.body.articles;
   });
 }
 function getJavascriptNewsFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(javascriptArticlesApi)).then(function (res) {
-    console.log(res.body.articles);
     return res.body.articles;
   });
 }
 function getSpaceNewsFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(spaceArticlesApi)).then(function (res) {
-    console.log(res.body.articles);
     return res.body.articles;
   });
 }
 function getNZScienceTechnologyHeadlines() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(nzScienceTechnologyHeadlinesApi)).then(function (res) {
-    console.log(res.body.articles);
     return res.body.articles;
   });
 }
 function getNZGeneralHeadlines() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(nzGeneralHeadlinesApi)).then(function (res) {
-    console.log(res.body.articles);
     return res.body.articles;
   });
 }
@@ -239,7 +233,6 @@ function getIsItBullshitFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(isItBullshit)).then(function (posts) {
     var newBSPostsArray = [];
     posts.body.data.children.map(function (post) {
-      console.log(post);
       newBSPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
@@ -37468,7 +37461,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
