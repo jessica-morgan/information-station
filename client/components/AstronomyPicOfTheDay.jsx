@@ -1,6 +1,7 @@
 import { getApod } from '../api/nasaApi'
 import { useState, useEffect } from 'react'
 import React from 'reactn'
+import LoadingIndicator from './LoadingIndicator'
 
 const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()
@@ -23,7 +24,7 @@ const AstronomyPicOfTheDay = () => {
       <h3>{apod.date}</h3>
       <h2>{apod.description}</h2>
     </div>) : <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
-  loading component
+    <LoadingIndicator />
   </div>
 }
 
