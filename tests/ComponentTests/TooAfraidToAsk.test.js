@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 import LoadingIndicator from '../../client/components/LoadingIndicator'
 import TooAfraidToAskFeed from '../../client/components/TooAfraidToAskFeed'
 
-test('IsItBullshit renders correctly', () => {
+test('TooAfraidToAsk renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <TooAfraidToAskFeed />
@@ -15,7 +15,7 @@ test('IsItBullshit renders correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('IsItBullshit should render LoadingIndicator if posts is not yet set with api data', done => {
+test('TooAfraidToAsk should render LoadingIndicator if posts is not yet set with api data', done => {
   const wrapper = mount(<TooAfraidToAskFeed />)
   setImmediate(() => {
     wrapper.update()

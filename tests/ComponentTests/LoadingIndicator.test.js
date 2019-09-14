@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
 
-test('IsItBullshit renders correctly', () => {
+test('LoadingIndicator renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <LoadingIndicator />

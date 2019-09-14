@@ -5,7 +5,7 @@ import JavascriptFeed from '../../client/components/JavascriptFeed'
 import { mount } from 'enzyme'
 import LoadingIndicator from '../../client/components/LoadingIndicator'
 
-test('IsItBullshit renders correctly', () => {
+test('Javascript feed renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <JavascriptFeed />
@@ -15,7 +15,7 @@ test('IsItBullshit renders correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('IsItBullshit should render LoadingIndicator if posts is not yet set with api data', done => {
+test('JavascriptFeed should render LoadingIndicator if posts is not yet set with api data', done => {
   const wrapper = mount(<JavascriptFeed />)
   setImmediate(() => {
     wrapper.update()

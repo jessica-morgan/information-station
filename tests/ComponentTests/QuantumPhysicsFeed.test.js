@@ -5,7 +5,7 @@ import QuantumPhysicsFeed from '../../client/components/QuantumPhysicsFeed'
 import { mount } from 'enzyme'
 import LoadingIndicator from '../../client/components/LoadingIndicator'
 
-test('IsItBullshit renders correctly', () => {
+test('QuantumPhysicsFeed renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <QuantumPhysicsFeed />
@@ -15,7 +15,7 @@ test('IsItBullshit renders correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('IsItBullshit should render LoadingIndicator if posts is not yet set with api data', done => {
+test('QuantumPhysicsFeed should render LoadingIndicator if posts is not yet set with api data', done => {
   const wrapper = mount(<QuantumPhysicsFeed />)
   setImmediate(() => {
     wrapper.update()

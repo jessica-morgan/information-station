@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 import LoadingIndicator from '../../client/components/LoadingIndicator'
 import ProgrammerHumorFeed from '../../client/components/ProgrammerHumorRedditFeed'
 
-test('IsItBullshit renders correctly', () => {
+test('ProgrammerHumor renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <ProgrammerHumorFeed />
@@ -15,7 +15,7 @@ test('IsItBullshit renders correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('IsItBullshit should render LoadingIndicator if posts is not yet set with api data', done => {
+test('ProgrammerHumor should render LoadingIndicator if posts is not yet set with api data', done => {
   const wrapper = mount(<ProgrammerHumorFeed />)
   setImmediate(() => {
     wrapper.update()

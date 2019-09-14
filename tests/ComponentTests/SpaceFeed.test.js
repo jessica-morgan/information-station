@@ -5,7 +5,7 @@ import SpaceFeed from '../../client/components/SpaceFeed'
 import { mount } from 'enzyme'
 import LoadingIndicator from '../../client/components/LoadingIndicator'
 
-test('IsItBullshit renders correctly', () => {
+test('SpaceFeed renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <SpaceFeed />
@@ -15,7 +15,7 @@ test('IsItBullshit renders correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('IsItBullshit should render LoadingIndicator if posts is not yet set with api data', done => {
+test('SpaceFeed should render LoadingIndicator if posts is not yet set with api data', done => {
   const wrapper = mount(<SpaceFeed />)
   setImmediate(() => {
     wrapper.update()

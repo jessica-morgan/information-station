@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 import LoadingIndicator from '../../client/components/LoadingIndicator'
 import RetconnedFeed from '../../client/components/RetconnedRedditFeed'
 
-test('IsItBullshit renders correctly', () => {
+test('RetconnedFeed renders correctly', () => {
   const component = renderer.create(
     <MemoryRouter>
       <RetconnedFeed />
@@ -15,7 +15,7 @@ test('IsItBullshit renders correctly', () => {
   expect(tree).toMatchSnapshot()
 })
 
-test('IsItBullshit should render LoadingIndicator if posts is not yet set with api data', done => {
+test('RetconnedFeed should render LoadingIndicator if posts is not yet set with api data', done => {
   const wrapper = mount(<RetconnedFeed />)
   setImmediate(() => {
     wrapper.update()
