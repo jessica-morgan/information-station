@@ -805,37 +805,17 @@ var Nav = function Nav() {
       "float": 'left',
       position: 'fixed'
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "New Zealand"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "News"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/nzgFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "General")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "General")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/nzstFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Science and Technology")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Reddit"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/phFeed",
-    onClick: function onClick() {
-      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Programmer Humor")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/rcFeed",
-    onClick: function onClick() {
-      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Retconned")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/bsFeed",
-    onClick: function onClick() {
-      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Is It Bullshit")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "tataFeed",
-    onClick: function onClick() {
-      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Too Afraid To Ask")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "News"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Science and Technology")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/jsFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
@@ -855,12 +835,32 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Space")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Space")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Reddit"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/phFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Programmer Humor")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/rcFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Retconned")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/bsFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Is It Bullshit")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "tataFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Too Afraid To Ask")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/apod",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Astronomy Picture of the Day")));
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Astronomy Picture of the Day")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
