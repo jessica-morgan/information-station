@@ -3,7 +3,7 @@ import React from 'react'
 const LoadingIndicator = () => {
   return (
     <div>
-      <img src="/loading.gif"></img>
+      <img className="loading-indicator" src="/loading.gif"></img>
     </div>
   )
 }

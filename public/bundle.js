@@ -112,7 +112,7 @@ function getApod() {
 /*!*******************************!*\
   !*** ./client/api/newsApi.js ***!
   \*******************************/
-/*! exports provided: getQuatumPhysicsNewsFeed, getQuatumComputingNewsFeed, getJavascriptNewsFeed, getSpaceNewsFeed, getNZScienceTechnologyHeadlines, getNZGeneralHeadlines */
+/*! exports provided: getQuatumPhysicsNewsFeed, getQuatumComputingNewsFeed, getJavascriptNewsFeed, getSpaceNewsFeed, getNZGeneralHeadlines */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -121,7 +121,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getQuatumComputingNewsFeed", function() { return getQuatumComputingNewsFeed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJavascriptNewsFeed", function() { return getJavascriptNewsFeed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSpaceNewsFeed", function() { return getSpaceNewsFeed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNZScienceTechnologyHeadlines", function() { return getNZScienceTechnologyHeadlines; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNZGeneralHeadlines", function() { return getNZGeneralHeadlines; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
@@ -136,7 +135,6 @@ var quantumPhysicsArticlesApi = "https://newsapi.org/v2/everything?q=quantum-phy
 var quantumComputingArticlesApi = "https://newsapi.org/v2/everything?q=quantum-computing&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
 var javascriptArticlesApi = "https://newsapi.org/v2/everything?q=javascript&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
 var spaceArticlesApi = "https://newsapi.org/v2/everything?q=space&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
-var nzScienceTechnologyHeadlinesApi = "https://newsapi.org/v2/top-headlines?country=nz&from=".concat(dateToday, "&pageSize=50&sortBy=publishedAt&apiKey=").concat(apiKey, "&language=en&category=science&technology");
 var nzGeneralHeadlinesApi = "https://newsapi.org/v2/top-headlines?country=nz&from=".concat(dateToday, "&pageSize=50&sortBy=publishedAt&apiKey=").concat(apiKey, "&language=en&category=general");
 function getQuatumPhysicsNewsFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(quantumPhysicsArticlesApi)).then(function (res) {
@@ -155,11 +153,6 @@ function getJavascriptNewsFeed() {
 }
 function getSpaceNewsFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(spaceArticlesApi)).then(function (res) {
-    return res.body.articles;
-  });
-}
-function getNZScienceTechnologyHeadlines() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(nzScienceTechnologyHeadlinesApi)).then(function (res) {
     return res.body.articles;
   });
 }
@@ -293,8 +286,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _JavascriptFeed__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./JavascriptFeed */ "./client/components/JavascriptFeed.jsx");
 /* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
 /* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
-/* harmony import */ var _NZScienceTechnologyFeed__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./NZScienceTechnologyFeed */ "./client/components/NZScienceTechnologyFeed.jsx");
-/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
+/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -302,7 +294,6 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -359,11 +350,8 @@ var App = function App() {
       path: "/apod",
       component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_12__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-      path: "/nzstFeed",
-      component: _NZScienceTechnologyFeed__WEBPACK_IMPORTED_MODULE_13__["default"]
-    }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/nzgFeed",
-      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_14__["default"]
+      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_13__["default"]
     })));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_3__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Welcome__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
@@ -388,6 +376,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -395,6 +384,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -438,7 +428,7 @@ var AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
       "float": 'right',
       position: 'relative'
     }
-  }, "loading component");
+  }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AstronomyPicOfTheDay);
@@ -675,6 +665,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var LoadingIndicator = function LoadingIndicator() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "loading-indicator",
     src: "/loading.gif"
   }));
 };
@@ -785,111 +776,6 @@ var NZGeneralFeed = function NZGeneralFeed() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NZGeneralFeed);
-
-/***/ }),
-
-/***/ "./client/components/NZScienceTechnologyFeed.jsx":
-/*!*******************************************************!*\
-  !*** ./client/components/NZScienceTechnologyFeed.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _api_newsApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/newsApi */ "./client/api/newsApi.js");
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
-/* harmony import */ var _SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleNewsArticle */ "./client/components/SingleNewsArticle.jsx");
-/* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-var NZScienceTechnologyFeed = function NZScienceTechnologyFeed() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
-      _useState2 = _slicedToArray(_useState, 2),
-      allArticles = _useState2[0],
-      setArticles = _useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_1__["getNZScienceTechnologyHeadlines"])().then(function (articles) {
-      setArticles({
-        articles: articles
-      });
-    });
-  }, []);
-
-  var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_2__["useGlobal"])('titleSelected'),
-      _useGlobal2 = _slicedToArray(_useGlobal, 2),
-      titleSelected = _useGlobal2[0],
-      setTitleSelected = _useGlobal2[1];
-
-  var _useGlobal3 = Object(reactn__WEBPACK_IMPORTED_MODULE_2__["useGlobal"])('categorySelected'),
-      _useGlobal4 = _slicedToArray(_useGlobal3, 2),
-      categorySelected = _useGlobal4[0],
-      setCategorySelected = _useGlobal4[1];
-
-  var _useGlobal5 = Object(reactn__WEBPACK_IMPORTED_MODULE_2__["useGlobal"])('currentTitle'),
-      _useGlobal6 = _slicedToArray(_useGlobal5, 2),
-      currentTitle = _useGlobal6[0],
-      setCurrentTitle = _useGlobal6[1];
-
-  if (allArticles && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, allArticles.articles.map(function (article, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-        key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
-        key: article.title,
-        onClick: function onClick() {
-          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
-          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(article.title);
-        }
-      }, article.title));
-    }));
-  }
-
-  if (allArticles && titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      articles: allArticles.articles,
-      key: currentTitle
-    }));
-  } else {
-    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__["default"], null));
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (NZScienceTechnologyFeed);
 
 /***/ }),
 
@@ -37461,7 +37347,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
