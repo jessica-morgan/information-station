@@ -3,12 +3,11 @@ import { Route } from 'react-router-dom'
 import Welcome from './Welcome'
 import Nav from './Nav'
 import ProgrammerHumorRedditFeed from './ProgrammerHumorRedditFeed'
-import RetconnedRedditFeed from './RetconnedRedditFeed'
-import IsItBullshitRedditFeed from './IsItBullshitRedditFeed'
-import TooAfraidToAskRedditFeed from './TooAfraidToAskFeed'
+import ReactjsRedditFeed from './ReactjsRedditFeed'
+import CoolGithubProjectsRedditFeed from './CoolGithubProjectsRedditFeed'
+import JavascriptRedditFeed from './JavascriptRedditFeed'
 import QuantumPhysicsFeed from './QuantumPhysicsFeed'
 import QuantumComputingFeed from './QuantumComputingFeed'
-import JavascriptFeed from './JavascriptFeed'
 import SpaceFeed from './SpaceFeed'
 import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
 import NZGeneralFeed from './NZGeneralFeed'
@@ -21,12 +20,11 @@ const App = () => {
       <Nav />
       <div>
         <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
-        <Route path='/rcFeed' component={RetconnedRedditFeed} />
-        <Route path='/bsFeed' component={IsItBullshitRedditFeed} />
-        <Route path='/tataFeed' component={TooAfraidToAskRedditFeed} />
+        <Route path='/rjsFeed' component={ReactjsRedditFeed} />
+        <Route path='/cgpFeed' component={CoolGithubProjectsRedditFeed} />
+        <Route path='/jsFeed' component={JavascriptRedditFeed} />
         <Route path='/qpFeed' component={QuantumPhysicsFeed} />
         <Route path='/qcFeed' component={QuantumComputingFeed} />
-        <Route path='/jsFeed' component={JavascriptFeed} />
         <Route path='/spaceFeed' component={SpaceFeed} />
         <Route path='/apod' component={AstronomyPicOfTheDay} />
         <Route path='/nzgFeed' component={NZGeneralFeed} />

@@ -1,26 +1,47 @@
 import React from 'reactn'
 import { selectCategory } from '../utils'
 import { Link } from 'react-router-dom'
+import { NavContainer, H2, H3, NavLinkContainer, Header } from '../styles'
 
 const Nav = () => {
   return (
-    <div style={{ display: 'block', width: '20vw', height: '100%', float: 'left', position: 'fixed' }}>
-      <h2>News</h2>
-      <Link to='/nzgFeed' onClick={() => selectCategory()}><h3>General</h3></Link>
-      <Link to='/nzstFeed' onClick={() => selectCategory()}><h3>Science and Technology</h3></Link>
-      <Link to='/jsFeed' onClick={() => selectCategory()}><h3>Javascript</h3></Link>
-      <Link to='/qcFeed' onClick={() => selectCategory()}><h3>Quantum Computing</h3></Link>
-      <Link to='/qpFeed' onClick={() => selectCategory()}><h3>Quantum Physics</h3></Link>
-      <Link to='spaceFeed' onClick={() => selectCategory()}><h3>Space</h3></Link>
-      <br/>
-      <h2>Reddit</h2>
-      <Link to='/phFeed' onClick={() => selectCategory()}><h3>Programmer Humor</h3></Link>
-      <Link to='/rcFeed' onClick={() => selectCategory()}><h3>Retconned</h3></Link>
-      <Link to='/bsFeed' onClick={() => selectCategory()}><h3>Is It Bullshit</h3></Link>
-      <Link to='tataFeed' onClick={() => selectCategory()}><h3>Too Afraid To Ask</h3></Link>
-      <br/>
-      <Link to='/apod' onClick={() => selectCategory()}><h3>Astronomy Picture of the Day</h3></Link>
-    </div>
+    <>
+    <Header />
+    <NavContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/apod' onClick={() => selectCategory()}><H3 style={{ marginTop: '5vh' }}>NASA Picture of the Day</H3></Link>
+      </NavLinkContainer>
+      <H2 style={{ marginTop: '5vh' }}>News</H2>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/nzgFeed' onClick={() => selectCategory()}><H3>General NZ</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/nzstFeed' onClick={() => selectCategory()}><H3>Science and Technology</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/qcFeed' onClick={() => selectCategory()}><H3>Quantum Computing</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/qpFeed' onClick={() => selectCategory()}><H3>Quantum Physics</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='spaceFeed' onClick={() => selectCategory()}><H3>Space</H3></Link>
+      </NavLinkContainer>
+      <H2 style={{ marginTop: '5vh' }}>Reddit</H2>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/phFeed' onClick={() => selectCategory()}><H3>Programmer Humor</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/rjsFeed' onClick={() => selectCategory()}><H3>Reactjs</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='/cgpFeed' onClick={() => selectCategory()}><H3>Cool github projects</H3></Link>
+      </NavLinkContainer>
+      <NavLinkContainer>
+        <Link style={{ textDecoration: 'none' }} to='jsFeed' onClick={() => selectCategory()}><H3>Javascript</H3></Link>
+      </NavLinkContainer>
+    </NavContainer>
+    </>
   )
 }
 
