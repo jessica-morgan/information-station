@@ -168,22 +168,22 @@ function getNZGeneralHeadlines() {
 /*!*********************************!*\
   !*** ./client/api/redditApi.js ***!
   \*********************************/
-/*! exports provided: getProgrammerHumorFeed, getRetconnedFeed, getIsItBullshitFeed, getTooAfraidFeed */
+/*! exports provided: getProgrammerHumorFeed, getReactJsFeed, getCoolGithubProjectsFeed, getJavascriptFeed */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getProgrammerHumorFeed", function() { return getProgrammerHumorFeed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRetconnedFeed", function() { return getRetconnedFeed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getIsItBullshitFeed", function() { return getIsItBullshitFeed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTooAfraidFeed", function() { return getTooAfraidFeed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getReactJsFeed", function() { return getReactJsFeed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCoolGithubProjectsFeed", function() { return getCoolGithubProjectsFeed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJavascriptFeed", function() { return getJavascriptFeed; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
 
 var programmerHumor = 'http://www.reddit.com/r/programmerHumor.json';
-var retconned = 'http://www.reddit.com/r/Retconned.json';
-var isItBullshit = 'http://www.reddit.com/r/IsItBullshit.json';
-var tooAfraidToAsk = 'http://www.reddit.com/r/TooAfraidToAsk.json';
+var reactjs = 'http://www.reddit.com/r/reactjs.json';
+var coolgithubprojects = 'http://www.reddit.com/r/coolgithubprojects.json';
+var javascript = 'http://www.reddit.com/r/javascript.json';
 function getProgrammerHumorFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(programmerHumor)).then(function (posts) {
     var newPHPostsArray = [];
@@ -203,11 +203,11 @@ function getProgrammerHumorFeed() {
     return newPHPostsArray;
   });
 }
-function getRetconnedFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(retconned)).then(function (posts) {
-    var newRetPostsArray = [];
+function getReactJsFeed() {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(reactjs)).then(function (posts) {
+    var newRjsPostsArray = [];
     posts.body.data.children.map(function (post) {
-      newRetPostsArray.push({
+      newRjsPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
         image: post.data.url,
@@ -217,16 +217,16 @@ function getRetconnedFeed() {
         link: post.data.permalink,
         upVotes: post.data.ups
       });
-      return newRetPostsArray;
+      return newRjsPostsArray;
     });
-    return newRetPostsArray;
+    return newRjsPostsArray;
   });
 }
-function getIsItBullshitFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(isItBullshit)).then(function (posts) {
-    var newBSPostsArray = [];
+function getCoolGithubProjectsFeed() {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(coolgithubprojects)).then(function (posts) {
+    var newGHPostsArray = [];
     posts.body.data.children.map(function (post) {
-      newBSPostsArray.push({
+      newGHPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
         image: post.data.url,
@@ -236,16 +236,16 @@ function getIsItBullshitFeed() {
         link: post.data.permalink,
         upVotes: post.data.ups
       });
-      return newBSPostsArray;
+      return newGHPostsArray;
     });
-    return newBSPostsArray;
+    return newGHPostsArray;
   });
 }
-function getTooAfraidFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(tooAfraidToAsk)).then(function (posts) {
-    var newTATAPostsArray = [];
+function getJavascriptFeed() {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(javascript)).then(function (posts) {
+    var newJSPostsArray = [];
     posts.body.data.children.map(function (post) {
-      newTATAPostsArray.push({
+      newJSPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
         image: post.data.url,
@@ -255,9 +255,9 @@ function getTooAfraidFeed() {
         link: post.data.permalink,
         upVotes: post.data.ups
       });
-      return newTATAPostsArray;
+      return newJSPostsArray;
     });
-    return newTATAPostsArray;
+    return newJSPostsArray;
   });
 }
 
@@ -278,15 +278,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Welcome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Welcome */ "./client/components/Welcome.jsx");
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
 /* harmony import */ var _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProgrammerHumorRedditFeed */ "./client/components/ProgrammerHumorRedditFeed.jsx");
-/* harmony import */ var _RetconnedRedditFeed__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./RetconnedRedditFeed */ "./client/components/RetconnedRedditFeed.jsx");
-/* harmony import */ var _IsItBullshitRedditFeed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IsItBullshitRedditFeed */ "./client/components/IsItBullshitRedditFeed.jsx");
-/* harmony import */ var _TooAfraidToAskFeed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TooAfraidToAskFeed */ "./client/components/TooAfraidToAskFeed.jsx");
+/* harmony import */ var _ReactjsRedditFeed__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ReactjsRedditFeed */ "./client/components/ReactjsRedditFeed.jsx");
+/* harmony import */ var _CoolGithubProjectsRedditFeed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CoolGithubProjectsRedditFeed */ "./client/components/CoolGithubProjectsRedditFeed.jsx");
+/* harmony import */ var _JavascriptRedditFeed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./JavascriptRedditFeed */ "./client/components/JavascriptRedditFeed.jsx");
 /* harmony import */ var _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./QuantumPhysicsFeed */ "./client/components/QuantumPhysicsFeed.jsx");
 /* harmony import */ var _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./QuantumComputingFeed */ "./client/components/QuantumComputingFeed.jsx");
-/* harmony import */ var _JavascriptFeed__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./JavascriptFeed */ "./client/components/JavascriptFeed.jsx");
-/* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
-/* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
-/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
+/* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
+/* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
+/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -294,7 +293,6 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -326,14 +324,14 @@ var App = function App() {
       path: "/phFeed",
       component: _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_4__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-      path: "/rcFeed",
-      component: _RetconnedRedditFeed__WEBPACK_IMPORTED_MODULE_5__["default"]
+      path: "/rjsFeed",
+      component: _ReactjsRedditFeed__WEBPACK_IMPORTED_MODULE_5__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-      path: "/bsFeed",
-      component: _IsItBullshitRedditFeed__WEBPACK_IMPORTED_MODULE_6__["default"]
+      path: "/cgpFeed",
+      component: _CoolGithubProjectsRedditFeed__WEBPACK_IMPORTED_MODULE_6__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-      path: "/tataFeed",
-      component: _TooAfraidToAskFeed__WEBPACK_IMPORTED_MODULE_7__["default"]
+      path: "/jsFeed",
+      component: _JavascriptRedditFeed__WEBPACK_IMPORTED_MODULE_7__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/qpFeed",
       component: _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_8__["default"]
@@ -341,17 +339,14 @@ var App = function App() {
       path: "/qcFeed",
       component: _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_9__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-      path: "/jsFeed",
-      component: _JavascriptFeed__WEBPACK_IMPORTED_MODULE_10__["default"]
-    }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/spaceFeed",
-      component: _SpaceFeed__WEBPACK_IMPORTED_MODULE_11__["default"]
+      component: _SpaceFeed__WEBPACK_IMPORTED_MODULE_10__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/apod",
-      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_12__["default"]
+      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/nzgFeed",
-      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_13__["default"]
+      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_12__["default"]
     })));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_3__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Welcome__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
@@ -420,25 +415,17 @@ var AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
       height: '80%'
     },
     src: apod.image
-  }), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h3", null, apod.date), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", null, apod.description)) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    style: {
-      display: 'block',
-      width: '70vw',
-      height: '100%',
-      "float": 'right',
-      position: 'relative'
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  }), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h3", null, apod.date), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", null, apod.description)) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AstronomyPicOfTheDay);
 
 /***/ }),
 
-/***/ "./client/components/IsItBullshitRedditFeed.jsx":
-/*!******************************************************!*\
-  !*** ./client/components/IsItBullshitRedditFeed.jsx ***!
-  \******************************************************/
+/***/ "./client/components/CoolGithubProjectsRedditFeed.jsx":
+/*!************************************************************!*\
+  !*** ./client/components/CoolGithubProjectsRedditFeed.jsx ***!
+  \************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -467,14 +454,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var IsItBullshitRedditFeed = function IsItBullshitRedditFeed() {
+var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
       posts = _useState2[0],
       setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getIsItBullshitFeed"])().then(function (posts) {
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getCoolGithubProjectsFeed"])().then(function (posts) {
       var postsArray = [];
       postsArray.push(posts);
       setPosts({
@@ -541,14 +528,14 @@ var IsItBullshitRedditFeed = function IsItBullshitRedditFeed() {
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (IsItBullshitRedditFeed);
+/* harmony default export */ __webpack_exports__["default"] = (CoolGithubProjectsRedditFeed);
 
 /***/ }),
 
-/***/ "./client/components/JavascriptFeed.jsx":
-/*!**********************************************!*\
-  !*** ./client/components/JavascriptFeed.jsx ***!
-  \**********************************************/
+/***/ "./client/components/JavascriptRedditFeed.jsx":
+/*!****************************************************!*\
+  !*** ./client/components/JavascriptRedditFeed.jsx ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -558,9 +545,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _api_newsApi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/newsApi */ "./client/api/newsApi.js");
+/* harmony import */ var _api_redditApi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/redditApi */ "./client/api/redditApi.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
-/* harmony import */ var _SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleNewsArticle */ "./client/components/SingleNewsArticle.jsx");
+/* harmony import */ var _SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleRedditPost */ "./client/components/SingleRedditPost.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -577,16 +564,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var JavascriptFeed = function JavascriptFeed() {
+var JavascriptRedditFeed = function JavascriptRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
-      allArticles = _useState2[0],
-      setArticles = _useState2[1];
+      posts = _useState2[0],
+      setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_2__["getJavascriptNewsFeed"])().then(function (articles) {
-      setArticles({
-        articles: articles
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getJavascriptFeed"])().then(function (posts) {
+      var postsArray = [];
+      postsArray.push(posts);
+      setPosts({
+        allPosts: postsArray
       });
     });
   }, []);
@@ -606,7 +595,7 @@ var JavascriptFeed = function JavascriptFeed() {
       currentTitle = _useGlobal6[0],
       setCurrentTitle = _useGlobal6[1];
 
-  if (allArticles && categorySelected) {
+  if (posts && categorySelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       style: {
         display: 'block',
@@ -615,20 +604,20 @@ var JavascriptFeed = function JavascriptFeed() {
         "float": 'right',
         position: 'relative'
       }
-    }, allArticles.articles.map(function (article, idx) {
+    }, posts.allPosts[0].map(function (singlePost, idx) {
       return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-        key: article.title,
+        key: singlePost.title,
         onClick: function onClick() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
-          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(article.title);
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, article.title));
+      }, singlePost.title));
     }));
   }
 
-  if (allArticles && titleSelected) {
+  if (posts && titleSelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       style: {
         display: 'block',
@@ -637,8 +626,8 @@ var JavascriptFeed = function JavascriptFeed() {
         "float": 'right',
         position: 'relative'
       }
-    }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      articles: allArticles.articles,
+    }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      posts: posts.allPosts[0],
       key: currentTitle
     }));
   } else {
@@ -646,7 +635,7 @@ var JavascriptFeed = function JavascriptFeed() {
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (JavascriptFeed);
+/* harmony default export */ __webpack_exports__["default"] = (JavascriptRedditFeed);
 
 /***/ }),
 
@@ -823,7 +812,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "General"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "General NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -832,14 +821,6 @@ var Nav = function Nav() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Science and Technology"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    style: {
-      textDecoration: 'none'
-    },
-    to: "/jsFeed",
-    onClick: function onClick() {
-      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Javascript"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -879,27 +860,27 @@ var Nav = function Nav() {
     style: {
       textDecoration: 'none'
     },
-    to: "/rcFeed",
+    to: "/rjsFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Retconned"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Reactjs"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
-    to: "/bsFeed",
+    to: "/cgpFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Is It Bullshit"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Cool github projects"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
-    to: "tataFeed",
+    to: "jsFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Too Afraid To Ask")))));
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Javascript")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
@@ -1223,10 +1204,10 @@ var QuantumPhysicsFeed = function QuantumPhysicsFeed() {
 
 /***/ }),
 
-/***/ "./client/components/RetconnedRedditFeed.jsx":
-/*!***************************************************!*\
-  !*** ./client/components/RetconnedRedditFeed.jsx ***!
-  \***************************************************/
+/***/ "./client/components/ReactjsRedditFeed.jsx":
+/*!*************************************************!*\
+  !*** ./client/components/ReactjsRedditFeed.jsx ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1255,14 +1236,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var RetconnedRedditFeed = function RetconnedRedditFeed() {
+var ReactjsRedditFeed = function ReactjsRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
       posts = _useState2[0],
       setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getRetconnedFeed"])().then(function (posts) {
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getReactJsFeed"])().then(function (posts) {
       var postsArray = [];
       postsArray.push(posts);
       setPosts({
@@ -1326,7 +1307,7 @@ var RetconnedRedditFeed = function RetconnedRedditFeed() {
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (RetconnedRedditFeed);
+/* harmony default export */ __webpack_exports__["default"] = (ReactjsRedditFeed);
 
 /***/ }),
 
@@ -1545,113 +1526,6 @@ var SpaceFeed = function SpaceFeed() {
 
 /***/ }),
 
-/***/ "./client/components/TooAfraidToAskFeed.jsx":
-/*!**************************************************!*\
-  !*** ./client/components/TooAfraidToAskFeed.jsx ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _api_redditApi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/redditApi */ "./client/api/redditApi.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
-/* harmony import */ var _SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleRedditPost */ "./client/components/SingleRedditPost.jsx");
-/* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-var TooAfraidToAskRedditFeed = function TooAfraidToAskRedditFeed() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
-      _useState2 = _slicedToArray(_useState, 2),
-      posts = _useState2[0],
-      setPosts = _useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getTooAfraidFeed"])().then(function (posts) {
-      var postsArray = [];
-      postsArray.push(posts);
-      setPosts({
-        allPosts: postsArray
-      });
-    });
-  }, []);
-
-  var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('titleSelected'),
-      _useGlobal2 = _slicedToArray(_useGlobal, 2),
-      titleSelected = _useGlobal2[0],
-      setTitleSelected = _useGlobal2[1];
-
-  var _useGlobal3 = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('categorySelected'),
-      _useGlobal4 = _slicedToArray(_useGlobal3, 2),
-      categorySelected = _useGlobal4[0],
-      setCategorySelected = _useGlobal4[1];
-
-  var _useGlobal5 = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('currentTitle'),
-      _useGlobal6 = _slicedToArray(_useGlobal5, 2),
-      currentTitle = _useGlobal6[0],
-      setCurrentTitle = _useGlobal6[1];
-
-  if (posts && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, posts.allPosts[0].map(function (singlePost, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-        key: singlePost.title,
-        onClick: function onClick() {
-          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
-          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
-        }
-      }, singlePost.title));
-    }));
-  }
-
-  if (posts && titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      posts: posts.allPosts[0],
-      key: currentTitle
-    }));
-  } else {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__["default"], null));
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (TooAfraidToAskRedditFeed);
-
-/***/ }),
-
 /***/ "./client/components/Welcome.jsx":
 /*!***************************************!*\
   !*** ./client/components/Welcome.jsx ***!
@@ -1766,7 +1640,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  background: #EDEDED;\n  height: 6vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  background: #EDEDED;\n  height: 10vh;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1776,7 +1650,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  width: 13.4vw;\n  &:hover {\n  background: #EDEDED;\n}\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  width: 13.4vw;\n  &:hover {\n  background: #F7F7F7;\n}\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1786,7 +1660,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  // background: #BFBFBF;\n  display: block;\n  width: 13.5vw;\n  height: 100%;\n  float: left;\n  position: fixed;\n  text-decoration: none;\n  // border-right: 0.1vw solid #999999;\n  padding-left: 1vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  width: 13.5vw;\n  height: auto;\n  float: left;\n  position: fixed;\n  text-decoration: none;\n  padding-left: 1vw;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
