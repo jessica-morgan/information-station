@@ -1,22 +1,28 @@
 import styled, { css } from 'styled-components'
 
 export const NavContainer = styled.div`
-  display: block;
-  width: 13.5vw;
-  height: auto;
-  float: left;
-  position: fixed;
+  top: 0;
+  width: 100%;
+  position: relative;
   text-decoration: none;
-  padding-left: 1vw;
+  display: block;
+  overflow: hidden;
 `
 
-export const NavLinkContainer = styled.div`
-  display: block;
-  width: 13.4vw;
-  &:hover {
-  background: #F7F7F7;
-}
+export const NavLi = styled.li`
+float: left;
+display: block;
+display: block;
+padding-left: 1vw;
 `
+export const NavUl = styled.ul`
+list-style-type: none;
+height: 10vh;
+overflow: hidden;
+position: relative;
+display: block;
+`
+
 export const Header = styled.header`
   display: block; 
   width: 100%;
@@ -33,7 +39,7 @@ export const H2 = styled.h2`
 `
 
 export const H3 = styled.h3`
-  font-size: 2.5vh;
+  font-size: 2.3vh;
   font-family: 'Open Sans', sans-serif;;
   color: #999999;
 `

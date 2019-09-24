@@ -788,7 +788,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Nav = function Nav() {
-  return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Header"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Header"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavUl"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -796,15 +796,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], {
-    style: {
-      marginTop: '5vh'
-    }
-  }, "NASA Picture of the Day"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H2"], {
-    style: {
-      marginTop: '5vh'
-    }
-  }, "News"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "NASA Picture of the Day"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -812,7 +804,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "General NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "General NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -820,7 +812,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Science and Technology"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Science and Technology"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -828,7 +820,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Quantum Computing"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Quantum Computing"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -836,7 +828,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Quantum Physics"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Quantum Physics"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -844,11 +836,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Space"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H2"], {
-    style: {
-      marginTop: '5vh'
-    }
-  }, "Reddit"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Space"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -856,7 +844,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Programmer Humor"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Programmer Humor"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -864,7 +852,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Reactjs"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Reactjs"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -872,7 +860,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Cool github projects"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLinkContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Cool github projects"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
     },
@@ -880,7 +868,7 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Javascript")))));
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "Javascript"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
@@ -1588,19 +1576,30 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: NavContainer, NavLinkContainer, Header, H2, H3 */
+/*! exports provided: NavContainer, NavLi, NavUl, Header, H2, H3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavContainer", function() { return NavContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavLinkContainer", function() { return NavLinkContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavLi", function() { return NavLi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavUl", function() { return NavUl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject7() {
+function _templateObject8() {
   var data = _taggedTemplateLiteral(["\n    background: palevioletred;\n    color: white;\n  "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -1610,7 +1609,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2.3vh;\n  font-family: 'Open Sans', sans-serif;;\n  color: #999999;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -1620,7 +1619,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;;\n  color: #999999;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2.8vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #999999;\n\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1630,7 +1629,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2.8vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #999999;\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  background: #EDEDED;\n  height: 10vh;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1640,7 +1639,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  background: #EDEDED;\n  height: 10vh;\n"]);
+  var data = _taggedTemplateLiteral(["\nlist-style-type: none;\nheight: 10vh;\noverflow: hidden;\nposition: relative;\ndisplay: block;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1650,7 +1649,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  width: 13.4vw;\n  &:hover {\n  background: #F7F7F7;\n}\n"]);
+  var data = _taggedTemplateLiteral(["\nfloat: left;\ndisplay: block;\ndisplay: block;\npadding-left: 1vw;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1660,7 +1659,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  width: 13.5vw;\n  height: auto;\n  float: left;\n  position: fixed;\n  text-decoration: none;\n  padding-left: 1vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  top: 0;\n  width: 100%;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1673,12 +1672,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject());
-var NavLinkContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2());
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject3());
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject4());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject5());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject6(), function (props) {
-  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject7());
+var NavLi = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li(_templateObject2());
+var NavUl = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul(_templateObject3());
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject4());
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject5());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject6());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject7(), function (props) {
+  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject8());
 }); // when passed the 'primary' prop- <Button primary> the button will use this css
 
 /***/ }),
