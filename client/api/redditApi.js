@@ -2,11 +2,11 @@ import request from 'superagent'
 
 const programmerHumor = 'http://www.reddit.com/r/programmerHumor.json'
 
-const retconned = 'http://www.reddit.com/r/Retconned.json'
+const reactjs = 'http://www.reddit.com/r/reactjs.json'
 
-const isItBullshit = 'http://www.reddit.com/r/IsItBullshit.json'
+const coolgithubprojects = 'http://www.reddit.com/r/coolgithubprojects.json'
 
-const tooAfraidToAsk = 'http://www.reddit.com/r/TooAfraidToAsk.json'
+const javascript = 'http://www.reddit.com/r/javascript.json'
 
 export function getProgrammerHumorFeed () {
   return (
@@ -31,14 +31,14 @@ export function getProgrammerHumorFeed () {
   )
 }
 
-export function getRetconnedFeed () {
+export function getReactJsFeed () {
   return (
-    request.get(`${retconned}`)
+    request.get(`${reactjs}`)
       .then(
         posts => {
-          let newRetPostsArray = []
+          let newRjsPostsArray = []
           posts.body.data.children.map(post => {
-            newRetPostsArray.push({
+            newRjsPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,
               image: post.data.url,
@@ -48,22 +48,22 @@ export function getRetconnedFeed () {
               link: post.data.permalink,
               upVotes: post.data.ups
             })
-            return newRetPostsArray
+            return newRjsPostsArray
           })
-          return newRetPostsArray
+          return newRjsPostsArray
         }
       )
   )
 }
 
-export function getIsItBullshitFeed () {
+export function getCoolGithubProjectsFeed () {
   return (
-    request.get(`${isItBullshit}`)
+    request.get(`${coolgithubprojects}`)
       .then(
         posts => {
-          let newBSPostsArray = []
+          let newGHPostsArray = []
           posts.body.data.children.map(post => {
-            newBSPostsArray.push({
+            newGHPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,
               image: post.data.url,
@@ -73,22 +73,22 @@ export function getIsItBullshitFeed () {
               link: post.data.permalink,
               upVotes: post.data.ups
             })
-            return newBSPostsArray
+            return newGHPostsArray
           })
-          return newBSPostsArray
+          return newGHPostsArray
         }
       )
   )
 }
 
-export function getTooAfraidFeed () {
+export function getJavascriptFeed () {
   return (
-    request.get(`${tooAfraidToAsk}`)
+    request.get(`${javascript}`)
       .then(
         posts => {
-          let newTATAPostsArray = []
+          let newJSPostsArray = []
           posts.body.data.children.map(post => {
-            newTATAPostsArray.push({
+            newJSPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,
               image: post.data.url,
@@ -98,9 +98,9 @@ export function getTooAfraidFeed () {
               link: post.data.permalink,
               upVotes: post.data.ups
             })
-            return newTATAPostsArray
+            return newJSPostsArray
           })
-          return newTATAPostsArray
+          return newJSPostsArray
         }
       )
   )
