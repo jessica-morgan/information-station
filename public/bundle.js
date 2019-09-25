@@ -275,19 +275,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _Welcome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Welcome */ "./client/components/Welcome.jsx");
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
-/* harmony import */ var _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProgrammerHumorRedditFeed */ "./client/components/ProgrammerHumorRedditFeed.jsx");
-/* harmony import */ var _ReactjsRedditFeed__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ReactjsRedditFeed */ "./client/components/ReactjsRedditFeed.jsx");
-/* harmony import */ var _CoolGithubProjectsRedditFeed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CoolGithubProjectsRedditFeed */ "./client/components/CoolGithubProjectsRedditFeed.jsx");
-/* harmony import */ var _JavascriptRedditFeed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./JavascriptRedditFeed */ "./client/components/JavascriptRedditFeed.jsx");
-/* harmony import */ var _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./QuantumPhysicsFeed */ "./client/components/QuantumPhysicsFeed.jsx");
-/* harmony import */ var _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./QuantumComputingFeed */ "./client/components/QuantumComputingFeed.jsx");
-/* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
-/* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
-/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
-/* harmony import */ var _HeaderComponent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./HeaderComponent */ "./client/components/HeaderComponent.jsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
+/* harmony import */ var _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProgrammerHumorRedditFeed */ "./client/components/ProgrammerHumorRedditFeed.jsx");
+/* harmony import */ var _ReactjsRedditFeed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ReactjsRedditFeed */ "./client/components/ReactjsRedditFeed.jsx");
+/* harmony import */ var _CoolGithubProjectsRedditFeed__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CoolGithubProjectsRedditFeed */ "./client/components/CoolGithubProjectsRedditFeed.jsx");
+/* harmony import */ var _JavascriptRedditFeed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./JavascriptRedditFeed */ "./client/components/JavascriptRedditFeed.jsx");
+/* harmony import */ var _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./QuantumPhysicsFeed */ "./client/components/QuantumPhysicsFeed.jsx");
+/* harmony import */ var _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./QuantumComputingFeed */ "./client/components/QuantumComputingFeed.jsx");
+/* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
+/* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
+/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
+/* harmony import */ var _HeaderComponent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./HeaderComponent */ "./client/components/HeaderComponent.jsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -295,7 +294,6 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -324,36 +322,36 @@ var App = function App() {
       setTitleSelected = _useGlobal4[1];
 
   if (categorySelected || titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderComponent__WEBPACK_IMPORTED_MODULE_13__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_3__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_14__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderComponent__WEBPACK_IMPORTED_MODULE_12__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_13__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/phFeed",
-      component: _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_4__["default"]
+      component: _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_3__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/rjsFeed",
-      component: _ReactjsRedditFeed__WEBPACK_IMPORTED_MODULE_5__["default"]
+      component: _ReactjsRedditFeed__WEBPACK_IMPORTED_MODULE_4__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/cgpFeed",
-      component: _CoolGithubProjectsRedditFeed__WEBPACK_IMPORTED_MODULE_6__["default"]
+      component: _CoolGithubProjectsRedditFeed__WEBPACK_IMPORTED_MODULE_5__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/jsFeed",
-      component: _JavascriptRedditFeed__WEBPACK_IMPORTED_MODULE_7__["default"]
+      component: _JavascriptRedditFeed__WEBPACK_IMPORTED_MODULE_6__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/qpFeed",
-      component: _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_8__["default"]
+      component: _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_7__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/qcFeed",
-      component: _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_9__["default"]
+      component: _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_8__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/spaceFeed",
-      component: _SpaceFeed__WEBPACK_IMPORTED_MODULE_10__["default"]
+      component: _SpaceFeed__WEBPACK_IMPORTED_MODULE_9__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/apod",
-      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__["default"]
+      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_10__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/nzgFeed",
-      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_12__["default"]
+      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_11__["default"]
     })));
   } else {
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderComponent__WEBPACK_IMPORTED_MODULE_13__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_3__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Welcome__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderComponent__WEBPACK_IMPORTED_MODULE_12__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null));
   }
 };
 
@@ -527,6 +525,48 @@ var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CoolGithubProjectsRedditFeed);
+
+/***/ }),
+
+/***/ "./client/components/CurrentCategoryTitle.jsx":
+/*!****************************************************!*\
+  !*** ./client/components/CurrentCategoryTitle.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
+/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+var CurrentCategoryTitle = function CurrentCategoryTitle() {
+  var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_0__["useGlobal"])('selectedCategoryName'),
+      _useGlobal2 = _slicedToArray(_useGlobal, 2),
+      selectedCategoryName = _useGlobal2[0],
+      setselectedCategoryName = _useGlobal2[1];
+
+  if (selectedCategoryName) {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      className: "current-category-title"
+    }, selectedCategoryName));
+  } else {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      className: "welcome"
+    }, "Welcome, please select a category"));
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CurrentCategoryTitle);
 
 /***/ }),
 
@@ -803,6 +843,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
+/* harmony import */ var _CurrentCategoryTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CurrentCategoryTitle */ "./client/components/CurrentCategoryTitle.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -821,6 +862,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -837,19 +881,18 @@ function (_React$Component) {
     _classCallCheck(this, Nav);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Nav).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "handleScroll", function () {
+      _this.setState({
+        scroll: window.scrollY
+      });
+    });
+
     _this.state = {};
-    _this.handleScroll = _this.handleScroll.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Nav, [{
-    key: "handleScroll",
-    value: function handleScroll() {
-      this.setState({
-        scroll: window.scrollY
-      });
-    }
-  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       var el = document.querySelector('nav');
@@ -869,13 +912,13 @@ function (_React$Component) {
     value: function render() {
       return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: this.state.scroll > this.state.top ? 'nav-container-onscroll' : 'nav-container'
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavUl"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrentCategoryTitle__WEBPACK_IMPORTED_MODULE_4__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavUl"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
           textDecoration: 'none'
         },
         to: "/apod",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Nasa Picture of the Day');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "NASA PICTURE OF THE DAY"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -883,7 +926,7 @@ function (_React$Component) {
         },
         to: "/phFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Programmer Humor');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "PROGRAMMER HUMOR"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -891,7 +934,7 @@ function (_React$Component) {
         },
         to: "/rjsFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Reactjs');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "REACTJS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -899,7 +942,7 @@ function (_React$Component) {
         },
         to: "/cgpFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Cool Github Projects');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "COOL GITHUB PROJECTS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -907,7 +950,7 @@ function (_React$Component) {
         },
         to: "jsFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Javascript');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "JAVASCRIPT"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -915,7 +958,7 @@ function (_React$Component) {
         },
         to: "/nzgFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('General NZ');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "GENERAL NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -923,7 +966,7 @@ function (_React$Component) {
         },
         to: "/nzstFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Science and Technology');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "SCIENCE AND TECHNOLOGY"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -931,7 +974,7 @@ function (_React$Component) {
         },
         to: "/qcFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Computing');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "QUANTUM COMPUTING"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -939,7 +982,7 @@ function (_React$Component) {
         },
         to: "/qpFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Physics');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "QUANTUM PHYSICS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         style: {
@@ -947,7 +990,7 @@ function (_React$Component) {
         },
         to: "spaceFeed",
         onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])();
+          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Space');
         }
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["H3"], null, "SPACE"))))));
     }
@@ -1585,35 +1628,6 @@ var SpaceFeed = function SpaceFeed() {
 
 /***/ }),
 
-/***/ "./client/components/Welcome.jsx":
-/*!***************************************!*\
-  !*** ./client/components/Welcome.jsx ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Welcome = function Welcome() {
-  return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      display: 'block',
-      width: '70vw',
-      height: '100%',
-      "float": 'right',
-      position: 'relative'
-    }
-  }, "Welcome");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Welcome);
-
-/***/ }),
-
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -1635,7 +1649,8 @@ __webpack_require__.r(__webpack_exports__);
 
 Object(reactn__WEBPACK_IMPORTED_MODULE_3__["setGlobal"])({
   categorySelected: false,
-  titleSelected: false
+  titleSelected: false,
+  selectedCategoryName: ''
 });
 document.addEventListener('DOMContentLoaded', function () {
   Object(react_dom__WEBPACK_IMPORTED_MODULE_0__["render"])(reactn__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["HashRouter"], null, reactn__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_2__["default"], null)), document.getElementById('app'));
@@ -1712,7 +1727,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 7vh;\n  height: 70%;\n  bottom: 0;\n  z-index: -1;\n  left: 2vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 7.3vh;\n  bottom: 0;\n  z-index: -1;\n  left: 2vw;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1752,7 +1767,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 4.5vh;\ncolor: DimGray;\nposition: absolute;\nmargin-left: 4.3vw;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 4vh;\ncolor: DimGray;\nposition: absolute;\nmargin-left: 4.3vw;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1793,10 +1808,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
 
-var selectCategory = function selectCategory() {
+var selectCategory = function selectCategory(category) {
   Object(reactn__WEBPACK_IMPORTED_MODULE_0__["setGlobal"])({
     categorySelected: true,
-    titleSelected: false
+    titleSelected: false,
+    selectedCategoryName: category
   });
 };
 var selectTitle = function selectTitle(bool) {

@@ -5,7 +5,8 @@ import React, { setGlobal } from 'reactn'
 
 setGlobal({
   categorySelected: false,
-  titleSelected: false
+  titleSelected: false,
+  selectedCategoryName: ''
 })
 
 document.addEventListener('DOMContentLoaded', () => {
