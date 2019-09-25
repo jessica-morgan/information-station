@@ -66,7 +66,7 @@ export const H2 = styled.h2`
 `
 
 export const H3 = styled.h3`
-  font-size: 2.2vh;
+  font-size: 1.9vh;
   font-family: 'Open Sans', sans-serif;
   color: #999999;
   &:hover {

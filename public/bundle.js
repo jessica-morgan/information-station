@@ -1697,7 +1697,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2.2vh;\n  font-family: 'Open Sans', sans-serif;\n  color: #999999;\n  &:hover {\n    color: grey;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  color: #999999;\n  &:hover {\n    color: grey;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
