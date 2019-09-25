@@ -4,7 +4,7 @@ import { getReactJsFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
 import LoadingIndicator from './LoadingIndicator'
-import { TitlesContainer } from '../styles'
+import { TitlesContainer, FeedTitles } from '../styles'
 
 const ReactjsRedditFeed = () => {
   const [posts, setPosts] = useState()
@@ -27,9 +27,9 @@ const ReactjsRedditFeed = () => {
     return <TitlesContainer>
       {posts.allPosts[0].map((singlePost, idx) => {
         return (
-          <div key={idx}>
+          <FeedTitles key={idx}>
             <h1 key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title}</h1>
-          </div>
+          </FeedTitles>
         )
       })}
     </TitlesContainer>
