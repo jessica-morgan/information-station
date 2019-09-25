@@ -45,7 +45,7 @@ export const TitlesContainer = styled.div`
   display: block;
   overflow: hidden;
   float: right;
-  margin-top: 7.3vh;
+  margin-top: 6.8vh;
   bottom: 0;
   z-index: -1;
   left: 2vw;
@@ -56,6 +56,32 @@ export const FeedTitles = styled.h3`
   font-size: 1.7vh;
   padding-bottom: 1.2vh;
   color: #696969;
+`
+
+export const SinglePostTitle = styled.h2`
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5vh;
+  color: DimGray;
+  position: arelative;
+  margin-left: 25vw;
+`
+
+export const PostBodyContainer = styled.div`
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.7vh;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  width: 59vw;
+  margin-left: 17vw;
+  margin-bottom: 5vh;
+`
+
+export const PostImageContainer = styled.img`
+  width: 50vw;
+  height: 65vh;
+  display: block;
+  margin-left: 21.2vw;
 `
 
 export const H2 = styled.h2`

@@ -405,13 +405,9 @@ var AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
       });
     });
   }, []);
-  return apod ? reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", null, apod.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
-    style: {
-      width: '80%',
-      height: '80%'
-    },
+  return apod ? reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["SinglePostTitle"], null, apod.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["PostImageContainer"], {
     src: apod.image
-  }), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h3", null, apod.date), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", null, apod.description)) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  }), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["PostBodyContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], null, apod.date), apod.description)) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AstronomyPicOfTheDay);
@@ -1662,7 +1658,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: Title, NavLi, NavUl, Header, TitlesContainer, FeedTitles, H2, H3 */
+/*! exports provided: Title, NavLi, NavUl, Header, TitlesContainer, FeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, H2, H3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1673,11 +1669,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitlesContainer", function() { return TitlesContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedTitles", function() { return FeedTitles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SinglePostTitle", function() { return SinglePostTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostBodyContainer", function() { return PostBodyContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostImageContainer", function() { return PostImageContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject10() {
+function _templateObject13() {
   var data = _taggedTemplateLiteral(["\n    background: palevioletred;\n    color: white;\n  "]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  color: #999999;\n  &:hover {\n    color: grey;\n  }\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2.8vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #999999;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -1687,7 +1716,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -1697,7 +1726,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  color: #999999;\n  &:hover {\n    color: grey;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -1707,7 +1736,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2.8vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #999999;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -1727,7 +1756,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 7.3vh;\n  bottom: 0;\n  z-index: -1;\n  left: 2vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 6.8vh;\n  bottom: 0;\n  z-index: -1;\n  left: 2vw;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1785,10 +1814,13 @@ var NavUl = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul(_templa
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject4());
 var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5());
 var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject6());
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject7());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject8());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject9(), function (props) {
-  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject10());
+var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject7());
+var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject8());
+var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject9());
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject10());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject11());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject12(), function (props) {
+  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject13());
 }); // when passed the 'primary' prop- <Button primary> the button will use this css
 
 /***/ }),

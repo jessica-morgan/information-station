@@ -2,7 +2,7 @@ import { getApod } from '../api/nasaApi'
 import { useState, useEffect } from 'react'
 import React from 'reactn'
 import LoadingIndicator from './LoadingIndicator'
-import { TitlesContainer } from '../styles'
+import { TitlesContainer, SinglePostTitle, PostImageContainer, PostBodyContainer, H3 } from '../styles'
 
 const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()
@@ -20,10 +20,16 @@ const AstronomyPicOfTheDay = () => {
   }, [])
   return apod ? (
     <TitlesContainer>
-      <h1>{apod.title}</h1>
-      <img style={{ width: '80%', height: '80%' }} src={apod.image}></img>
-      <h3>{apod.date}</h3>
-      <h2>{apod.description}</h2>
+      <SinglePostTitle>
+        {apod.title}
+      </SinglePostTitle>
+
+      <PostImageContainer src={apod.image}></PostImageContainer>
+      <br/>
+      <PostBodyContainer>
+        <H3>{apod.date}</H3>
+        {apod.description}
+      </PostBodyContainer>
     </TitlesContainer>) : <div>
     <LoadingIndicator />
   </div>
