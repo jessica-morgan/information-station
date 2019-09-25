@@ -44,11 +44,18 @@ export const TitlesContainer = styled.div`
   display: block;
   overflow: hidden;
   float: right;
-  margin-top: 6vh;
+  margin-top: 7vh;
   height: 70%;
   bottom: 0;
   z-index: -1;
-  padding-left: 3vw;
+  left: 2vw;
+`
+
+export const FeedTitles = styled.h3`
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.7vh;
+  padding-bottom: 1.2vh;
+  color: #696969;
 `
 
 export const H2 = styled.h2`
@@ -56,7 +63,6 @@ export const H2 = styled.h2`
   font-family: 'Open Sans', sans-serif;
   text-decoration: underline;
   color: #999999;
-
 `
 
 export const H3 = styled.h3`
