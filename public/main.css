@@ -5,8 +5,8 @@ body {
 .loading-indicator {
   width: 6vw;
   height: 12vh;
-  margin-left: 50vw;
-  margin-top: 45vh;
+  margin-left: 45vw;
+  margin-top: 35vh;
 }
 
 .nav-container {
@@ -18,7 +18,8 @@ body {
   overflow: hidden;
   background: white;
   z-index: 1;
-  height: 14vh;
+  height: 12vh;
+  padding-top: 3vh;
 }
 
 .nav-container-onscroll {
@@ -30,6 +31,26 @@ body {
   display: block;
   overflow: hidden;
   z-index: 1;
-  height: 15vh;
-  padding-top: 5vh;
+  height: 11vh;
+  padding-top: 8vh;
+}
+
+.current-category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3vh;
+  color: DimGray;
+  position: absolute;
+  margin-left: 4.3vw;
+  z-index: 2;
+  margin-top: -3vh;
+}
+
+.welcome {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3vh;
+  color: DimGray;
+  position: absolute;
+  margin-left: 4.3vw;
+  z-index: 2;
+  margin-top: -3vh;
 }
