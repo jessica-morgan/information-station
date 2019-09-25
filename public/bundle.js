@@ -1344,7 +1344,7 @@ var ReactjsRedditFeed = function ReactjsRedditFeed() {
 
   if (posts && categorySelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, posts.allPosts[0].map(function (singlePost, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         key: singlePost.title,
@@ -1647,7 +1647,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: Title, NavLi, NavUl, Header, TitlesContainer, H2, H3 */
+/*! exports provided: Title, NavLi, NavUl, Header, TitlesContainer, FeedTitles, H2, H3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1657,11 +1657,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavUl", function() { return NavUl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitlesContainer", function() { return TitlesContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedTitles", function() { return FeedTitles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject9() {
+function _templateObject10() {
   var data = _taggedTemplateLiteral(["\n    background: palevioletred;\n    color: white;\n  "]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -1671,7 +1682,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2.2vh;\n  font-family: 'Open Sans', sans-serif;\n  color: #999999;\n  &:hover {\n    color: grey;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -1681,7 +1692,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2.2vh;\n  font-family: 'Open Sans', sans-serif;\n  color: #999999;\n  &:hover {\n    color: grey;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2.8vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #999999;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -1691,7 +1702,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2.8vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #999999;\n\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  padding-bottom: 1.2vh;\n  color: #696969;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -1701,7 +1712,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 6vh;\n  height: 70%;\n  bottom: 0;\n  z-index: -1;\n  padding-left: 3vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 7vh;\n  height: 70%;\n  bottom: 0;\n  z-index: -1;\n  left: 2vw;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1758,10 +1769,11 @@ var NavLi = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li(_templa
 var NavUl = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul(_templateObject3());
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject4());
 var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5());
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject6());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject7());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject8(), function (props) {
-  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject9());
+var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject6());
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject7());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject8());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject9(), function (props) {
+  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject10());
 }); // when passed the 'primary' prop- <Button primary> the button will use this css
 
 /***/ }),
