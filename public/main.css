@@ -8,3 +8,27 @@ body {
   margin-left: 50vw;
   margin-top: 45vh;
 }
+
+.nav-container {
+  top: 13vh;
+  width: 100%;
+  position: fixed;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  background: white;
+  z-index: 1;
+}
+
+.nav-container-onscroll {
+  top: 0;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  height: 15vh;
+  padding-top: 5vh;
+}

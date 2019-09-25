@@ -1,48 +1,73 @@
 import React from 'reactn'
 import { selectCategory } from '../utils'
 import { Link } from 'react-router-dom'
-import { NavContainer, H3, Header, NavLi, NavUl } from '../styles'
+import { H3, NavLi, NavUl } from '../styles'
 
-const Nav = () => {
-  return (
+class Nav extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {}
+
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  handleScroll () {
+    this.setState({ scroll: window.scrollY })
+  }
+
+  componentDidMount () {
+    const el = document.querySelector('nav')
+    this.setState({ top: el.offsetTop, height: el.offsetHeight })
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentDidUpdate () {
+    this.state.scroll > this.state.top
+      ? document.body.style.paddingTop = `${this.state.height}px`
+      : document.body.style.paddingTop = 0
+  }
+
+  render () {
+    return (
     <>
-    <Header />
-    <NavContainer>
+    <nav className={this.state.scroll > this.state.top ? 'nav-container-onscroll' : 'nav-container'}>
       <NavUl>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/apod' onClick={() => selectCategory()}><H3>NASA Picture of the Day</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/apod' onClick={() => selectCategory()}><H3>NASA PICTURE OF THE DAY</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/nzgFeed' onClick={() => selectCategory()}><H3>General NZ</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/phFeed' onClick={() => selectCategory()}><H3>PROGRAMMER HUMOR</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/nzstFeed' onClick={() => selectCategory()}><H3>Science and Technology</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/rjsFeed' onClick={() => selectCategory()}><H3>REACTJS</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/qcFeed' onClick={() => selectCategory()}><H3>Quantum Computing</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/cgpFeed' onClick={() => selectCategory()}><H3>COOL GITHUB PROJECTS</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/qpFeed' onClick={() => selectCategory()}><H3>Quantum Physics</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='jsFeed' onClick={() => selectCategory()}><H3>JAVASCRIPT</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='spaceFeed' onClick={() => selectCategory()}><H3>Space</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/nzgFeed' onClick={() => selectCategory()}><H3>GENERAL NZ</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/phFeed' onClick={() => selectCategory()}><H3>Programmer Humor</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/nzstFeed' onClick={() => selectCategory()}><H3>SCIENCE AND TECHNOLOGY</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/rjsFeed' onClick={() => selectCategory()}><H3>Reactjs</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/qcFeed' onClick={() => selectCategory()}><H3>QUANTUM COMPUTING</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='/cgpFeed' onClick={() => selectCategory()}><H3>Cool github projects</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='/qpFeed' onClick={() => selectCategory()}><H3>QUANTUM PHYSICS</H3></Link>
         </NavLi>
         <NavLi>
-          <Link style={{ textDecoration: 'none' }} to='jsFeed' onClick={() => selectCategory()}><H3>Javascript</H3></Link>
+          <Link style={{ textDecoration: 'none' }} to='spaceFeed' onClick={() => selectCategory()}><H3>SPACE</H3></Link>
         </NavLi>
       </NavUl>
-    </NavContainer>
+    </nav>
     </>
-  )
+    )
+  }
 }
 
 export default Nav

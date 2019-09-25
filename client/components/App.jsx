@@ -11,14 +11,17 @@ import QuantumComputingFeed from './QuantumComputingFeed'
 import SpaceFeed from './SpaceFeed'
 import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
 import NZGeneralFeed from './NZGeneralFeed'
+import HeaderComponent from './HeaderComponent'
+import { TitlesContainer } from '../styles'
 
 const App = () => {
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   if (categorySelected || titleSelected) {
-    return <div>
+    return <>
+      <HeaderComponent />
       <Nav />
-      <div>
+      <TitlesContainer>
         <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
         <Route path='/rjsFeed' component={ReactjsRedditFeed} />
         <Route path='/cgpFeed' component={CoolGithubProjectsRedditFeed} />
@@ -28,10 +31,11 @@ const App = () => {
         <Route path='/spaceFeed' component={SpaceFeed} />
         <Route path='/apod' component={AstronomyPicOfTheDay} />
         <Route path='/nzgFeed' component={NZGeneralFeed} />
-      </div>
-    </div>
+      </TitlesContainer>
+    </>
   } else {
     return <div>
+      <HeaderComponent />
       <Nav />
       <div>
         <Welcome />

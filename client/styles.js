@@ -1,33 +1,54 @@
 import styled, { css } from 'styled-components'
 
-export const NavContainer = styled.div`
-  top: 0;
-  width: 100%;
-  position: relative;
-  text-decoration: none;
-  display: block;
-  overflow: hidden;
+export const Title = styled.h1`
+font-family: 'Playfair Display', serif;
+font-size: 4.5vh;
+color: DimGray;
+position: absolute;
+margin-left: 4.3vw;
 `
 
 export const NavLi = styled.li`
 float: left;
 display: block;
 display: block;
-padding-left: 1vw;
+padding-left: 1.2vw;
+background: white;
+opacity: 1.0;
 `
+
 export const NavUl = styled.ul`
 list-style-type: none;
-height: 10vh;
+height: 8vh;
 overflow: hidden;
 position: relative;
 display: block;
+background: white;
+opacity: 1.0;
 `
 
 export const Header = styled.header`
   display: block; 
   width: 100%;
-  background: #EDEDED;
-  height: 10vh;
+  height: 5vh;
+  background-color: white;
+  margin-bottom: 5vh;
+  padding-top: 1vh;
+  postiton: fixed;
+`
+
+export const TitlesContainer = styled.div`
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  float: right;
+  margin-top: 6vh;
+  height: 70%;
+  bottom: 0;
+  z-index: -1;
+  padding-left: 3vw;
 `
 
 export const H2 = styled.h2`
@@ -39,9 +60,12 @@ export const H2 = styled.h2`
 `
 
 export const H3 = styled.h3`
-  font-size: 2.3vh;
-  font-family: 'Open Sans', sans-serif;;
+  font-size: 2.2vh;
+  font-family: 'Open Sans', sans-serif;
   color: #999999;
+  &:hover {
+    color: grey;
+  }
 `
 
 const Button = styled.button`
