@@ -4,6 +4,7 @@ import { getReactJsFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
 import LoadingIndicator from './LoadingIndicator'
+import { TitlesContainer } from '../styles'
 
 const ReactjsRedditFeed = () => {
   const [posts, setPosts] = useState()
@@ -23,7 +24,7 @@ const ReactjsRedditFeed = () => {
   const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
 
   if (posts && categorySelected) {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+    return <TitlesContainer>
       {posts.allPosts[0].map((singlePost, idx) => {
         return (
           <div key={idx}>
@@ -31,11 +32,11 @@ const ReactjsRedditFeed = () => {
           </div>
         )
       })}
-    </div >
+    </TitlesContainer>
   } if (posts && titleSelected) {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+    return <TitlesContainer>
       <SingleRedditPost posts={posts.allPosts[0]} key={currentTitle} />
-    </div>
+    </TitlesContainer>
   } else {
     return <div>
       <LoadingIndicator />
