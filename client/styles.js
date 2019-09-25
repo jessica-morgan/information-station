@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Title = styled.h1`
 font-family: 'Playfair Display', serif;
-font-size: 4.5vh;
+font-size: 4vh;
 color: DimGray;
 position: absolute;
 margin-left: 4.3vw;
@@ -39,13 +39,13 @@ export const Header = styled.header`
 
 export const TitlesContainer = styled.div`
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
   position: relative;
   text-decoration: none;
   display: block;
   overflow: hidden;
   float: right;
-  margin-top: 7vh;
-  height: 70%;
+  margin-top: 7.3vh;
   bottom: 0;
   z-index: -1;
   left: 2vw;

@@ -1,6 +1,5 @@
 import React, { useGlobal } from 'reactn'
 import { Route } from 'react-router-dom'
-import Welcome from './Welcome'
 import Nav from './Nav'
 import ProgrammerHumorRedditFeed from './ProgrammerHumorRedditFeed'
 import ReactjsRedditFeed from './ReactjsRedditFeed'
@@ -20,7 +19,7 @@ const App = () => {
   if (categorySelected || titleSelected) {
     return <>
       <HeaderComponent />
-      <Nav />
+      <Nav/>
       <TitlesContainer>
         <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
         <Route path='/rjsFeed' component={ReactjsRedditFeed} />
@@ -37,9 +36,6 @@ const App = () => {
     return <div>
       <HeaderComponent />
       <Nav />
-      <div>
-        <Welcome />
-      </div>
     </div>
   }
 }
