@@ -1,8 +1,8 @@
 import request from 'superagent'
 import { format } from 'date-fns'
 
-const dateMonthYear = format(new Date(), 'YYYY-MM')
-const dateToday = format(new Date(), 'YYYY-MM-DD')
+const dateMonthYear = format(new Date(), 'yyyy-mm')
+const dateToday = format(new Date(), 'yyyy-mm-dd')
 const apiKey = '6b54422930be418da308df921864490f'
 const quantumPhysicsArticlesApi = `https://newsapi.org/v2/everything?q=quantum-physics&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
 const quantumComputingArticlesApi = `https://newsapi.org/v2/everything?q=quantum-computing&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
