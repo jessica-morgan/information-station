@@ -45,7 +45,7 @@ export const TitlesContainer = styled.div`
   display: block;
   overflow: hidden;
   float: right;
-  margin-top: 6.8vh;
+  margin-top: 7vh;
   bottom: 0;
   z-index: -1;
   left: 2vw;
@@ -54,7 +54,7 @@ export const TitlesContainer = styled.div`
 export const FeedTitles = styled.h3`
   font-family: 'Open Sans', sans-serif;
   font-size: 1.7vh;
-  padding-bottom: 1.2vh;
+  padding-bottom: 0.5vh;
   color: #696969;
 `
 
@@ -83,21 +83,42 @@ export const PostImageContainer = styled.img`
   display: block;
   margin-left: 21.2vw;
 `
+export const NavCategories = styled.h3`
+text-decoration: none;
+font-size: 1.9vh;
+font-family: 'Open Sans', sans-serif;
+color: #999999;
+&:hover {
+  color: grey;
+}
+`
 
 export const H2 = styled.h2`
-  font-size: 2.8vh;
+  margin-top: 0.1vh;
+  margin-bottom: 1vh;
+  text-decoration: none;
+  font-size: 2.2vh;
   font-family: 'Open Sans', sans-serif;
   text-decoration: underline;
-  color: #999999;
+  color: #707070;
 `
 
 export const H3 = styled.h3`
+  text-decoration: none;
   font-size: 1.9vh;
   font-family: 'Open Sans', sans-serif;
-  color: #999999;
+  margin-bottom: 0.5vh;
+  margin-top: 3.5vh;
+  color: #808080;
   &:hover {
     color: grey;
   }
+`
+
+export const Hr = styled.hr`
+border-width: 0.5px;
+opacity: 90%;
+margin-right: 9vw;
 `
 
 const Button = styled.button`
