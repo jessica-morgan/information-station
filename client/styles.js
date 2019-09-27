@@ -1,10 +1,28 @@
 import styled, { css } from 'styled-components'
 
+export const HomeContainer = styled.div`
+font-family: 'Open Sans', sans-serif;
+position: relative;
+text-decoration: none;
+display: block;
+overflow: hidden;
+float: left;
+margin-top: 18vh;
+bottom: 0;
+z-index: -1;
+left: 5vw;
+`
+
 export const Icon = styled.img`
   width: 3.7vw;
   height: 6.3vh;
   margin-left: 4vw;
   opacity: 0.7;
+`
+
+export const WeatherIcon = styled.img`
+  width: 9vw;
+  height: 12vh;
 `
 
 export const NavLi = styled.li`
