@@ -8,6 +8,16 @@ export const selectCategory = (category) => {
   })
 }
 
+export const selectIcon = () => {
+  setGlobal({
+    categorySelected: false,
+    titleSelected: false,
+    iconSelected: true,
+    currentTitle: null,
+    selectedCategoryName: null
+  })
+}
+
 export const selectTitle = (bool) => {
   setGlobal({
     categorySelected: false,

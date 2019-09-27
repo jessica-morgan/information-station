@@ -1,4 +1,6 @@
 import React, { useGlobal } from 'reactn'
+import { Link } from 'react-router-dom'
+import { selectIcon } from '../utils'
 import { Icon } from '../styles'
 
 const CurrentCategoryTitle = () => {
@@ -6,8 +8,10 @@ const CurrentCategoryTitle = () => {
   if (selectedCategoryName) {
     return (
   <>
-
-<Icon src="article-icon.jpg"></Icon><h2 className='current-category-title'>{selectedCategoryName}</h2>
+<Link to='/'>
+  <Icon onClick={() => selectIcon()} src="article-icon.jpg"></Icon>
+</Link>
+<h2 className='current-category-title'>{selectedCategoryName}</h2>
     </>
     )
   } else {
