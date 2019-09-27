@@ -350,8 +350,7 @@ var App = function App() {
   var _useGlobal3 = Object(reactn__WEBPACK_IMPORTED_MODULE_0__["useGlobal"])('titleSelected'),
       _useGlobal4 = _slicedToArray(_useGlobal3, 2),
       titleSelected = _useGlobal4[0],
-      setTitleSelected = _useGlobal4[1]; // const [iconSelected, setIconSelected] = useGlobal('iconSelected')
-
+      setTitleSelected = _useGlobal4[1];
 
   if (categorySelected || titleSelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_13__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
