@@ -10,7 +10,6 @@ import QuantumComputingFeed from './QuantumComputingFeed'
 import SpaceFeed from './SpaceFeed'
 import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
 import NZGeneralFeed from './NZGeneralFeed'
-import HeaderComponent from './HeaderComponent'
 import { TitlesContainer } from '../styles'
 
 const App = () => {
@@ -18,7 +17,6 @@ const App = () => {
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   if (categorySelected || titleSelected) {
     return <>
-      <HeaderComponent />
       <Nav/>
       <TitlesContainer>
         <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
@@ -34,7 +32,6 @@ const App = () => {
     </>
   } else {
     return <div>
-      <HeaderComponent />
       <Nav />
     </div>
   }
