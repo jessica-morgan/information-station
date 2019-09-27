@@ -45,7 +45,6 @@ const CoolGithubProjectsRedditFeed = () => {
     </div>
   } else {
     return <div>
-      {/* style this div */}
       <LoadingIndicator />
     </div>
   }
