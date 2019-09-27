@@ -10,7 +10,6 @@ body {
 }
 
 .nav-container {
-  top: 13vh;
   width: 100%;
   position: fixed;
   text-decoration: none;
@@ -18,8 +17,8 @@ body {
   overflow: hidden;
   background: white;
   z-index: 1;
-  height: 12vh;
-  padding-top: 3vh;
+  height: 15vh;
+  padding-top: 2vh;
 }
 
 .nav-container-onscroll {
@@ -31,8 +30,8 @@ body {
   display: block;
   overflow: hidden;
   z-index: 1;
-  height: 11vh;
-  padding-top: 6vh;
+  height: 18vh;
+  padding-top: 3vh;
 }
 
 .current-category-title {
@@ -40,9 +39,9 @@ body {
   font-size: 3vh;
   color: DimGray;
   position: absolute;
-  margin-left: 4.3vw;
   z-index: 2;
-  margin-top: -3vh;
+  margin-top: -4.8vh;
+  left: 9vw;
 }
 
 .welcome {
