@@ -1,11 +1,10 @@
 import styled, { css } from 'styled-components'
 
-export const Title = styled.h1`
-font-family: 'Playfair Display', serif;
-font-size: 4vh;
-color: DimGray;
-position: absolute;
-margin-left: 4.3vw;
+export const Icon = styled.img`
+  width: 3.7vw;
+  height: 6.3vh;
+  margin-left: 4vw;
+  opacity: 0.7;
 `
 
 export const NavLi = styled.li`
@@ -25,6 +24,7 @@ position: relative;
 display: block;
 background: white;
 opacity: 1.0;
+margin-top: 0.5vh;
 `
 
 export const Header = styled.header`
@@ -45,10 +45,9 @@ export const TitlesContainer = styled.div`
   display: block;
   overflow: hidden;
   float: right;
-  margin-top: 7vh;
+  margin-top: 9vh;
   bottom: 0;
   z-index: -1;
-  left: 2vw;
 `
 
 export const FeedTitles = styled.h3`
@@ -56,6 +55,7 @@ export const FeedTitles = styled.h3`
   font-size: 1.7vh;
   padding-bottom: 0.5vh;
   color: #696969;
+  padding-left: 4vw;
 `
 
 export const SinglePostTitle = styled.h2`
@@ -118,7 +118,7 @@ export const H3 = styled.h3`
 export const Hr = styled.hr`
 border-width: 0.5px;
 opacity: 90%;
-margin-right: 9vw;
+margin-right: 4.8vw;
 `
 
 const Button = styled.button`

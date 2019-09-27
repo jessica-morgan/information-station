@@ -1,10 +1,10 @@
 import React from 'reactn'
-import { Header, Title } from '../styles'
+import { Header, Icon } from '../styles'
 
 const HeaderComponent = () => {
   return (
   <>
-  <Header><Title>Information Station</Title></Header>
+  <Header><Icon src="article-icon.jpg"></Icon></Header>
   </>
   )
 }
