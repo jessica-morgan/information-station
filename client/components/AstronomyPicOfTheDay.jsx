@@ -2,7 +2,8 @@ import { getApod } from '../api/nasaApi'
 import { useState, useEffect } from 'react'
 import React from 'reactn'
 import LoadingIndicator from './LoadingIndicator'
-import { TitlesContainer, SinglePostTitle, PostImageContainer, PostBodyContainer, H3 } from '../styles'
+import Weather from './Weather'
+import { HomeContainer, HomeRowCol1, HomeRowCol3, APODBodyContainer, APODDescriptionTitle, APODImage, APODDescriptionContainer, APODImageTitle } from '../styles'
 
 const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()
@@ -19,18 +20,25 @@ const AstronomyPicOfTheDay = () => {
       })
   }, [])
   return apod ? (
-    <TitlesContainer>
-      <SinglePostTitle>
-        {apod.title}
-      </SinglePostTitle>
-
-      <PostImageContainer src={apod.image}></PostImageContainer>
-      <br/>
-      <PostBodyContainer>
-        <H3>{apod.date}</H3>
-        {apod.description}
-      </PostBodyContainer>
-    </TitlesContainer>) : <div>
+    <HomeContainer>
+      <HomeRowCol1>
+        <APODBodyContainer>
+          <APODImageTitle>
+            {apod.title}
+          </APODImageTitle>
+        </APODBodyContainer>
+        <APODImage src={apod.image}></APODImage>
+      </HomeRowCol1>
+      <HomeRowCol3>
+        <Weather/>
+        <APODDescriptionContainer>
+          <APODDescriptionTitle>
+        Astronomy picture of the day
+          </APODDescriptionTitle>
+          {apod.description}
+        </APODDescriptionContainer>
+      </HomeRowCol3>
+    </HomeContainer>) : <div>
     <LoadingIndicator />
   </div>
 }
