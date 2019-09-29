@@ -8,9 +8,8 @@ import JavascriptRedditFeed from './JavascriptRedditFeed'
 import QuantumPhysicsFeed from './QuantumPhysicsFeed'
 import QuantumComputingFeed from './QuantumComputingFeed'
 import SpaceFeed from './SpaceFeed'
-import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
 import NZGeneralFeed from './NZGeneralFeed'
-import Home from './Home'
+import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
 import { TitlesContainer } from '../styles'
 
 const App = () => {
@@ -21,7 +20,7 @@ const App = () => {
     return <>
       <Nav/>
       <TitlesContainer>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={AstronomyPicOfTheDay} />
         <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
         <Route path='/rjsFeed' component={ReactjsRedditFeed} />
         <Route path='/cgpFeed' component={CoolGithubProjectsRedditFeed} />
@@ -29,14 +28,13 @@ const App = () => {
         <Route path='/qpFeed' component={QuantumPhysicsFeed} />
         <Route path='/qcFeed' component={QuantumComputingFeed} />
         <Route path='/spaceFeed' component={SpaceFeed} />
-        <Route path='/apod' component={AstronomyPicOfTheDay} />
         <Route path='/nzgFeed' component={NZGeneralFeed} />
       </TitlesContainer>
     </>
   } else {
     return <div>
       <Nav />
-      <Route exact path='/' component={Home} />
+      <Route exact path='/' component={AstronomyPicOfTheDay} />
     </div>
   }
 }
