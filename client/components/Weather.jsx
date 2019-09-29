@@ -1,8 +1,7 @@
 import React from 'reactn'
 import { useState, useEffect } from 'react'
-import LoadingIndicator from './LoadingIndicator'
 import { getCurrentWeather } from '../api/weatherApi'
-import { HomeContainer, H3, H2, WeatherIcon } from '../styles'
+import { WeatherContainer, WeatherText, WeatherIcon, City, Temperature, Hr } from '../styles'
 import { fromUnixTime, format } from 'date-fns'
 
 const Home = () => {
@@ -27,23 +26,25 @@ const Home = () => {
 
   if (weather) {
     const date = fromUnixTime(weather.data[0].time)
-    const formattedDate = format(date, 'dd-MMM-yy, HH:mm')
+    const formattedDate = format(date, 'dd MM yyyy')
+    const formattedTime = format(date, 'HH:mm')
     const celcius = fahrenheitToCelcius(weather.data[0].temp)
-    const humidityString = weather.data[0].humidity.toString()
     const image = weather.data[0].icon + '.svg'
     return (
-      <HomeContainer>
-        <H3 style={{ textDecoration: 'none' }}>{formattedDate}</H3>
-        <WeatherIcon src={image}></WeatherIcon>
-        <H3>{weather.data[0].summary}</H3>
-        <H3>Temperature: {Math.round(celcius)}°C</H3>
-        <H3>Humidity: {humidityString.substring(2, 4)}%</H3>
-      </HomeContainer>
+      <>
+      <WeatherContainer>
+        <Temperature >
+          <WeatherIcon src={image}></WeatherIcon>
+          {Math.round(celcius)}°C
+        </Temperature >
+        <City>Auckland</City><WeatherText>{weather.data[0].summary}</WeatherText>
+      </WeatherContainer>
+      <Hr />
+      </>
     )
   } else {
-    return <div>
-      <LoadingIndicator />
-    </div>
+    return <WeatherContainer>
+    </WeatherContainer>
   }
 }
 

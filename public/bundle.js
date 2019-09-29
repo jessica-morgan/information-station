@@ -314,10 +314,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _QuantumPhysicsFeed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./QuantumPhysicsFeed */ "./client/components/QuantumPhysicsFeed.jsx");
 /* harmony import */ var _QuantumComputingFeed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./QuantumComputingFeed */ "./client/components/QuantumComputingFeed.jsx");
 /* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
-/* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
-/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Home */ "./client/components/Home.jsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
+/* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
+/* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -325,7 +324,6 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -353,10 +351,10 @@ var App = function App() {
       setTitleSelected = _useGlobal4[1];
 
   if (categorySelected || titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_13__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_12__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       exact: true,
       path: "/",
-      component: _Home__WEBPACK_IMPORTED_MODULE_12__["default"]
+      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/phFeed",
       component: _ProgrammerHumorRedditFeed__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -379,17 +377,14 @@ var App = function App() {
       path: "/spaceFeed",
       component: _SpaceFeed__WEBPACK_IMPORTED_MODULE_9__["default"]
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-      path: "/apod",
-      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_10__["default"]
-    }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/nzgFeed",
-      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_11__["default"]
+      component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_10__["default"]
     })));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       exact: true,
       path: "/",
-      component: _Home__WEBPACK_IMPORTED_MODULE_12__["default"]
+      component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__["default"]
     }));
   }
 };
@@ -413,7 +408,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
+/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Weather */ "./client/components/Weather.jsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -421,6 +417,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -444,9 +441,9 @@ var AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
       });
     });
   }, []);
-  return apod ? reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["SinglePostTitle"], null, apod.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["PostImageContainer"], {
+  return apod ? reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol1"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODBodyContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODImageTitle"], null, apod.title)), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODImage"], {
     src: apod.image
-  }), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["PostBodyContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], null, apod.date), apod.description)) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  })), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol3"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Weather__WEBPACK_IMPORTED_MODULE_4__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODDescriptionContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODDescriptionTitle"], null, "Astronomy picture of the day"), apod.description))) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AstronomyPicOfTheDay);
@@ -621,82 +618,6 @@ var CurrentCategoryTitle = function CurrentCategoryTitle() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CurrentCategoryTitle);
-
-/***/ }),
-
-/***/ "./client/components/Home.jsx":
-/*!************************************!*\
-  !*** ./client/components/Home.jsx ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
-/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
-/* harmony import */ var _api_weatherApi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api/weatherApi */ "./client/api/weatherApi.js");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-var Home = function Home() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
-      _useState2 = _slicedToArray(_useState, 2),
-      weather = _useState2[0],
-      setWeather = _useState2[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    Object(_api_weatherApi__WEBPACK_IMPORTED_MODULE_3__["getCurrentWeather"])().then(function (weatherData) {
-      var weatherArray = [];
-      weatherArray.push(weatherData);
-      setWeather({
-        data: weatherArray
-      });
-    });
-  }, []);
-
-  var fahrenheitToCelcius = function fahrenheitToCelcius(fahrenheit) {
-    var fTemp = fahrenheit;
-    var fToCel = (fTemp - 32) * 5 / 9;
-    return fToCel;
-  };
-
-  if (weather) {
-    var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_5__["fromUnixTime"])(weather.data[0].time);
-    var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_5__["format"])(date, 'dd-MMM-yy, HH:mm');
-    var celcius = fahrenheitToCelcius(weather.data[0].temp);
-    var humidityString = weather.data[0].humidity.toString();
-    var image = weather.data[0].icon + '.svg';
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["HomeContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], {
-      style: {
-        textDecoration: 'none'
-      }
-    }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["WeatherIcon"], {
-      src: image
-    }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], null, weather.data[0].summary), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], null, "Temperature: ", Math.round(celcius), "\xB0C"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], null, "Humidity: ", humidityString.substring(2, 4), "%"));
-  } else {
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_2__["default"], null));
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
 
@@ -959,160 +880,105 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 /* harmony import */ var _CurrentCategoryTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CurrentCategoryTitle */ "./client/components/CurrentCategoryTitle.jsx");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
 
-
-var Nav =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Nav, _React$Component);
-
-  function Nav(props) {
-    var _this;
-
-    _classCallCheck(this, Nav);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Nav).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "handleScroll", function () {
-      _this.setState({
-        scroll: window.scrollY
-      });
-    });
-
-    _this.state = {};
-    return _this;
-  }
-
-  _createClass(Nav, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var el = document.querySelector('nav');
-      this.setState({
-        top: el.offsetTop,
-        height: el.offsetHeight
-      });
-      window.addEventListener('scroll', this.handleScroll);
+var Nav = function Nav() {
+  return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrentCategoryTitle__WEBPACK_IMPORTED_MODULE_4__["default"], null)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row1: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/phFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Programmer Humor');
     }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.state.scroll > this.state.top ? document.body.style.paddingTop = "".concat(this.state.height, "px") : document.body.style.paddingTop = 0;
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "PROGRAMMER HUMOR"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row2: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/rjsFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Reactjs');
     }
-  }, {
-    key: "render",
-    value: function render() {
-      return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: this.state.scroll > this.state.top ? 'nav-container-onscroll' : 'nav-container'
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrentCategoryTitle__WEBPACK_IMPORTED_MODULE_4__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavUl"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/apod",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Nasa Picture of the Day');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "NASA PICTURE OF THE DAY"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/phFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Programmer Humor');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "PROGRAMMER HUMOR"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/rjsFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Reactjs');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "REACTJS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/cgpFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Cool Github Projects');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "COOL GITHUB PROJECTS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "jsFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Javascript');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "JAVASCRIPT"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/nzgFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('General NZ');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "GENERAL NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/nzstFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Science and Technology');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "SCIENCE AND TECHNOLOGY"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/qcFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Computing');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM COMPUTING"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "/qpFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Physics');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM PHYSICS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavLi"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        style: {
-          textDecoration: 'none'
-        },
-        to: "spaceFeed",
-        onClick: function onClick() {
-          return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Space');
-        }
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "SPACE"))))));
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "REACTJS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row3: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/cgpFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Cool Github Projects');
     }
-  }]);
-
-  return Nav;
-}(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "COOL GITHUB PROJECTS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row4: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "jsFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Javascript');
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "JAVASCRIPT"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row5: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/nzgFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('General NZ');
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "GENERAL NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row6: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/nzstFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Science and Technology');
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "SCIENCE AND TECHNOLOGY"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row7: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/qcFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Computing');
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM COMPUTING"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row8: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "/qpFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Physics');
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM PHYSICS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    row9: true
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    style: {
+      textDecoration: 'none'
+    },
+    to: "spaceFeed",
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Space');
+    }
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "SPACE")))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
 
@@ -1757,6 +1623,76 @@ var SpaceFeed = function SpaceFeed() {
 
 /***/ }),
 
+/***/ "./client/components/Weather.jsx":
+/*!***************************************!*\
+  !*** ./client/components/Weather.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
+/* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _api_weatherApi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/weatherApi */ "./client/api/weatherApi.js");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var Home = function Home() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+      _useState2 = _slicedToArray(_useState, 2),
+      weather = _useState2[0],
+      setWeather = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    Object(_api_weatherApi__WEBPACK_IMPORTED_MODULE_2__["getCurrentWeather"])().then(function (weatherData) {
+      var weatherArray = [];
+      weatherArray.push(weatherData);
+      setWeather({
+        data: weatherArray
+      });
+    });
+  }, []);
+
+  var fahrenheitToCelcius = function fahrenheitToCelcius(fahrenheit) {
+    var fTemp = fahrenheit;
+    var fToCel = (fTemp - 32) * 5 / 9;
+    return fToCel;
+  };
+
+  if (weather) {
+    var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["fromUnixTime"])(weather.data[0].time);
+    var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["format"])(date, 'dd MM yyyy');
+    var formattedTime = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["format"])(date, 'HH:mm');
+    var celcius = fahrenheitToCelcius(weather.data[0].temp);
+    var image = weather.data[0].icon + '.svg';
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Temperature"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherIcon"], {
+      src: image
+    }), Math.round(celcius), "\xB0C"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["City"], null, "Auckland"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherText"], null, weather.data[0].summary)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Hr"], null));
+  } else {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -1791,29 +1727,263 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: HomeContainer, Icon, WeatherIcon, NavLi, NavUl, Header, TitlesContainer, FeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, NavCategories, H2, H3, Hr */
+/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, HomeRowCol3, HomeRowCol4, Icon, Date, City, WeatherContainer, WeatherIcon, WeatherText, Temperature, NavContainer, NavCategoryContainer, NavCategories, Header, TitlesContainer, FeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, APODDescriptionTitle, APODImageTitle, APODBodyContainer, APODImage, APODDescriptionContainer, H2, H3, Hr */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeContainer", function() { return HomeContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol1", function() { return HomeRowCol1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol2", function() { return HomeRowCol2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol3", function() { return HomeRowCol3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol4", function() { return HomeRowCol4; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return Icon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Date", function() { return Date; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "City", function() { return City; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherContainer", function() { return WeatherContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherIcon", function() { return WeatherIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavLi", function() { return NavLi; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavUl", function() { return NavUl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherText", function() { return WeatherText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Temperature", function() { return Temperature; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavContainer", function() { return NavContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavCategoryContainer", function() { return NavCategoryContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavCategories", function() { return NavCategories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitlesContainer", function() { return TitlesContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedTitles", function() { return FeedTitles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SinglePostTitle", function() { return SinglePostTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostBodyContainer", function() { return PostBodyContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostImageContainer", function() { return PostImageContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavCategories", function() { return NavCategories; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODDescriptionTitle", function() { return APODDescriptionTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODImageTitle", function() { return APODImageTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODBodyContainer", function() { return APODBodyContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODImage", function() { return APODImage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODDescriptionContainer", function() { return APODDescriptionContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hr", function() { return Hr; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject39() {
+  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 4.8vw;\nwidth: 81%;\n"]);
+
+  _templateObject39 = function _templateObject39() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject38() {
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  &:hover {\n    color: grey;\n  }\n"]);
+
+  _templateObject38 = function _templateObject38() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject37() {
+  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.2vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+
+  _templateObject37 = function _templateObject37() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject36() {
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nfont-size: 2.2vh;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\nmargin-bottom: 8vh;\nwidth: 37vw;\npadding-left: 3vw;\nmargin-top: 3vh;\ntext-align: left;\n"]);
+
+  _templateObject36 = function _templateObject36() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject35() {
+  var data = _taggedTemplateLiteral(["\nwidth: 49vw;\nheight: 56.5vh;\ndisplay: block;\n"]);
+
+  _templateObject35 = function _templateObject35() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject34() {
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nbottom: 0;\nz-index: -1;\n"]);
+
+  _templateObject34 = function _templateObject34() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject33() {
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 4.5vh;\ncolor: DimGray;\nposition: relative;\nmargin-top: 4vh;\nmargin-bottom: 5vh;\n"]);
+
+  _templateObject33 = function _templateObject33() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject32() {
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 2.6vh;\ncolor: DimGray;\nposition: relative;\nmargin-bottom: 0.5vh;\nmargin-top: 3vh;\n"]);
+
+  _templateObject32 = function _templateObject32() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject31() {
+  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
+
+  _templateObject31 = function _templateObject31() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject30() {
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
+
+  _templateObject30 = function _templateObject30() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject29() {
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
+
+  _templateObject29 = function _templateObject29() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject28() {
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n"]);
+
+  _templateObject28 = function _templateObject28() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject27() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 9vh;\n  bottom: 0;\n  z-index: -1;\n"]);
+
+  _templateObject27 = function _templateObject27() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject26() {
+  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  height: 5vh;\n  background-color: white;\n  margin-bottom: 5vh;\n  padding-top: 1vh;\n  postiton: fixed;\n"]);
+
+  _templateObject26 = function _templateObject26() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject25() {
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #999999;\n&:hover {\n  color: grey;\n}\n"]);
+
+  _templateObject25 = function _templateObject25() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject24() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 9;\n  grid-row: 2;\n  "]);
+
+  _templateObject24 = function _templateObject24() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject23() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 8;\n  grid-row: 2;\n  "]);
+
+  _templateObject23 = function _templateObject23() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject22() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 7;\n  grid-row: 2;\n  "]);
+
+  _templateObject22 = function _templateObject22() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject21() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 6;\n  grid-row: 2;\n  "]);
+
+  _templateObject21 = function _templateObject21() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 5;\n  grid-row: 2;\n  "]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 4;\n  grid-row: 2;\n  "]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  grid-column: 3;\n  grid-row: 2;\n  "]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n    background: palevioletred;\n    color: white;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 2;\n  grid-row: 2;\n  "]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -1823,7 +1993,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  background: transparent;\n  border-radius: 3px;\n  border: 2px solid palevioletred;\n  color: palevioletred;\n  margin: 0.5em 1em;\n  padding: 0.25em 1em;\n\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 2;\n  "]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -1833,7 +2003,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 4.8vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  width: 3.7vw;\n  height: 6.3vh;\n  opacity: 0.7;\n  margin-left: 0.5vw;\n  "]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -1843,7 +2013,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  &:hover {\n    color: grey;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  float: left;\n  padding-left: 1.2vw;\n  background: white;\n  opacity: 1.0;\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  justify-content: space-evenly;\n  height: 1vh;\n  ", "\n  ", "\n  ", "", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -1853,7 +2023,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.2vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 95%;\n  position: fixed;\n  text-decoration: none;\n  display: grid;\n  grid-gap: 0;  \n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  height: 16vh;\n  padding-top: 2vh;\n  margin-left: 1vw;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -1863,7 +2033,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 1.9vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #999999;\n&:hover {\n  color: grey;\n}\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 9.1vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\ncolor: #808080;\nmargin-top: 0vh;\nmargin-left: -5vw;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -1873,7 +2043,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: -3.7vw;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -1883,7 +2053,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 9vw;\n  height: 12vh;\n  padding-top: 2vh;\n  margin-bottom: -2vh;\n  margin-top: -1vh;\n  opacity: 0.7;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -1893,7 +2063,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 43vw;\n  height: 23vh;\n  margin-rught: 0vw; \n  margin-top: 0.5vh;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -1903,7 +2073,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 4.7vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-top: -1vh;\nmargin-left: -2.9vw;\ncolor: #808080;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -1913,7 +2083,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 9vh;\n  bottom: 0;\n  z-index: -1;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.3vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  margin-left: -7.6vw;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -1923,7 +2093,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  height: 5vh;\n  background-color: white;\n  margin-bottom: 5vh;\n  padding-top: 1vh;\n  postiton: fixed;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -1933,7 +2103,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\nlist-style-type: none;\nheight: 8vh;\noverflow: hidden;\nposition: relative;\ndisplay: block;\nbackground: white;\nopacity: 1.0;\nmargin-top: 0.5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\ngrid-column: 2;\ngrid-row: 2;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1943,7 +2113,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\nfloat: left;\ndisplay: block;\ndisplay: block;\npadding-left: 1.2vw;\nbackground: white;\nopacity: 1.0;\n"]);
+  var data = _taggedTemplateLiteral(["\ngrid-column: 2;\ngrid-row: 1;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1953,7 +2123,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  width: 9vw;\n  height: 12vh;\n"]);
+  var data = _taggedTemplateLiteral(["\ngrid-column: 1;\ngrid-row: 2;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1963,7 +2133,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 4vw;\n  opacity: 0.7;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  float: left;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1973,7 +2143,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nfloat: left;\nmargin-top: 18vh;\nbottom: 0;\nz-index: -1;\nleft: 5vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  overflow: hidden;\n  float: left;\n  bottom: 0;\n  z-index: -1;\n  left: 5vw;\n  display: grid;\n  justify-content: space-evenly;\n  margin-top: 18vh;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1986,23 +2156,54 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var HomeContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject());
-var Icon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject2());
-var WeatherIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject3());
-var NavLi = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li(_templateObject4());
-var NavUl = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul(_templateObject5());
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject6());
-var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject7());
-var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject8());
-var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject9());
-var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject10());
-var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject11());
-var NavCategories = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject12());
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject13());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject14());
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject15());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button(_templateObject16(), function (props) {
-  return props.primary && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject17());
-}); // when passed the 'primary' prop- <Button primary> the button will use this css
+var HomeRowCol1 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2());
+var HomeRowCol2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3());
+var HomeRowCol3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4());
+var HomeRowCol4 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5());
+var Icon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject6());
+var Date = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject7());
+var City = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject8());
+var WeatherContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject9());
+var WeatherIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject10());
+var WeatherText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject11());
+var Temperature = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject12());
+var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject13());
+var NavCategoryContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject14(), function (props) {
+  return props.icon && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject15());
+}, function (props) {
+  return props.row1 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject16());
+}, function (props) {
+  return props.row2 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject17());
+}, function (props) {
+  return props.row3 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject18());
+}, function (props) {
+  return props.row4 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject19());
+}, function (props) {
+  return props.row5 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject20());
+}, function (props) {
+  return props.row6 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject21());
+}, function (props) {
+  return props.row7 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject22());
+}, function (props) {
+  return props.row8 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject23());
+}, function (props) {
+  return props.row9 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject24());
+});
+var NavCategories = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject25());
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject26());
+var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject27());
+var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject28());
+var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject29());
+var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject30());
+var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject31());
+var APODDescriptionTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject32());
+var APODImageTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject33());
+var APODBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject34());
+var APODImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject35());
+var APODDescriptionContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject36());
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject37());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject38());
+var Hr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject39());
 
 /***/ }),
 
