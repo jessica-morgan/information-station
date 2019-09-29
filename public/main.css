@@ -9,39 +9,14 @@ body {
   margin-top: 35vh;
 }
 
-.nav-container {
-  width: 100%;
-  position: fixed;
-  text-decoration: none;
-  display: block;
-  overflow: hidden;
-  background: white;
-  z-index: 1;
-  height: 15vh;
-  padding-top: 2vh;
-}
-
-.nav-container-onscroll {
-  top: 0;
-  background-color: white;
-  width: 100%;
-  position: fixed;
-  text-decoration: none;
-  display: block;
-  overflow: hidden;
-  z-index: 1;
-  height: 18vh;
-  padding-top: 3vh;
-}
-
 .current-category-title {
   font-family: 'Playfair Display', serif;
   font-size: 3vh;
   color: DimGray;
   position: absolute;
   z-index: 2;
-  margin-top: -4.8vh;
-  left: 9vw;
+  margin-top: 2vh;
+  left: 7.5vw;
 }
 
 .welcome {
