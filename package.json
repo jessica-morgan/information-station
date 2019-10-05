@@ -4,7 +4,7 @@
   "description": "A personalised news feed app",
   "main": "server/index.js",
   "scripts": {
-    "start": "node .",
+    "start": "webpack && node server",
     "dev": "nodemon --watch server & webpack --watch",
     "test": "jest --watchAll --noStackTrace"
   },
