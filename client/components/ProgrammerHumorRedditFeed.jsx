@@ -20,6 +20,7 @@ const ProgrammerHumorRedditFeed = () => {
         })
       })
   }, [])
+ 
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')

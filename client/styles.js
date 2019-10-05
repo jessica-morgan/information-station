@@ -56,6 +56,7 @@ export const Icon = styled.img`
   margin-left: 0.5vw;
   opacity: 0.6;
   float: left;
+  padding-left: 0.5vw;
 `
 
 export const Date = styled.h3`
@@ -100,7 +101,7 @@ font-family: 'Open Sans', sans-serif;
 margin-bottom: 0.5vh;
 margin-top: -5.4vh;
 color: #808080;
-margin-left: -3.7vw;
+margin-left: -5.9vw;
 `
 export const Temperature = styled.h3`
 text-decoration: none;
@@ -185,7 +186,7 @@ export const NavCategoryContainer = styled.div`
 
 export const NavCategories = styled.h3`
 text-decoration: none;
-font-size: 2vh;
+font-size: 2.1vh;
 font-family: 'Open Sans', sans-serif;
 color: #999999;
 &:hover {
@@ -214,6 +215,14 @@ export const TitlesContainer = styled.div`
   margin-top: 9vh;
   bottom: 0;
   z-index: -1;
+`
+
+export const NewsFeedTitles = styled.h3`
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 0.5vh;
+  color: #696969;
+  padding-left: 4vw;
+  margin-top: 4vh;
 `
 
 export const FeedTitles = styled.h3`
@@ -258,6 +267,7 @@ position: relative;
 margin-bottom: 0.5vh;
 margin-top: 3vh;
 `
+
 export const APODImageTitle = styled.h2`
 font-family: 'Playfair Display', serif;
 font-size: 4.5vh;
@@ -279,7 +289,7 @@ z-index: -1;
 
 export const APODImage = styled.img`
 width: 49vw;
-height: 56.5vh;
+height: 59vh;
 display: block;
 `
 
@@ -296,11 +306,54 @@ margin-top: 3vh;
 text-align: left;
 `
 
+export const NewsTitleH2 = styled.h2`
+  margin-top: 0.1vh;
+  margin-bottom: 1vh;
+  text-decoration: none;
+  font-size: 2.5vh;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: underline;
+  color: #707070;
+`
+
+export const SingleContainer = styled.div`
+font-family: 'Open Sans', sans-serif;
+position: relative;
+text-decoration: none;
+display: block;
+overflow: hidden;
+margin-left: auto;
+text-align: center;
+margin-right: auto;
+bottom: 0;
+z-index: -1;
+margin-top: 5vh;
+${props => props.title && css`
+margin-top: 0.1vh;
+margin-bottom: 1vh;
+text-decoration: none;
+font-size: 4.5vh;
+font-family: 'Open Sans', sans-serif;
+color: #707070;
+`}
+${props => props.authorDateUpvotes && css`
+margin-top: 3vh;
+margin-bottom: 1vh;
+text-decoration: none;
+font-size: 2.5vh;
+font-family: 'Open Sans', sans-serif;
+color: #707070;
+`}
+${props => props.imageAndBody && css`
+margin-right: 39vw;
+`}
+`
+
 export const H2 = styled.h2`
   margin-top: 0.1vh;
   margin-bottom: 1vh;
   text-decoration: none;
-  font-size: 2.2vh;
+  font-size: 2.5vh;
   font-family: 'Open Sans', sans-serif;
   text-decoration: underline;
   color: #707070;
@@ -319,6 +372,13 @@ export const H3 = styled.h3`
 `
 
 export const Hr = styled.hr`
+border-width: 0.5px;
+opacity: 90%;
+margin-right: 4.8vw;
+width: 90%%;
+`
+
+export const WeatherHr = styled.hr`
 border-width: 0.5px;
 opacity: 90%;
 margin-right: 4.8vw;

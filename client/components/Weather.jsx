@@ -1,7 +1,7 @@
 import React from 'reactn'
 import { useState, useEffect } from 'react'
 import { getCurrentWeather } from '../api/weatherApi'
-import { WeatherContainer, WeatherText, WeatherIcon, City, Temperature, Hr } from '../styles'
+import { WeatherContainer, WeatherText, WeatherIcon, City, Temperature, WeatherHr } from '../styles'
 import { fromUnixTime, format } from 'date-fns'
 
 const Home = () => {
@@ -39,7 +39,7 @@ const Home = () => {
         </Temperature >
         <City>Auckland</City><WeatherText>{weather.data[0].summary}</WeatherText>
       </WeatherContainer>
-      <Hr />
+      <WeatherHr />
       </>
     )
   } else {

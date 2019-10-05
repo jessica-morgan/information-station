@@ -11,7 +11,6 @@ const Nav = () => {
       <NavCategoryContainer>
         <CurrentCategoryTitle/>
       </NavCategoryContainer>
-      {/* <NavUl> */}
       <NavCategoryContainer row1>
         <Link style={{ textDecoration: 'none' }} to='/phFeed' onClick={() => selectCategory('Programmer Humor')}><NavCategories>PROGRAMMER HUMOR</NavCategories></Link>
       </NavCategoryContainer>
@@ -28,18 +27,14 @@ const Nav = () => {
         <Link style={{ textDecoration: 'none' }} to='/nzgFeed' onClick={() => selectCategory('General NZ')}><NavCategories>GENERAL NZ</NavCategories></Link>
       </NavCategoryContainer>
       <NavCategoryContainer row6>
-        <Link style={{ textDecoration: 'none' }} to='/nzstFeed' onClick={() => selectCategory('Science and Technology')}><NavCategories>SCIENCE AND TECHNOLOGY</NavCategories></Link>
-      </NavCategoryContainer>
-      <NavCategoryContainer row7>
         <Link style={{ textDecoration: 'none' }} to='/qcFeed' onClick={() => selectCategory('Quantum Computing')}><NavCategories>QUANTUM COMPUTING</NavCategories></Link>
       </NavCategoryContainer>
-      <NavCategoryContainer row8>
+      <NavCategoryContainer row7>
         <Link style={{ textDecoration: 'none' }} to='/qpFeed' onClick={() => selectCategory('Quantum Physics')}><NavCategories>QUANTUM PHYSICS</NavCategories></Link>
       </NavCategoryContainer>
-      <NavCategoryContainer row9>
+      <NavCategoryContainer row8>
         <Link style={{ textDecoration: 'none' }} to='spaceFeed' onClick={() => selectCategory('Space')}><NavCategories>SPACE</NavCategories></Link>
       </NavCategoryContainer>
-      {/* </NavUl> */}
     </NavContainer>
     </>
   )

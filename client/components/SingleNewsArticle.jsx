@@ -5,15 +5,15 @@ const SingleNewsArticle = (props) => {
   return (
     <div key={currentTitle}>
       {props.articles.map((article, idx) => {
+        const formattedDate = article.publishedAt.substring(0, 10)
         if (article.title === currentTitle) {
           return <div key={idx}>
             <h1 key={article.title}>{article.title}</h1>
             <br />
             <h3 key={article.author}>{article.author}</h3>
             <br />
-            <h3 key={article.publishedAt}>{article.publishedAt}</h3>
+            <h3 key={formattedDate}>{formattedDate}</h3>
             <br />
-            {/* cors for images */}
             <img key={article.url} src={article.url}/>
             <br />
             <h2 key={article.content}>{article.content}</h2>

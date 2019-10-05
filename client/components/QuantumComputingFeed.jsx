@@ -4,6 +4,7 @@ import { selectTitle, currentTitleSelected } from '../utils'
 import SingleNewsArticle from './SingleNewsArticle'
 import { getQuatumComputingNewsFeed } from '../api/newsApi'
 import LoadingIndicator from './LoadingIndicator'
+import { TitlesContainer, NewsFeedTitles, H3, NewsTitleH2, Hr } from '../styles'
 
 const QuantumComputingFeed = () => {
   const [allArticles, setArticles] = useState()
@@ -21,15 +22,19 @@ const QuantumComputingFeed = () => {
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
 
   if (allArticles && categorySelected) {
-    return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
+    return <TitlesContainer>
       {allArticles.articles.map((article, idx) => {
+        const formattedDate = article.publishedAt.substring(0, 10)
         return (
-          <div key={idx}>
-            <h1 key={article.title} onClick={() => { selectTitle(true); currentTitleSelected(article.title) }}>{article.title}</h1>
-          </div>
+          <NewsFeedTitles key={idx}>
+            <H3 key={article.publishedAt}>{formattedDate}</H3>
+            <NewsTitleH2 style={{ textDecoration: 'none' }} key={article.title} onClick={() => { selectTitle(true); currentTitleSelected(article.title) }}>{article.title}</NewsTitleH2>
+            <H3 style={{ marginTop: '0.1vh', color: '#808080' }}>{article.description}</H3>
+            <Hr/>
+          </NewsFeedTitles>
         )
       })}
-    </div>
+    </TitlesContainer>
   } if (allArticles && titleSelected) {
     return <div style={{ display: 'block', width: '70vw', height: '100%', float: 'right', position: 'relative' }}>
       <SingleNewsArticle articles={allArticles.articles} key={currentTitle} />
