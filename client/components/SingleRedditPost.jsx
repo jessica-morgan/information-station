@@ -19,7 +19,7 @@ const SingleRedditPost = (props) => {
             </SingleContainer>
             {post.media ? JSON.parse(post.media.oembed.html) : <div></div>}
             <SingleContainer imageAndBody>
-              {/* if theres body text show next to image else show centered image */}
+              {/* if theres body text show next to image else show centered image or have image clickable w/ modal to show actual size */}
               {checkImageType.includes('png') || checkImageType.includes('jpg') || checkImageType.includes('jpeg') || checkImageType.includes('gif') || checkImageType.includes('bpm') || checkImageType.includes('tiff') || checkImageType.includes('svg')
                 ? <> <img key={post.url} src={post.url}/> { ' ' } {post.body} </> : <> <Link key={post.url}>{post.url}</Link> {' '} {post.body} </>}
             </SingleContainer>
