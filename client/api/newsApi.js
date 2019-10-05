@@ -1,58 +1,49 @@
 import request from 'superagent'
-import { format } from 'date-fns'
-
-const dateMonthYear = format(new Date(), 'yyyy-mm')
-const dateToday = format(new Date(), 'yyyy-mm-dd')
-const apiKey = '6b54422930be418da308df921864490f'
-const quantumPhysicsArticlesApi = `https://newsapi.org/v2/everything?q=quantum-physics&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
-const quantumComputingArticlesApi = `https://newsapi.org/v2/everything?q=quantum-computing&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
-const javascriptArticlesApi = `https://newsapi.org/v2/everything?q=javascript&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
-const spaceArticlesApi = `https://newsapi.org/v2/everything?q=space&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
-const nzGeneralHeadlinesApi = `https://newsapi.org/v2/top-headlines?country=nz&from=${dateToday}&pageSize=50&sortBy=publishedAt&apiKey=${apiKey}&language=en&category=general`
 
 export function getQuatumPhysicsNewsFeed () {
   return (
-    request.get(`${quantumPhysicsArticlesApi}`)
+    request.get('http://localhost:3000/api/v1/quatumPhysicsNews')
       .then(res => {
-        return res.body.articles
+        return res.body
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get quantum physics feed')
       })
   )
 }
 
 export function getQuatumComputingNewsFeed () {
   return (
-    request.get(`${quantumComputingArticlesApi}`)
+    request.get('http://localhost:3000/api/v1/quatumComputingNews')
       .then(res => {
-        return res.body.articles
-      }
-
-      )
-  )
-}
-
-export function getJavascriptNewsFeed () {
-  return (
-    request.get(`${javascriptArticlesApi}`)
-      .then(res => {
-        return res.body.articles
+        return res.body
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get quantum computing feed')
       })
   )
 }
 
 export function getSpaceNewsFeed () {
   return (
-    request.get(`${spaceArticlesApi}`)
+    request.get('http://localhost:3000/api/v1/spaceNews')
       .then(res => {
-        return res.body.articles
+        return res.body
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get space news feed')
       })
   )
 }
 
 export function getNZGeneralHeadlines () {
   return (
-    request.get(`${nzGeneralHeadlinesApi}`)
+    request.get('http://localhost:3000/api/v1/NZGeneralHeadlines')
       .then(res => {
-        return res.body.articles
+        return res.body
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get nz general headlines feed')
       })
   )
 }

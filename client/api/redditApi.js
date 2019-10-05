@@ -1,107 +1,116 @@
 import request from 'superagent'
-
-const programmerHumor = 'http://www.reddit.com/r/programmerHumor.json'
-
-const reactjs = 'http://www.reddit.com/r/reactjs.json'
-
-const coolgithubprojects = 'http://www.reddit.com/r/coolgithubprojects.json'
-
-const javascript = 'http://www.reddit.com/r/javascript.json'
+import { fromUnixTime, format } from 'date-fns'
 
 export function getProgrammerHumorFeed () {
   return (
-    request.get(`${programmerHumor}`)
+    request.get('http://localhost:3000/api/v1/programmerHumorFeed')
       .then(posts => {
         let newPHPostsArray = []
-        posts.body.data.children.map(post => {
+        posts.body.map(post => {
           newPHPostsArray.push({
             title: post.data.title,
             body: post.data.selftext,
-            image: post.data.url,
+            url: post.data.url,
             dateCreated: post.data.created_utc,
             postAuthor: post.data.author,
             likes: post.data.likes,
             link: post.data.permalink,
-            upVotes: post.data.ups
+            upVotes: post.data.ups,
+            media: post.data.media
           })
           return newPHPostsArray
         })
         return newPHPostsArray
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get programmer humor feed')
       })
   )
 }
 
 export function getReactJsFeed () {
   return (
-    request.get(`${reactjs}`)
+    request.get('http://localhost:3000/api/v1/reactJsFeed')
       .then(
         posts => {
           let newRjsPostsArray = []
-          posts.body.data.children.map(post => {
+          posts.body.map(post => {
             newRjsPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,
-              image: post.data.url,
+              url: post.data.url,
               dateCreated: post.data.created_utc,
               postAuthor: post.data.author,
               likes: post.data.likes,
               link: post.data.permalink,
-              upVotes: post.data.ups
+              upVotes: post.data.ups,
+              media: JSON.parse(post.data.media)
             })
             return newRjsPostsArray
           })
           return newRjsPostsArray
         }
       )
+      .catch(err => {
+        if (err) throw Error('Cannot get ReactJs feed')
+      })
   )
 }
 
 export function getCoolGithubProjectsFeed () {
   return (
-    request.get(`${coolgithubprojects}`)
+    request.get('http://localhost:3000/api/v1/coolGithubProjectsFeed')
       .then(
         posts => {
           let newGHPostsArray = []
-          posts.body.data.children.map(post => {
+          posts.body.map(post => {
             newGHPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,
-              image: post.data.url,
+              url: post.data.url,
               dateCreated: post.data.created_utc,
               postAuthor: post.data.author,
               likes: post.data.likes,
               link: post.data.permalink,
-              upVotes: post.data.ups
+              upVotes: post.data.ups,
+              media: post.data.media
             })
             return newGHPostsArray
           })
           return newGHPostsArray
         }
       )
+      .catch(err => {
+        if (err) throw Error('Cannot get cool github projects feed')
+      })
   )
 }
 
 export function getJavascriptFeed () {
   return (
-    request.get(`${javascript}`)
+    request.get('http://localhost:3000/api/v1/getJavascriptFeed')
       .then(
         posts => {
           let newJSPostsArray = []
-          posts.body.data.children.map(post => {
+          posts.body.map(post => {
             newJSPostsArray.push({
               title: post.data.title,
               body: post.data.selftext,
-              image: post.data.url,
+              url: post.data.url,
               dateCreated: post.data.created_utc,
               postAuthor: post.data.author,
               likes: post.data.likes,
               link: post.data.permalink,
-              upVotes: post.data.ups
+              upVotes: post.data.ups,
+              media: post.data.media
             })
             return newJSPostsArray
           })
           return newJSPostsArray
         }
       )
+      .catch(err => {
+        if (err) throw Error('Cannot get javascript feed')
+      })
   )
 }

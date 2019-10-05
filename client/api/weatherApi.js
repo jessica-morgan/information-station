@@ -17,5 +17,8 @@ export function getCurrentWeather () {
         })
         return newWeatherArray[0]
       })
+      .catch(err => {
+        if (err) throw Error('Cannot get weather')
+      })
   )
 }

@@ -7,5 +7,9 @@ export function getApod () {
     request.get(`${apodApi}`)
       .then(apodres => {
         return apodres.body
-      }))
+      })
+      .catch(err => {
+        if (err) throw Error('Cannot get astronomy picture of the day')
+      })
+  )
 }
