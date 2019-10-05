@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A personalised news feed app",
   "main": "server/index.js",
+  "proxy": "https://custom-news-feed.herokuapp.com/",
   "scripts": {
     "start": "webpack && node server",
     "dev": "nodemon --watch server & webpack --watch",
