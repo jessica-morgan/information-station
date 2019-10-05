@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IsItBullshit renders correctly 1`] = `
+exports[`ProgrammerHumor renders correctly 1`] = `
 <div>
   <div>
     <img
+      className="loading-indicator"
       src="/loading.gif"
     />
   </div>

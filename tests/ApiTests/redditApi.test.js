@@ -5,56 +5,68 @@ test('fetches results from getProgrammerHumorFeed', () => {
     expect(response[0]).toEqual(
       expect.objectContaining({
         'title': expect.anything() || null,
-        'postAuthor': expect.anything() || null,
-        'dateCreated': expect.anything() || null,
-        'image': expect.anything() || null,
         'body': expect.anything() || null,
-        'upVotes': expect.anything() || null
+        'url': expect.anything() || null,
+        'dateCreated': expect.anything() || null,
+        'postAuthor': expect.anything() || null,
+        'likes': expect.anything() || null,
+        'link': expect.anything() || null,
+        'upVotes': expect.anything() || null,
+        'media': expect.anything() || null
       })
     )
   })
 })
 
-test('fetches results from getRetconnedFeed', () => {
-  return redditApi.getRetconnedFeed().then(response => {
+test('fetches results from getReactJsFeed', () => {
+  return redditApi.getReactJsFeed().then(response => {
     expect(response[0]).toEqual(
       expect.objectContaining({
         'title': expect.anything() || null,
-        'postAuthor': expect.anything() || null,
-        'dateCreated': expect.anything() || null,
-        'image': expect.anything() || null,
         'body': expect.anything() || null,
-        'upVotes': expect.anything() || null
+        'url': expect.anything() || null,
+        'dateCreated': expect.anything() || null,
+        'postAuthor': expect.anything() || null,
+        'likes': expect.anything() || null,
+        'link': expect.anything() || null,
+        'upVotes': expect.anything() || null,
+        'media': expect.anything() || null
       })
     )
   })
 })
 
-test('fetches results from getIsItBullshitFeed', () => {
-  return redditApi.getIsItBullshitFeed().then(response => {
+test('fetches results from getCoolGithubProjectsFeed', () => {
+  return redditApi.getCoolGithubProjectsFeed().then(response => {
     expect(response[0]).toEqual(
       expect.objectContaining({
         'title': expect.anything() || null,
-        'postAuthor': expect.anything() || null,
-        'dateCreated': expect.anything() || null,
-        'image': expect.anything() || null,
         'body': expect.anything() || null,
-        'upVotes': expect.anything() || null
+        'url': expect.anything() || null,
+        'dateCreated': expect.anything() || null,
+        'postAuthor': expect.anything() || null,
+        'likes': expect.anything() || null,
+        'link': expect.anything() || null,
+        'upVotes': expect.anything() || null,
+        'media': expect.anything() || null
       })
     )
   })
 })
 
-test('fetches results from getTooAfraidFeed', () => {
-  return redditApi.getTooAfraidFeed().then(response => {
+test('fetches results from getJavascriptFeed', () => {
+  return redditApi.getJavascriptFeed().then(response => {
     expect(response[0]).toEqual(
       expect.objectContaining({
         'title': expect.anything() || null,
-        'postAuthor': expect.anything() || null,
-        'dateCreated': expect.anything() || null,
-        'image': expect.anything() || null,
         'body': expect.anything() || null,
-        'upVotes': expect.anything() || null
+        'url': expect.anything() || null,
+        'dateCreated': expect.anything() || null,
+        'postAuthor': expect.anything() || null,
+        'likes': expect.anything() || null,
+        'link': expect.anything() || null,
+        'upVotes': expect.anything() || null,
+        'media': expect.anything() || null
       })
     )
   })

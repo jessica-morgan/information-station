@@ -103,6 +103,8 @@ var apodApi = 'https://api.nasa.gov/planetary/apod?api_key=UQFDU8qGbafUolXayLU0J
 function getApod() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(apodApi)).then(function (apodres) {
     return apodres.body;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get astronomy picture of the day');
   });
 }
 
@@ -112,52 +114,44 @@ function getApod() {
 /*!*******************************!*\
   !*** ./client/api/newsApi.js ***!
   \*******************************/
-/*! exports provided: getQuatumPhysicsNewsFeed, getQuatumComputingNewsFeed, getJavascriptNewsFeed, getSpaceNewsFeed, getNZGeneralHeadlines */
+/*! exports provided: getQuatumPhysicsNewsFeed, getQuatumComputingNewsFeed, getSpaceNewsFeed, getNZGeneralHeadlines */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getQuatumPhysicsNewsFeed", function() { return getQuatumPhysicsNewsFeed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getQuatumComputingNewsFeed", function() { return getQuatumComputingNewsFeed; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJavascriptNewsFeed", function() { return getJavascriptNewsFeed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSpaceNewsFeed", function() { return getSpaceNewsFeed; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getNZGeneralHeadlines", function() { return getNZGeneralHeadlines; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 
-
-var dateMonthYear = Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["format"])(new Date(), 'yyyy-mm');
-var dateToday = Object(date_fns__WEBPACK_IMPORTED_MODULE_1__["format"])(new Date(), 'yyyy-mm-dd');
-var apiKey = '6b54422930be418da308df921864490f';
-var quantumPhysicsArticlesApi = "https://newsapi.org/v2/everything?q=quantum-physics&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
-var quantumComputingArticlesApi = "https://newsapi.org/v2/everything?q=quantum-computing&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
-var javascriptArticlesApi = "https://newsapi.org/v2/everything?q=javascript&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
-var spaceArticlesApi = "https://newsapi.org/v2/everything?q=space&from=".concat(dateMonthYear, "&pageSize=30&sortBy=publishedAt&language=en&apiKey=").concat(apiKey);
-var nzGeneralHeadlinesApi = "https://newsapi.org/v2/top-headlines?country=nz&from=".concat(dateToday, "&pageSize=50&sortBy=publishedAt&apiKey=").concat(apiKey, "&language=en&category=general");
 function getQuatumPhysicsNewsFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(quantumPhysicsArticlesApi)).then(function (res) {
-    return res.body.articles;
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/quatumPhysicsNews').then(function (res) {
+    return res.body;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get quantum physics feed');
   });
 }
 function getQuatumComputingNewsFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(quantumComputingArticlesApi)).then(function (res) {
-    return res.body.articles;
-  });
-}
-function getJavascriptNewsFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(javascriptArticlesApi)).then(function (res) {
-    return res.body.articles;
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/quatumComputingNews').then(function (res) {
+    return res.body;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get quantum computing feed');
   });
 }
 function getSpaceNewsFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(spaceArticlesApi)).then(function (res) {
-    return res.body.articles;
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/spaceNews').then(function (res) {
+    return res.body;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get space news feed');
   });
 }
 function getNZGeneralHeadlines() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(nzGeneralHeadlinesApi)).then(function (res) {
-    return res.body.articles;
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/NZGeneralHeadlines').then(function (res) {
+    return res.body;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get nz general headlines feed');
   });
 }
 
@@ -178,85 +172,95 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJavascriptFeed", function() { return getJavascriptFeed; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 
-var programmerHumor = 'http://www.reddit.com/r/programmerHumor.json';
-var reactjs = 'http://www.reddit.com/r/reactjs.json';
-var coolgithubprojects = 'http://www.reddit.com/r/coolgithubprojects.json';
-var javascript = 'http://www.reddit.com/r/javascript.json';
+
 function getProgrammerHumorFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(programmerHumor)).then(function (posts) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/programmerHumorFeed').then(function (posts) {
     var newPHPostsArray = [];
-    posts.body.data.children.map(function (post) {
+    posts.body.map(function (post) {
       newPHPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
-        image: post.data.url,
+        url: post.data.url,
         dateCreated: post.data.created_utc,
         postAuthor: post.data.author,
         likes: post.data.likes,
         link: post.data.permalink,
-        upVotes: post.data.ups
+        upVotes: post.data.ups,
+        media: post.data.media
       });
       return newPHPostsArray;
     });
     return newPHPostsArray;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get programmer humor feed');
   });
 }
 function getReactJsFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(reactjs)).then(function (posts) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/reactJsFeed').then(function (posts) {
     var newRjsPostsArray = [];
-    posts.body.data.children.map(function (post) {
+    posts.body.map(function (post) {
       newRjsPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
-        image: post.data.url,
+        url: post.data.url,
         dateCreated: post.data.created_utc,
         postAuthor: post.data.author,
         likes: post.data.likes,
         link: post.data.permalink,
-        upVotes: post.data.ups
+        upVotes: post.data.ups,
+        media: JSON.parse(post.data.media)
       });
       return newRjsPostsArray;
     });
     return newRjsPostsArray;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get ReactJs feed');
   });
 }
 function getCoolGithubProjectsFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(coolgithubprojects)).then(function (posts) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/coolGithubProjectsFeed').then(function (posts) {
     var newGHPostsArray = [];
-    posts.body.data.children.map(function (post) {
+    posts.body.map(function (post) {
       newGHPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
-        image: post.data.url,
+        url: post.data.url,
         dateCreated: post.data.created_utc,
         postAuthor: post.data.author,
         likes: post.data.likes,
         link: post.data.permalink,
-        upVotes: post.data.ups
+        upVotes: post.data.ups,
+        media: post.data.media
       });
       return newGHPostsArray;
     });
     return newGHPostsArray;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get cool github projects feed');
   });
 }
 function getJavascriptFeed() {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(javascript)).then(function (posts) {
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/getJavascriptFeed').then(function (posts) {
     var newJSPostsArray = [];
-    posts.body.data.children.map(function (post) {
+    posts.body.map(function (post) {
       newJSPostsArray.push({
         title: post.data.title,
         body: post.data.selftext,
-        image: post.data.url,
+        url: post.data.url,
         dateCreated: post.data.created_utc,
         postAuthor: post.data.author,
         likes: post.data.likes,
         link: post.data.permalink,
-        upVotes: post.data.ups
+        upVotes: post.data.ups,
+        media: post.data.media
       });
       return newJSPostsArray;
     });
     return newJSPostsArray;
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get javascript feed');
   });
 }
 
@@ -289,6 +293,8 @@ function getCurrentWeather() {
       humidity: weatherArray[0].body.humidity
     });
     return newWeatherArray[0];
+  })["catch"](function (err) {
+    if (err) throw Error('Cannot get weather');
   });
 }
 
@@ -777,6 +783,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
 /* harmony import */ var _SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleNewsArticle */ "./client/components/SingleNewsArticle.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -784,6 +792,8 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -822,24 +832,27 @@ var NZGeneralFeed = function NZGeneralFeed() {
       setCurrentTitle = _useGlobal6[1];
 
   if (allArticles && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, allArticles.articles.map(function (article, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["TitlesContainer"], null, allArticles.articles.map(function (article, idx) {
+      var formattedDate = article.publishedAt.substring(0, 10);
+      return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["NewsFeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
+      }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["H3"], {
+        key: article.publishedAt
+      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["NewsTitleH2"], {
+        style: {
+          textDecoration: 'none'
+        },
         key: article.title,
         onClick: function onClick() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(article.title);
         }
-      }, article.title));
+      }, article.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["H3"], {
+        style: {
+          marginTop: '0.1vh',
+          color: '#808080'
+        }
+      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["Hr"], null));
     }));
   }
 
@@ -943,22 +956,12 @@ var Nav = function Nav() {
     style: {
       textDecoration: 'none'
     },
-    to: "/nzstFeed",
-    onClick: function onClick() {
-      return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Science and Technology');
-    }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "SCIENCE AND TECHNOLOGY"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
-    row7: true
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    style: {
-      textDecoration: 'none'
-    },
     to: "/qcFeed",
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Computing');
     }
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM COMPUTING"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
-    row8: true
+    row7: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
@@ -968,7 +971,7 @@ var Nav = function Nav() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Physics');
     }
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM PHYSICS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
-    row9: true
+    row8: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
       textDecoration: 'none'
@@ -1108,6 +1111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SingleNewsArticle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SingleNewsArticle */ "./client/components/SingleNewsArticle.jsx");
 /* harmony import */ var _api_newsApi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../api/newsApi */ "./client/api/newsApi.js");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1115,6 +1119,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -1153,24 +1158,27 @@ var QuantumComputingFeed = function QuantumComputingFeed() {
       setCategorySelected = _useGlobal6[1];
 
   if (allArticles && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, allArticles.articles.map(function (article, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, allArticles.articles.map(function (article, idx) {
+      var formattedDate = article.publishedAt.substring(0, 10);
+      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["NewsFeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
+        key: article.publishedAt
+      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["NewsTitleH2"], {
+        style: {
+          textDecoration: 'none'
+        },
         key: article.title,
         onClick: function onClick() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_2__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_2__["currentTitleSelected"])(article.title);
         }
-      }, article.title));
+      }, article.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
+        style: {
+          marginTop: '0.1vh',
+          color: '#808080'
+        }
+      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
     }));
   }
 
@@ -1213,6 +1221,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./client/utils.js");
 /* harmony import */ var _SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleNewsArticle */ "./client/components/SingleNewsArticle.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1220,6 +1229,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -1258,24 +1268,27 @@ var QuantumPhysicsFeed = function QuantumPhysicsFeed() {
       setCurrentTitle = _useGlobal6[1];
 
   if (allArticles && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, allArticles.articles.map(function (article, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, allArticles.articles.map(function (article, idx) {
+      var formattedDate = article.publishedAt.substring(0, 10);
+      return reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["NewsFeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", {
+      }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
+        key: article.publishedAt
+      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["NewsTitleH2"], {
+        style: {
+          textDecoration: 'none'
+        },
         key: article.title,
         onClick: function onClick() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(article.title);
         }
-      }, article.title));
+      }, article.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
+        style: {
+          marginTop: '0.1vh',
+          color: '#808080'
+        }
+      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
     }));
   }
 
@@ -1438,6 +1451,8 @@ var SingleNewsArticle = function SingleNewsArticle(props) {
   return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: currentTitle
   }, props.articles.map(function (article, idx) {
+    var formattedDate = article.publishedAt.substring(0, 10);
+
     if (article.title === currentTitle) {
       return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         key: idx
@@ -1446,8 +1461,8 @@ var SingleNewsArticle = function SingleNewsArticle(props) {
       }, article.title), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         key: article.author
       }, article.author), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        key: article.publishedAt
-      }, article.publishedAt), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        key: formattedDate
+      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         key: article.url,
         src: article.url
       }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -1474,6 +1489,9 @@ var SingleNewsArticle = function SingleNewsArticle(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1484,6 +1502,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
 var SingleRedditPost = function SingleRedditPost(props) {
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_0__["useGlobal"])('currentTitle'),
       _useGlobal2 = _slicedToArray(_useGlobal, 2),
@@ -1491,23 +1512,27 @@ var SingleRedditPost = function SingleRedditPost(props) {
       setCurrentTitle = _useGlobal2[1];
 
   return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.posts.map(function (post, idx) {
+    var checkImageType = post.url.length ? post.url.substr(post.url.length - 4) : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+    var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["fromUnixTime"])(post.dateCreated);
+    var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["format"])(date, 'dd-MM-yy');
+
     if (post.title === currentTitle) {
-      return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
+        title: true,
         key: post.title
-      }, post.title), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+      }, post.title), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
+        authorDateUpvotes: true,
         key: post.postAuthor
-      }, post.postAuthor), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        key: post.dateCreated
-      }, post.dateCreated), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        key: post.image,
-        src: post.image
-      }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        key: post.body
-      }, post.body), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        key: post.upVotes
-      }, post.upVotes));
+      }, formattedDate, " | Author: ", post.postAuthor, " | Upvotes: ", post.upVotes), post.media ? JSON.parse(post.media.oembed.html) : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
+        imageAndBody: true
+      }, checkImageType.includes('png') || checkImageType.includes('jpg') || checkImageType.includes('jpeg') || checkImageType.includes('gif') || checkImageType.includes('bpm') || checkImageType.includes('tiff') || checkImageType.includes('svg') ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        key: post.url,
+        src: post.url
+      }), " ", ' ', " ", post.body, " ") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        key: post.url
+      }, post.url), " ", ' ', " ", post.body, " ")));
     } else {
       return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
@@ -1535,6 +1560,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_newsApi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api/newsApi */ "./client/api/newsApi.js");
 /* harmony import */ var _SingleNewsArticle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleNewsArticle */ "./client/components/SingleNewsArticle.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1542,6 +1568,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -1580,24 +1607,27 @@ var SpaceFeed = function SpaceFeed() {
       setCurrentTitle = _useGlobal6[1];
 
   if (allArticles && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, allArticles.articles.map(function (article, idx) {
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, allArticles.articles.map(function (article, idx) {
+      var formattedDate = article.publishedAt.substring(0, 10);
+      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["NewsFeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
+        key: article.publishedAt
+      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["NewsTitleH2"], {
+        style: {
+          textDecoration: 'none'
+        },
         key: article.title,
         onClick: function onClick() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_2__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_2__["currentTitleSelected"])(article.title);
         }
-      }, article.title));
+      }, article.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
+        style: {
+          marginTop: '0.1vh',
+          color: '#808080'
+        }
+      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
     }));
   }
 
@@ -1683,7 +1713,7 @@ var Home = function Home() {
     var image = weather.data[0].icon + '.svg';
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Temperature"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherIcon"], {
       src: image
-    }), Math.round(celcius), "\xB0C"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["City"], null, "Auckland"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherText"], null, weather.data[0].summary)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Hr"], null));
+    }), Math.round(celcius), "\xB0C"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["City"], null, "Auckland"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherText"], null, weather.data[0].summary)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherHr"], null));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null);
   }
@@ -1727,7 +1757,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, HomeRowCol3, HomeRowCol4, Icon, Date, City, WeatherContainer, WeatherIcon, WeatherText, Temperature, NavContainer, NavCategoryContainer, NavCategories, Header, TitlesContainer, FeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, APODDescriptionTitle, APODImageTitle, APODBodyContainer, APODImage, APODDescriptionContainer, H2, H3, Hr */
+/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, HomeRowCol3, HomeRowCol4, Icon, Date, City, WeatherContainer, WeatherIcon, WeatherText, Temperature, NavContainer, NavCategoryContainer, NavCategories, Header, TitlesContainer, NewsFeedTitles, FeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, APODDescriptionTitle, APODImageTitle, APODBodyContainer, APODImage, APODDescriptionContainer, NewsTitleH2, SingleContainer, H2, H3, Hr, WeatherHr */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1749,6 +1779,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavCategories", function() { return NavCategories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitlesContainer", function() { return TitlesContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsFeedTitles", function() { return NewsFeedTitles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedTitles", function() { return FeedTitles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SinglePostTitle", function() { return SinglePostTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostBodyContainer", function() { return PostBodyContainer; });
@@ -1758,12 +1789,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODBodyContainer", function() { return APODBodyContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODImage", function() { return APODImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODDescriptionContainer", function() { return APODDescriptionContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsTitleH2", function() { return NewsTitleH2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SingleContainer", function() { return SingleContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hr", function() { return Hr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherHr", function() { return WeatherHr; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject39() {
+function _templateObject46() {
   var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 4.8vw;\nwidth: 81%;\n"]);
+
+  _templateObject46 = function _templateObject46() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject45() {
+  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 4.8vw;\nwidth: 90%%;\n"]);
+
+  _templateObject45 = function _templateObject45() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject44() {
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  &:hover {\n    color: grey;\n  }\n"]);
+
+  _templateObject44 = function _templateObject44() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject43() {
+  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+
+  _templateObject43 = function _templateObject43() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject42() {
+  var data = _taggedTemplateLiteral(["\nmargin-right: 39vw;\n"]);
+
+  _templateObject42 = function _templateObject42() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject41() {
+  var data = _taggedTemplateLiteral(["\nmargin-top: 3vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 2.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
+
+  _templateObject41 = function _templateObject41() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject40() {
+  var data = _taggedTemplateLiteral(["\nmargin-top: 0.1vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 4.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
+
+  _templateObject40 = function _templateObject40() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject39() {
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nmargin-left: auto;\ntext-align: center;\nmargin-right: auto;\nbottom: 0;\nz-index: -1;\nmargin-top: 5vh;\n", "\n", "\n", "\n"]);
 
   _templateObject39 = function _templateObject39() {
     return data;
@@ -1773,7 +1877,7 @@ function _templateObject39() {
 }
 
 function _templateObject38() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  &:hover {\n    color: grey;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
 
   _templateObject38 = function _templateObject38() {
     return data;
@@ -1783,7 +1887,7 @@ function _templateObject38() {
 }
 
 function _templateObject37() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.2vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nfont-size: 2.2vh;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\nmargin-bottom: 8vh;\nwidth: 37vw;\npadding-left: 3vw;\nmargin-top: 3vh;\ntext-align: left;\n"]);
 
   _templateObject37 = function _templateObject37() {
     return data;
@@ -1793,7 +1897,7 @@ function _templateObject37() {
 }
 
 function _templateObject36() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nfont-size: 2.2vh;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\nmargin-bottom: 8vh;\nwidth: 37vw;\npadding-left: 3vw;\nmargin-top: 3vh;\ntext-align: left;\n"]);
+  var data = _taggedTemplateLiteral(["\nwidth: 49vw;\nheight: 59vh;\ndisplay: block;\n"]);
 
   _templateObject36 = function _templateObject36() {
     return data;
@@ -1803,7 +1907,7 @@ function _templateObject36() {
 }
 
 function _templateObject35() {
-  var data = _taggedTemplateLiteral(["\nwidth: 49vw;\nheight: 56.5vh;\ndisplay: block;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nbottom: 0;\nz-index: -1;\n"]);
 
   _templateObject35 = function _templateObject35() {
     return data;
@@ -1813,7 +1917,7 @@ function _templateObject35() {
 }
 
 function _templateObject34() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nbottom: 0;\nz-index: -1;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 4.5vh;\ncolor: DimGray;\nposition: relative;\nmargin-top: 4vh;\nmargin-bottom: 5vh;\n"]);
 
   _templateObject34 = function _templateObject34() {
     return data;
@@ -1823,7 +1927,7 @@ function _templateObject34() {
 }
 
 function _templateObject33() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 4.5vh;\ncolor: DimGray;\nposition: relative;\nmargin-top: 4vh;\nmargin-bottom: 5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 2.6vh;\ncolor: DimGray;\nposition: relative;\nmargin-bottom: 0.5vh;\nmargin-top: 3vh;\n"]);
 
   _templateObject33 = function _templateObject33() {
     return data;
@@ -1833,7 +1937,7 @@ function _templateObject33() {
 }
 
 function _templateObject32() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 2.6vh;\ncolor: DimGray;\nposition: relative;\nmargin-bottom: 0.5vh;\nmargin-top: 3vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
 
   _templateObject32 = function _templateObject32() {
     return data;
@@ -1843,7 +1947,7 @@ function _templateObject32() {
 }
 
 function _templateObject31() {
-  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
 
   _templateObject31 = function _templateObject31() {
     return data;
@@ -1853,7 +1957,7 @@ function _templateObject31() {
 }
 
 function _templateObject30() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
 
   _templateObject30 = function _templateObject30() {
     return data;
@@ -1863,7 +1967,7 @@ function _templateObject30() {
 }
 
 function _templateObject29() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n"]);
 
   _templateObject29 = function _templateObject29() {
     return data;
@@ -1873,7 +1977,7 @@ function _templateObject29() {
 }
 
 function _templateObject28() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n  margin-top: 4vh;\n"]);
 
   _templateObject28 = function _templateObject28() {
     return data;
@@ -1903,7 +2007,7 @@ function _templateObject26() {
 }
 
 function _templateObject25() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #999999;\n&:hover {\n  color: grey;\n}\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.1vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #999999;\n&:hover {\n  color: grey;\n}\n"]);
 
   _templateObject25 = function _templateObject25() {
     return data;
@@ -2043,7 +2147,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: -3.7vw;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: -5.9vw;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -2093,7 +2197,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n  padding-left: 0.5vw;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -2192,18 +2296,28 @@ var NavCategoryContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["defau
 var NavCategories = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject25());
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject26());
 var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject27());
-var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject28());
-var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject29());
-var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject30());
-var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject31());
-var APODDescriptionTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject32());
-var APODImageTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject33());
-var APODBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject34());
-var APODImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject35());
-var APODDescriptionContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject36());
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject37());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject38());
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject39());
+var NewsFeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject28());
+var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject29());
+var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject30());
+var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject31());
+var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject32());
+var APODDescriptionTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject33());
+var APODImageTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject34());
+var APODBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject35());
+var APODImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject36());
+var APODDescriptionContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject37());
+var NewsTitleH2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject38());
+var SingleContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject39(), function (props) {
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject40());
+}, function (props) {
+  return props.authorDateUpvotes && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject41());
+}, function (props) {
+  return props.imageAndBody && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject42());
+});
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject43());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject44());
+var Hr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject45());
+var WeatherHr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject46());
 
 /***/ }),
 

@@ -1,19 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AstronomyPicOfTheDay renders correctly 1`] = `
-<div
-  style={
-    Object {
-      "display": "block",
-      "float": "right",
-      "height": "100%",
-      "position": "relative",
-      "width": "70vw",
-    }
-  }
->
+<div>
   <div>
     <img
+      className="loading-indicator"
       src="/loading.gif"
     />
   </div>

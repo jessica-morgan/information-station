@@ -14,7 +14,7 @@ test('<SingleRedditPost /> recieves correct data as props', () => {
     expect(wrapper.children().props().posts).toEqual(expect.objectContaining({
       title: expect.anything() || null,
       body: expect.anything() || null,
-      image: expect.anything() || null,
+      url: expect.anything() || null,
       dateCreated: expect.anything() || null,
       postAuthor: expect.anything() || null,
       upVotes: expect.anything() || null
