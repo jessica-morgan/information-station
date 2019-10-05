@@ -10,7 +10,7 @@ const quantumPhysicsArticlesApi = `https://newsapi.org/v2/everything?q=quantum-p
 const quantumComputingArticlesApi = `https://newsapi.org/v2/everything?q=quantum-computing&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
 const spaceArticlesApi = `https://newsapi.org/v2/everything?q=space&from=${dateMonthYear}&pageSize=30&sortBy=publishedAt&language=en&apiKey=${apiKey}`
 const nzGeneralHeadlinesApi = `https://newsapi.org/v2/top-headlines?country=nz&from=${dateToday}&pageSize=30&sortBy=publishedAt&apiKey=${apiKey}&language=en&category=general`
-const programmerHumor = 'https://cors-anywhere.herokuapp.com/http://www.reddit.com/r/programmerHumor.json'
+const programmerHumor = 'http://www.reddit.com/r/programmerHumor.json'
 const reactjs = 'http://www.reddit.com/r/reactjs.json'
 const coolgithubprojects = 'http://www.reddit.com/r/coolgithubprojects.json'
 const javascript = 'http://www.reddit.com/r/javascript.json'
