@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react'
 import React from 'reactn'
 import LoadingIndicator from './LoadingIndicator'
 import Weather from './Weather'
-import { HomeContainer, HomeRowCol1, HomeRowCol3, APODBodyContainer, APODDescriptionTitle, APODImage, APODDescriptionContainer, APODImageTitle } from '../styles'
+import { HomeContainer, HomeRowCol1, HomeRowCol2, APODDescriptionTitle, APODImage, APODDescriptionContainer } from '../styles'
 
 const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()
 
   useEffect(() => {
-    getApod()
+    const abortController = new AbortController()
+    getApod({ signal: abortController.signal })
       .then(apodInfo => {
         setApod({
           title: apodInfo.title,
@@ -18,27 +19,30 @@ const AstronomyPicOfTheDay = () => {
           date: apodInfo.date
         })
       })
+    return () => {
+      abortController.abort()
+    }
   }, [])
   return apod ? (
     <HomeContainer>
       <HomeRowCol1>
-        <APODBodyContainer>
-          <APODImageTitle>
+        <HomeRowCol1 APODBodyContainer="true">
+          <HomeRowCol1 APODImageTitle="true">
             {apod.title}
-          </APODImageTitle>
-        </APODBodyContainer>
+          </HomeRowCol1>
+        </HomeRowCol1>
         <APODImage src={apod.image}></APODImage>
       </HomeRowCol1>
-      <HomeRowCol3>
+      <HomeRowCol2>
         <Weather/>
-        <APODDescriptionContainer>
-          <APODDescriptionTitle>
+        <HomeRowCol2 APODDescriptionContainer="true">
+          <HomeRowCol2 APODDescriptionTitle="true">
         Astronomy picture of the day
-          </APODDescriptionTitle>
+          </HomeRowCol2>
           {apod.description}
-        </APODDescriptionContainer>
-      </HomeRowCol3>
-    </HomeContainer>) : <div>
+        </HomeRowCol2>
+      </HomeRowCol2>
+    </HomeContainer>) : <div >
     <LoadingIndicator />
   </div>
 }
