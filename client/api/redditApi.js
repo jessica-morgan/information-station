@@ -1,5 +1,4 @@
 import request from 'superagent'
-import { fromUnixTime, format } from 'date-fns'
 
 export function getProgrammerHumorFeed () {
   return (
@@ -31,26 +30,24 @@ export function getProgrammerHumorFeed () {
 export function getReactJsFeed () {
   return (
     request.get('http://localhost:3000/api/v1/reactJsFeed')
-      .then(
-        posts => {
-          let newRjsPostsArray = []
-          posts.body.map(post => {
-            newRjsPostsArray.push({
-              title: post.data.title,
-              body: post.data.selftext,
-              url: post.data.url,
-              dateCreated: post.data.created_utc,
-              postAuthor: post.data.author,
-              likes: post.data.likes,
-              link: post.data.permalink,
-              upVotes: post.data.ups,
-              media: JSON.parse(post.data.media)
-            })
-            return newRjsPostsArray
+      .then(posts => {
+        let newRjsPostsArray = []
+        posts.body.map(post => {
+          newRjsPostsArray.push({
+            title: post.data.title,
+            body: post.data.selftext,
+            url: post.data.url,
+            dateCreated: post.data.created_utc,
+            postAuthor: post.data.author,
+            likes: post.data.likes,
+            link: post.data.permalink,
+            upVotes: post.data.ups,
+            media: JSON.parse(post.data.media)
           })
           return newRjsPostsArray
-        }
-      )
+        })
+        return newRjsPostsArray
+      })
       .catch(err => {
         if (err) throw Error('Cannot get ReactJs feed')
       })
