@@ -10,12 +10,16 @@ const SpaceFeed = () => {
   const [allArticles, setArticles] = useState()
 
   useEffect(() => {
-    getSpaceNewsFeed()
+    const abortController = new AbortController()
+    getSpaceNewsFeed({ signal: abortController.signal })
       .then(articles => {
         setArticles({
           articles
         })
       })
+    return () => {
+      abortController.abort()
+    }
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
@@ -29,8 +33,7 @@ const SpaceFeed = () => {
           <NewsFeedTitles key={idx}>
             <H3 key={article.publishedAt}>{formattedDate}</H3>
             <NewsTitleH2 style={{ textDecoration: 'none' }} key={article.title} onClick={() => { selectTitle(true); currentTitleSelected(article.title) }}>{article.title}</NewsTitleH2>
-            <H3 style={{ marginTop: '0.1vh', color: '#808080' }}>{article.description}</H3>
-            <Hr/>
+            <H3 style={{ color: '#808080' }}>{article.description}</H3>
           </NewsFeedTitles>
         )
       })}

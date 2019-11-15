@@ -10,12 +10,16 @@ const QuantumComputingFeed = () => {
   const [allArticles, setArticles] = useState()
 
   useEffect(() => {
-    getQuatumComputingNewsFeed()
+    const abortController = new AbortController()
+    getQuatumComputingNewsFeed({ signal: abortController.signal })
       .then(articles => {
         setArticles({
           articles
         })
       })
+    return () => {
+      abortController.abort()
+    }
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [currentTitle, setCurrentTitle] = useGlobal('currentTitle')
@@ -29,8 +33,7 @@ const QuantumComputingFeed = () => {
           <NewsFeedTitles key={idx}>
             <H3 key={article.publishedAt}>{formattedDate}</H3>
             <NewsTitleH2 style={{ textDecoration: 'none' }} key={article.title} onClick={() => { selectTitle(true); currentTitleSelected(article.title) }}>{article.title}</NewsTitleH2>
-            <H3 style={{ marginTop: '0.1vh', color: '#808080' }}>{article.description}</H3>
-            <Hr/>
+            <H3 style={{ color: '#808080' }}>{article.description}</H3>
           </NewsFeedTitles>
         )
       })}
