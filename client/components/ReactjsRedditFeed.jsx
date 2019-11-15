@@ -4,14 +4,14 @@ import { getReactJsFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
 import SingleRedditPost from './SingleRedditPost'
 import LoadingIndicator from './LoadingIndicator'
-import { TitlesContainer, FeedTitles, H3, H2, Hr } from '../styles'
-import { fromUnixTime, format } from 'date-fns'
+import { TitlesContainer, FeedTitles, GridItemImage, TitlesGridItem } from '../styles'
 
 const ReactjsRedditFeed = () => {
   const [posts, setPosts] = useState()
 
   useEffect(() => {
-    getReactJsFeed()
+    const abortController = new AbortController()
+    getReactJsFeed({ signal: abortController.signal })
       .then(posts => {
         let postsArray = []
         postsArray.push(posts)
@@ -19,6 +19,9 @@ const ReactjsRedditFeed = () => {
           allPosts: postsArray
         })
       })
+    return () => {
+      abortController.abort()
+    }
   }, [])
   const [titleSelected, setTitleSelected] = useGlobal('titleSelected')
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
@@ -27,15 +30,13 @@ const ReactjsRedditFeed = () => {
   if (posts && categorySelected) {
     return <TitlesContainer>
       {posts.allPosts[0].map((singlePost, idx) => {
-        const date = fromUnixTime(singlePost.dateCreated)
-        const formattedDate = format(date, 'dd-MM-yy')
         return (
-          <FeedTitles key={idx}>
-            <H3 key={singlePost.dateCreated}>{formattedDate}</H3>
-            <H2 style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title}</H2>
-            <H3 style={{ marginTop: '0.1vh', color: '#808080' }}>{singlePost.body.substr(0, 100)}</H3>
-            <Hr/>
-          </FeedTitles>
+          <TitlesGridItem key={idx}>
+            <FeedTitles key={idx}>
+              <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title.substr(0, 30)}...</FeedTitles>
+              <GridItemImage src={singlePost.url} />
+            </FeedTitles>
+          </TitlesGridItem>
         )
       })}
     </TitlesContainer>
