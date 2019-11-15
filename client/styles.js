@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 
+// Home page styles
 export const HomeContainer = styled.div`
   font-family: 'Open Sans', sans-serif;
   position: relative;
@@ -13,6 +14,7 @@ export const HomeContainer = styled.div`
   justify-content: space-evenly;
   margin-top: 18vh;
 `
+
 export const HomeRowCol1 = styled.div`
   grid-column: 1;
   grid-row: 1;
@@ -21,68 +23,76 @@ export const HomeRowCol1 = styled.div`
   text-decoration: none;
   text-align: center;
   float: left;
+  display: grid;
+  ${props => props.APODBodyContainer && css`
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  bottom: 0;
+  z-index: -1;
+  `}
+  ${props => props.APODImageTitle && css`
+  font-family: 'Playfair Display', serif;
+  font-size: 3vw;
+  color: DimGray;
+  position: relative;
+  margin-top: 4vh;
+  margin-bottom: 5vh;
+  display: block;
+  float: none;
+  `}
 `
 
 export const HomeRowCol2 = styled.div`
-grid-column: 1;
-grid-row: 2;
-grid-auto-columns: min-content;
-grid-auto-rows: min-content;
-text-decoration: none;
-text-align: center;
-`
-
-export const HomeRowCol3 = styled.div`
 grid-column: 2;
 grid-row: 1;
 grid-auto-columns: min-content;
 grid-auto-rows: min-content;
 text-decoration: none;
 text-align: center;
-`
-
-export const HomeRowCol4 = styled.div`
-grid-column: 2;
-grid-row: 2;
-grid-auto-columns: min-content;
-grid-auto-rows: min-content;
-text-decoration: none;
-text-align: center;
-`
-
-export const Icon = styled.img`
-  width: 3.7vw;
-  height: 6.3vh;
-  margin-left: 0.5vw;
-  opacity: 0.6;
-  float: left;
-  padding-left: 0.5vw;
-`
-
-export const Date = styled.h3`
-  text-decoration: none;
-  font-size: 1.3vh;
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0.5vh;
-  margin-top: 3.5vh;
-  color: #808080;
-  margin-left: -7.6vw;
-`
-
-export const City = styled.h3`
-text-decoration: none;
-font-size: 4.7vh;
+${props => props.APODDescriptionContainer && css`
 font-family: 'Open Sans', sans-serif;
-margin-top: -1vh;
-margin-left: -2.9vw;
-color: #808080;
+font-size: 1.1vw;
+position: relative;
+text-decoration: none;
+display: block;
+margin-bottom: 8vh;
+width: 37vw;
+padding-left: 4vw;
+margin-top: 3vh;
+text-align: left;
+`}
+${props => props.APODDescriptionTitle && css`
+font-family: 'Playfair Display', serif;
+font-size: 2vw;
+color: DimGray;
+position: relative;
+margin-bottom: 1.5vh;
+margin-top: 3vh;
+`}
+`
+export const APODImage = styled.img`
+width: 49vw;
+height: 59vh;
+display: block;
 `
 
+// weather styles
 export const WeatherContainer = styled.div`
-  width: 43vw;
-  height: 23vh;
-  margin-rught: 0vw; 
-  margin-top: 0.5vh;
+  width: 41.5vw;
+  height: 16vh;
+  margin-top: 1.5vh;
+`
+export const Temperature = styled.h3`
+text-decoration: none;
+font-size: 5vw;
+font-family: 'Open Sans', sans-serif;
+margin-bottom: 0.5vh;
+color: #808080;
+margin-top: 0vh;
+margin-left: -13vw;
 `
 
 export const WeatherIcon = styled.img`
@@ -94,6 +104,15 @@ export const WeatherIcon = styled.img`
   opacity: 0.7;
 `
 
+export const City = styled.h3`
+text-decoration: none;
+font-size: 4.7vh;
+font-family: 'Open Sans', sans-serif;
+margin-top: -15vh;
+margin-left: 23vw;
+color: #808080;
+`
+
 export const WeatherText = styled.h3`
 text-decoration: none;
 font-size: 2.2vh;
@@ -101,20 +120,27 @@ font-family: 'Open Sans', sans-serif;
 margin-bottom: 0.5vh;
 margin-top: -5.4vh;
 color: #808080;
-margin-left: -5.9vw;
-`
-export const Temperature = styled.h3`
-text-decoration: none;
-font-size: 9.1vh;
-font-family: 'Open Sans', sans-serif;
-margin-bottom: 0.5vh;
-color: #808080;
-margin-top: 0vh;
-margin-left: -5vw;
+margin-left: 19.9vw;
 `
 
+export const WeatherHr = styled.hr`
+border-width: 0.5px;
+opacity: 90%;
+margin-right: 2vw;
+width: 85.3%;
+`
+
+// Nav bar styles
+export const Icon = styled.img`
+  width: 3.7vw;
+  height: 6.3vh;
+  margin-left: 0.5vw;
+  opacity: 0.6;
+  float: left;
+  padding-left: 0.5vw;
+`
 export const NavContainer = styled.div`
-  width: 95%;
+  width: 101vw;
   position: fixed;
   text-decoration: none;
   display: grid;
@@ -124,7 +150,7 @@ export const NavContainer = styled.div`
   z-index: 1;
   height: 16vh;
   padding-top: 2vh;
-  margin-left: 1vw;
+  margin-left: -1vw;
 `
 export const NavCategoryContainer = styled.div`
   float: left;
@@ -144,54 +170,62 @@ export const NavCategoryContainer = styled.div`
   grid-row: 1;
   width: 3.7vw;
   height: 6.3vh;
-  opacity: 0.7;
+  opacity: 0.4;
   margin-left: 0.5vw;
   `}
   ${props => props.row1 && css`
   grid-column: 1;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row2 && css`
   grid-column: 2;
   grid-row: 2;
+  margin-top: 3vh;
   `}${props => props.row3 && css`
   grid-column: 3;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row4 && css`
   grid-column: 4;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row5 && css`
   grid-column: 5;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row6 && css`
   grid-column: 6;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row7 && css`
   grid-column: 7;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row8 && css`
   grid-column: 8;
   grid-row: 2;
+  margin-top: 3vh;
   `}
   ${props => props.row9 && css`
   grid-column: 9;
   grid-row: 2;
+  margin-top: 3vh;
   `}
-`
-
-export const NavCategories = styled.h3`
-text-decoration: none;
-font-size: 2.1vh;
-font-family: 'Open Sans', sans-serif;
-color: #999999;
-&:hover {
-  color: grey;
-}
+  ${props => props.title && css`
+  text-decoration: none;
+  font-size: 1.1vw;
+  font-family: 'Open Sans', sans-serif;
+  color: #626262;
+  &:hover {
+    color: grey;
+  }
+  `}
 `
 
 export const Header = styled.header`
@@ -204,17 +238,54 @@ export const Header = styled.header`
   postiton: fixed;
 `
 
+// news feed styles
 export const TitlesContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   font-family: 'Open Sans', sans-serif;
   position: relative;
   text-decoration: none;
-  display: block;
+  display: grid;
   overflow: hidden;
   float: right;
-  margin-top: 9vh;
-  bottom: 0;
+  margin-top: 18vh;
   z-index: -1;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  grid-gap: 4vw;
+  background: #e9e9e9;
+`
+
+export const TitlesGridItem = styled.div`
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  width: 26vw;
+  height: 34vh;
+`
+
+export const GridItemImage = styled.img`
+  width: 26vw;
+  height: 25vh;
+  margin-top: 1vh;
+  object-fit: none;
+`
+
+export const FeedTitles = styled.div`
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.7vh;
+  color: #696969;
+  margin: auto;
+  ${props => props.title && css`
+  text-decoration: none;
+  font-size: 1.5vw;
+  font-family: 'Open Sans', sans-serif;
+  color: #808080;
+  margin: auto;
+  padding-top: 1vh;
+  &:hover {
+    color: grey;
+  `}
 `
 
 export const NewsFeedTitles = styled.h3`
@@ -225,14 +296,7 @@ export const NewsFeedTitles = styled.h3`
   margin-top: 4vh;
 `
 
-export const FeedTitles = styled.h3`
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.7vh;
-  padding-bottom: 0.5vh;
-  color: #696969;
-  padding-left: 4vw;
-`
-
+// single post styles
 export const SinglePostTitle = styled.h2`
   font-family: 'Playfair Display', serif;
   font-size: 4.5vh;
@@ -259,53 +323,6 @@ export const PostImageContainer = styled.img`
   margin-left: 21.2vw;
 `
 
-export const APODDescriptionTitle = styled.h2`
-font-family: 'Playfair Display', serif;
-font-size: 2.6vh;
-color: DimGray;
-position: relative;
-margin-bottom: 0.5vh;
-margin-top: 3vh;
-`
-
-export const APODImageTitle = styled.h2`
-font-family: 'Playfair Display', serif;
-font-size: 4.5vh;
-color: DimGray;
-position: relative;
-margin-top: 4vh;
-margin-bottom: 5vh;
-`
-
-export const APODBodyContainer = styled.div`
-font-family: 'Open Sans', sans-serif;
-position: relative;
-text-decoration: none;
-display: block;
-overflow: hidden;
-bottom: 0;
-z-index: -1;
-`
-
-export const APODImage = styled.img`
-width: 49vw;
-height: 59vh;
-display: block;
-`
-
-export const APODDescriptionContainer = styled.div`
-font-family: 'Open Sans', sans-serif;
-font-size: 2.2vh;
-position: relative;
-text-decoration: none;
-display: block;
-margin-bottom: 8vh;
-width: 37vw;
-padding-left: 3vw;
-margin-top: 3vh;
-text-align: left;
-`
-
 export const NewsTitleH2 = styled.h2`
   margin-top: 0.1vh;
   margin-bottom: 1vh;
@@ -329,12 +346,13 @@ bottom: 0;
 z-index: -1;
 margin-top: 5vh;
 ${props => props.title && css`
-margin-top: 0.1vh;
+margin-top: 2.1vh;
 margin-bottom: 1vh;
 text-decoration: none;
 font-size: 4.5vh;
 font-family: 'Open Sans', sans-serif;
 color: #707070;
+font-weight: bold;
 `}
 ${props => props.authorDateUpvotes && css`
 margin-top: 3vh;
@@ -344,43 +362,44 @@ font-size: 2.5vh;
 font-family: 'Open Sans', sans-serif;
 color: #707070;
 `}
-${props => props.imageAndBody && css`
+${props => props.image && css`
 margin-right: 39vw;
+text-align: left;
+width: 70vw;
+margin-left: auto;
+margin-right: auto;
+font-size: 2.5vh;
+line-height: 4vh;
+`}
+${props => props.body && css`
+margin-right: 39vw;
+text-align: left;
+width: 70vw;
+margin-left: auto;
+margin-right: auto;
+font-size: 2.5vh;
+line-height: 4vh;
 `}
 `
 
 export const H2 = styled.h2`
-  margin-top: 0.1vh;
-  margin-bottom: 1vh;
   text-decoration: none;
-  font-size: 2.5vh;
+  font-size: 1.5em;
   font-family: 'Open Sans', sans-serif;
   text-decoration: underline;
   color: #707070;
+  margin: auto;
+  padding-top: 1.6vh;
 `
 
 export const H3 = styled.h3`
   text-decoration: none;
-  font-size: 1.9vh;
+  font-size: 1em;
   font-family: 'Open Sans', sans-serif;
-  margin-bottom: 0.5vh;
-  margin-top: 3.5vh;
   color: #808080;
+  margin: auto;
+  padding-top: 1vh;
   &:hover {
     color: grey;
   }
-`
-
-export const Hr = styled.hr`
-border-width: 0.5px;
-opacity: 90%;
-margin-right: 4.8vw;
-width: 90%%;
-`
-
-export const WeatherHr = styled.hr`
-border-width: 0.5px;
-opacity: 90%;
-margin-right: 4.8vw;
-width: 81%;
 `
