@@ -2,13 +2,13 @@ import React from 'reactn'
 import { useState, useEffect } from 'react'
 import { getCurrentWeather } from '../api/weatherApi'
 import { WeatherContainer, WeatherText, WeatherIcon, City, Temperature, WeatherHr } from '../styles'
-import { fromUnixTime, format } from 'date-fns'
 
 const Home = () => {
   const [weather, setWeather] = useState()
 
   useEffect(() => {
-    getCurrentWeather()
+    const abortController = new AbortController()
+    getCurrentWeather({ signal: abortController.signal })
       .then(weatherData => {
         let weatherArray = []
         weatherArray.push(weatherData)
@@ -16,6 +16,9 @@ const Home = () => {
           data: weatherArray
         })
       })
+    return () => {
+      abortController.abort()
+    }
   }, [])
 
   const fahrenheitToCelcius = (fahrenheit) => {
@@ -25,9 +28,6 @@ const Home = () => {
   }
 
   if (weather) {
-    const date = fromUnixTime(weather.data[0].time)
-    const formattedDate = format(date, 'dd MM yyyy')
-    const formattedTime = format(date, 'HH:mm')
     const celcius = fahrenheitToCelcius(weather.data[0].temp)
     const image = weather.data[0].icon + '.svg'
     return (
@@ -35,9 +35,9 @@ const Home = () => {
       <WeatherContainer>
         <Temperature >
           <WeatherIcon src={image}></WeatherIcon>
-          {Math.round(celcius)}°C
+          {Math.round(celcius)}°C <p style={{ fontSize: '3.7vw', marginLeft: '23vw', marginTop: '-11.3vh' }}>|</p>
         </Temperature >
-        <City>Auckland</City><WeatherText>{weather.data[0].summary}</WeatherText>
+        <City> Auckland</City><WeatherText> {weather.data[0].summary}</WeatherText>
       </WeatherContainer>
       <WeatherHr />
       </>
