@@ -172,8 +172,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJavascriptFeed", function() { return getJavascriptFeed; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
-
 
 function getProgrammerHumorFeed() {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:3000/api/v1/programmerHumorFeed').then(function (posts) {
@@ -322,7 +320,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SpaceFeed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SpaceFeed */ "./client/components/SpaceFeed.jsx");
 /* harmony import */ var _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./NZGeneralFeed */ "./client/components/NZGeneralFeed.jsx");
 /* harmony import */ var _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./AstronomyPicOfTheDay */ "./client/components/AstronomyPicOfTheDay.jsx");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -330,7 +327,6 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -357,7 +353,7 @@ var App = function App() {
       setTitleSelected = _useGlobal4[1];
 
   if (categorySelected || titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_12__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       exact: true,
       path: "/",
       component: _AstronomyPicOfTheDay__WEBPACK_IMPORTED_MODULE_11__["default"]
@@ -385,7 +381,7 @@ var App = function App() {
     }), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/nzgFeed",
       component: _NZGeneralFeed__WEBPACK_IMPORTED_MODULE_10__["default"]
-    })));
+    }));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Nav__WEBPACK_IMPORTED_MODULE_2__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       exact: true,
@@ -438,7 +434,10 @@ var AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
       setApod = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    Object(_api_nasaApi__WEBPACK_IMPORTED_MODULE_0__["getApod"])().then(function (apodInfo) {
+    var abortController = new AbortController();
+    Object(_api_nasaApi__WEBPACK_IMPORTED_MODULE_0__["getApod"])({
+      signal: abortController.signal
+    }).then(function (apodInfo) {
       setApod({
         title: apodInfo.title,
         image: apodInfo.url,
@@ -446,10 +445,21 @@ var AstronomyPicOfTheDay = function AstronomyPicOfTheDay() {
         date: apodInfo.date
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
-  return apod ? reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol1"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODBodyContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODImageTitle"], null, apod.title)), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODImage"], {
+  return apod ? reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol1"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol1"], {
+    APODBodyContainer: "true"
+  }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol1"], {
+    APODImageTitle: "true"
+  }, apod.title)), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODImage"], {
     src: apod.image
-  })), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol3"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Weather__WEBPACK_IMPORTED_MODULE_4__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODDescriptionContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["APODDescriptionTitle"], null, "Astronomy picture of the day"), apod.description))) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  })), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol2"], null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_Weather__WEBPACK_IMPORTED_MODULE_4__["default"], null), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol2"], {
+    APODDescriptionContainer: "true"
+  }, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_5__["HomeRowCol2"], {
+    APODDescriptionTitle: "true"
+  }, "Astronomy picture of the day"), apod.description))) : reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_LoadingIndicator__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AstronomyPicOfTheDay);
@@ -474,7 +484,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleRedditPost */ "./client/components/SingleRedditPost.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -491,7 +500,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
@@ -499,13 +507,19 @@ var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
       setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getCoolGithubProjectsFeed"])().then(function (posts) {
+    var abortController = new AbortController();
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getCoolGithubProjectsFeed"])({
+      signal: abortController.signal
+    }).then(function (posts) {
       var postsArray = [];
       postsArray.push(posts);
       setPosts({
         allPosts: postsArray
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('titleSelected'),
@@ -525,13 +539,12 @@ var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
 
   if (posts && categorySelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, posts.allPosts[0].map(function (singlePost, idx) {
-      var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["fromUnixTime"])(singlePost.dateCreated);
-      var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["format"])(date, 'dd-MM-yy');
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesGridItem"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
-        key: singlePost.dateCreated
-      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H2"], {
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        key: idx
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        title: "true",
         style: {
           textDecoration: 'none'
         },
@@ -540,26 +553,14 @@ var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
-        style: {
-          marginTop: '0.1vh',
-          color: '#808080'
-        }
-      }, singlePost.body.substr(0, 100)), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
+      }, singlePost.title.substr(0, 30), "..."), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
+        src: singlePost.url
+      })));
     }));
   }
 
   if (posts && titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      id: "singlePost",
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
       posts: posts.allPosts[0],
       key: currentTitle
     }));
@@ -645,7 +646,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleRedditPost */ "./client/components/SingleRedditPost.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -662,7 +662,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var JavascriptRedditFeed = function JavascriptRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
@@ -670,13 +669,19 @@ var JavascriptRedditFeed = function JavascriptRedditFeed() {
       setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getJavascriptFeed"])().then(function (posts) {
+    var abortController = new AbortController();
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getJavascriptFeed"])({
+      signal: abortController.signal
+    }).then(function (posts) {
       var postsArray = [];
       postsArray.push(posts);
       setPosts({
         allPosts: postsArray
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('titleSelected'),
@@ -696,13 +701,12 @@ var JavascriptRedditFeed = function JavascriptRedditFeed() {
 
   if (posts && categorySelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, posts.allPosts[0].map(function (singlePost, idx) {
-      var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["fromUnixTime"])(singlePost.dateCreated);
-      var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["format"])(date, 'dd-MM-yy');
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesGridItem"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
-        key: singlePost.dateCreated
-      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H2"], {
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        key: idx
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        title: "true",
         style: {
           textDecoration: 'none'
         },
@@ -711,25 +715,14 @@ var JavascriptRedditFeed = function JavascriptRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
-        style: {
-          marginTop: '0.1vh',
-          color: '#808080'
-        }
-      }, singlePost.body.substr(0, 100)), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
+      }, singlePost.title.substr(0, 30), "..."), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
+        src: singlePost.url
+      })));
     }));
   }
 
   if (posts && titleSelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-      style: {
-        display: 'block',
-        width: '70vw',
-        height: '100%',
-        "float": 'right',
-        position: 'relative'
-      }
-    }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__["default"], {
       posts: posts.allPosts[0],
       key: currentTitle
     }));
@@ -809,11 +802,17 @@ var NZGeneralFeed = function NZGeneralFeed() {
       setArticles = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_1__["getNZGeneralHeadlines"])().then(function (articles) {
+    var abortController = new AbortController();
+    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_1__["getNZGeneralHeadlines"])({
+      signal: abortController.signal
+    }).then(function (articles) {
       setArticles({
         articles: articles
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_2__["useGlobal"])('titleSelected'),
@@ -849,10 +848,9 @@ var NZGeneralFeed = function NZGeneralFeed() {
         }
       }, article.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["H3"], {
         style: {
-          marginTop: '0.1vh',
           color: '#808080'
         }
-      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_7__["Hr"], null));
+      }, article.description));
     }));
   }
 
@@ -910,7 +908,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Programmer Humor');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "PROGRAMMER HUMOR"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "PROGRAMMER HUMOR"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row2: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -920,7 +920,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Reactjs');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "REACTJS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "REACTJS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row3: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -930,7 +932,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Cool Github Projects');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "COOL GITHUB PROJECTS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "COOL GITHUB PROJECTS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row4: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -940,7 +944,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Javascript');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "JAVASCRIPT"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "JAVASCRIPT"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row5: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -950,7 +956,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('General NZ');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "GENERAL NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "GENERAL NZ"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row6: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -960,7 +968,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Computing');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM COMPUTING"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "QUANTUM COMPUTING"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row7: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -970,7 +980,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Quantum Physics');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "QUANTUM PHYSICS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "QUANTUM PHYSICS"))), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
     row8: true
   }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     style: {
@@ -980,7 +992,9 @@ var Nav = function Nav() {
     onClick: function onClick() {
       return Object(_utils__WEBPACK_IMPORTED_MODULE_1__["selectCategory"])('Space');
     }
-  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategories"], null, "SPACE")))));
+  }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["NavCategoryContainer"], {
+    title: "true"
+  }, "SPACE")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Nav);
@@ -1005,7 +1019,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
 /* harmony import */ var _SingleRedditPost__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SingleRedditPost */ "./client/components/SingleRedditPost.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1022,7 +1035,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var ProgrammerHumorRedditFeed = function ProgrammerHumorRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
@@ -1030,13 +1042,19 @@ var ProgrammerHumorRedditFeed = function ProgrammerHumorRedditFeed() {
       setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getProgrammerHumorFeed"])().then(function (posts) {
+    var abortController = new AbortController();
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getProgrammerHumorFeed"])({
+      signal: abortController.signal
+    }).then(function (posts) {
       var postsArray = [];
       postsArray.push(posts);
       setPosts({
         allPosts: postsArray
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_0__["useGlobal"])('titleSelected'),
@@ -1055,14 +1073,17 @@ var ProgrammerHumorRedditFeed = function ProgrammerHumorRedditFeed() {
       setCategorySelected = _useGlobal6[1];
 
   if (posts && categorySelected) {
-    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["TitlesContainer"], null, posts.allPosts[0].map(function (singlePost, idx) {
-      var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["fromUnixTime"])(singlePost.dateCreated);
-      var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["format"])(date, 'dd-MM-yy');
-      return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
+    return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        background: 'lightsmoke'
+      }
+    }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["TitlesContainer"], null, posts.allPosts[0].map(function (singlePost, idx) {
+      return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["TitlesGridItem"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], {
-        key: singlePost.dateCreated
-      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H2"], {
+      }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
+        key: idx
+      }, singlePost.title.length > 30 ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
+        title: "true",
         style: {
           textDecoration: 'none'
         },
@@ -1071,13 +1092,20 @@ var ProgrammerHumorRedditFeed = function ProgrammerHumorRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["H3"], {
+      }, singlePost.title.substr(0, 34), "...") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
+        title: "true",
         style: {
-          marginTop: '0.1vh',
-          color: '#808080'
+          textDecoration: 'none'
+        },
+        key: singlePost.title,
+        onClick: function onClick() {
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.body.substr(0, 100)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["Hr"], null));
-    }));
+      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["GridItemImage"], {
+        src: singlePost.url
+      })));
+    })));
   }
 
   if (posts && titleSelected) {
@@ -1135,11 +1163,17 @@ var QuantumComputingFeed = function QuantumComputingFeed() {
       setArticles = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_4__["getQuatumComputingNewsFeed"])().then(function (articles) {
+    var abortController = new AbortController();
+    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_4__["getQuatumComputingNewsFeed"])({
+      signal: abortController.signal
+    }).then(function (articles) {
       setArticles({
         articles: articles
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('titleSelected'),
@@ -1175,10 +1209,9 @@ var QuantumComputingFeed = function QuantumComputingFeed() {
         }
       }, article.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
         style: {
-          marginTop: '0.1vh',
           color: '#808080'
         }
-      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
+      }, article.description));
     }));
   }
 
@@ -1245,11 +1278,17 @@ var QuantumPhysicsFeed = function QuantumPhysicsFeed() {
       setArticles = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_1__["getQuatumPhysicsNewsFeed"])().then(function (articles) {
+    var abortController = new AbortController();
+    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_1__["getQuatumPhysicsNewsFeed"])({
+      signal: abortController.signal
+    }).then(function (articles) {
       setArticles({
         articles: articles
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_2__["useGlobal"])('titleSelected'),
@@ -1285,10 +1324,9 @@ var QuantumPhysicsFeed = function QuantumPhysicsFeed() {
         }
       }, article.title), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
         style: {
-          marginTop: '0.1vh',
           color: '#808080'
         }
-      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
+      }, article.description));
     }));
   }
 
@@ -1332,7 +1370,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SingleRedditPost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleRedditPost */ "./client/components/SingleRedditPost.jsx");
 /* harmony import */ var _LoadingIndicator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoadingIndicator */ "./client/components/LoadingIndicator.jsx");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1349,7 +1386,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var ReactjsRedditFeed = function ReactjsRedditFeed() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
@@ -1357,13 +1393,19 @@ var ReactjsRedditFeed = function ReactjsRedditFeed() {
       setPosts = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getReactJsFeed"])().then(function (posts) {
+    var abortController = new AbortController();
+    Object(_api_redditApi__WEBPACK_IMPORTED_MODULE_2__["getReactJsFeed"])({
+      signal: abortController.signal
+    }).then(function (posts) {
       var postsArray = [];
       postsArray.push(posts);
       setPosts({
         allPosts: postsArray
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('titleSelected'),
@@ -1383,13 +1425,12 @@ var ReactjsRedditFeed = function ReactjsRedditFeed() {
 
   if (posts && categorySelected) {
     return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesContainer"], null, posts.allPosts[0].map(function (singlePost, idx) {
-      var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["fromUnixTime"])(singlePost.dateCreated);
-      var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_7__["format"])(date, 'dd-MM-yy');
-      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+      return reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["TitlesGridItem"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
-        key: singlePost.dateCreated
-      }, formattedDate), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H2"], {
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        key: idx
+      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        title: "true",
         style: {
           textDecoration: 'none'
         },
@@ -1398,12 +1439,9 @@ var ReactjsRedditFeed = function ReactjsRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
-        style: {
-          marginTop: '0.1vh',
-          color: '#808080'
-        }
-      }, singlePost.body.substr(0, 100)), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
+      }, singlePost.title.substr(0, 30), "..."), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
+        src: singlePost.url
+      })));
     }));
   }
 
@@ -1511,7 +1549,9 @@ var SingleRedditPost = function SingleRedditPost(props) {
       currentTitle = _useGlobal2[0],
       setCurrentTitle = _useGlobal2[1];
 
-  return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.posts.map(function (post, idx) {
+  return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: currentTitle
+  }, props.posts.map(function (post, idx) {
     var checkImageType = post.url.length ? post.url.substr(post.url.length - 4) : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["fromUnixTime"])(post.dateCreated);
     var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_3__["format"])(date, 'dd-MM-yy');
@@ -1520,19 +1560,21 @@ var SingleRedditPost = function SingleRedditPost(props) {
       return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
-        title: true,
+        title: "true",
         key: post.title
       }, post.title), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
-        authorDateUpvotes: true,
+        authorDateUpvotes: "true",
         key: post.postAuthor
       }, formattedDate, " | Author: ", post.postAuthor, " | Upvotes: ", post.upVotes), post.media ? JSON.parse(post.media.oembed.html) : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
-        imageAndBody: true
-      }, checkImageType.includes('png') || checkImageType.includes('jpg') || checkImageType.includes('jpeg') || checkImageType.includes('gif') || checkImageType.includes('bpm') || checkImageType.includes('tiff') || checkImageType.includes('svg') ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        key: post.url,
-        src: post.url
-      }), " ", ' ', " ", post.body, " ") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        image: "true",
         key: post.url
-      }, post.url), " ", ' ', " ", post.body, " ")));
+      }, checkImageType.includes('png') || checkImageType.includes('jpg') || checkImageType.includes('jpeg') || checkImageType.includes('gif') || checkImageType.includes('bpm') || checkImageType.includes('tiff') || checkImageType.includes('svg') ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: post.url
+      }), " ") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, " ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: post.url
+      }, post.url), " ")), post.body.length ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_2__["SingleContainer"], {
+        body: "true"
+      }, " ", post.body, " ") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     } else {
       return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
@@ -1584,11 +1626,17 @@ var SpaceFeed = function SpaceFeed() {
       setArticles = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_3__["getSpaceNewsFeed"])().then(function (articles) {
+    var abortController = new AbortController();
+    Object(_api_newsApi__WEBPACK_IMPORTED_MODULE_3__["getSpaceNewsFeed"])({
+      signal: abortController.signal
+    }).then(function (articles) {
       setArticles({
         articles: articles
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var _useGlobal = Object(reactn__WEBPACK_IMPORTED_MODULE_1__["useGlobal"])('titleSelected'),
@@ -1624,10 +1672,9 @@ var SpaceFeed = function SpaceFeed() {
         }
       }, article.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["H3"], {
         style: {
-          marginTop: '0.1vh',
           color: '#808080'
         }
-      }, article.description), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["Hr"], null));
+      }, article.description));
     }));
   }
 
@@ -1668,7 +1715,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _api_weatherApi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/weatherApi */ "./client/api/weatherApi.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles */ "./client/styles.js");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -1682,7 +1728,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var Home = function Home() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
       _useState2 = _slicedToArray(_useState, 2),
@@ -1690,13 +1735,19 @@ var Home = function Home() {
       setWeather = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    Object(_api_weatherApi__WEBPACK_IMPORTED_MODULE_2__["getCurrentWeather"])().then(function (weatherData) {
+    var abortController = new AbortController();
+    Object(_api_weatherApi__WEBPACK_IMPORTED_MODULE_2__["getCurrentWeather"])({
+      signal: abortController.signal
+    }).then(function (weatherData) {
       var weatherArray = [];
       weatherArray.push(weatherData);
       setWeather({
         data: weatherArray
       });
     });
+    return function () {
+      abortController.abort();
+    };
   }, []);
 
   var fahrenheitToCelcius = function fahrenheitToCelcius(fahrenheit) {
@@ -1706,14 +1757,17 @@ var Home = function Home() {
   };
 
   if (weather) {
-    var date = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["fromUnixTime"])(weather.data[0].time);
-    var formattedDate = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["format"])(date, 'dd MM yyyy');
-    var formattedTime = Object(date_fns__WEBPACK_IMPORTED_MODULE_4__["format"])(date, 'HH:mm');
     var celcius = fahrenheitToCelcius(weather.data[0].temp);
     var image = weather.data[0].icon + '.svg';
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Temperature"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherIcon"], {
       src: image
-    }), Math.round(celcius), "\xB0C"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["City"], null, "Auckland"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherText"], null, weather.data[0].summary)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherHr"], null));
+    }), Math.round(celcius), "\xB0C ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      style: {
+        fontSize: '3.7vw',
+        marginLeft: '23vw',
+        marginTop: '-11.3vh'
+      }
+    }, "|")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["City"], null, " Auckland"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherText"], null, " ", weather.data[0].summary)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherHr"], null));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null);
   }
@@ -1757,7 +1811,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, HomeRowCol3, HomeRowCol4, Icon, Date, City, WeatherContainer, WeatherIcon, WeatherText, Temperature, NavContainer, NavCategoryContainer, NavCategories, Header, TitlesContainer, NewsFeedTitles, FeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, APODDescriptionTitle, APODImageTitle, APODBodyContainer, APODImage, APODDescriptionContainer, NewsTitleH2, SingleContainer, H2, H3, Hr, WeatherHr */
+/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, APODImage, WeatherContainer, Temperature, WeatherIcon, City, WeatherText, WeatherHr, Icon, NavContainer, NavCategoryContainer, Header, TitlesContainer, TitlesGridItem, GridItemImage, FeedTitles, NewsFeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, NewsTitleH2, SingleContainer, H2, H3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1765,39 +1819,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeContainer", function() { return HomeContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol1", function() { return HomeRowCol1; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol2", function() { return HomeRowCol2; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol3", function() { return HomeRowCol3; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeRowCol4", function() { return HomeRowCol4; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return Icon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Date", function() { return Date; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "City", function() { return City; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODImage", function() { return APODImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherContainer", function() { return WeatherContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherIcon", function() { return WeatherIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherText", function() { return WeatherText; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Temperature", function() { return Temperature; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherIcon", function() { return WeatherIcon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "City", function() { return City; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherText", function() { return WeatherText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherHr", function() { return WeatherHr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return Icon; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavContainer", function() { return NavContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavCategoryContainer", function() { return NavCategoryContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavCategories", function() { return NavCategories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitlesContainer", function() { return TitlesContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsFeedTitles", function() { return NewsFeedTitles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TitlesGridItem", function() { return TitlesGridItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridItemImage", function() { return GridItemImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedTitles", function() { return FeedTitles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsFeedTitles", function() { return NewsFeedTitles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SinglePostTitle", function() { return SinglePostTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostBodyContainer", function() { return PostBodyContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostImageContainer", function() { return PostImageContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODDescriptionTitle", function() { return APODDescriptionTitle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODImageTitle", function() { return APODImageTitle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODBodyContainer", function() { return APODBodyContainer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODImage", function() { return APODImage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APODDescriptionContainer", function() { return APODDescriptionContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsTitleH2", function() { return NewsTitleH2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SingleContainer", function() { return SingleContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hr", function() { return Hr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherHr", function() { return WeatherHr; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject46() {
-  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 4.8vw;\nwidth: 81%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1em;\n  font-family: 'Open Sans', sans-serif;\n  color: #808080;\n  margin: auto;\n  padding-top: 1vh;\n  &:hover {\n    color: grey;\n  }\n"]);
 
   _templateObject46 = function _templateObject46() {
     return data;
@@ -1807,7 +1854,7 @@ function _templateObject46() {
 }
 
 function _templateObject45() {
-  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 4.8vw;\nwidth: 90%%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.5em;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n  margin: auto;\n  padding-top: 1.6vh;\n"]);
 
   _templateObject45 = function _templateObject45() {
     return data;
@@ -1817,7 +1864,7 @@ function _templateObject45() {
 }
 
 function _templateObject44() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.9vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  &:hover {\n    color: grey;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-right: 39vw;\ntext-align: left;\nwidth: 70vw;\nmargin-left: auto;\nmargin-right: auto;\nfont-size: 2.5vh;\nline-height: 4vh;\n"]);
 
   _templateObject44 = function _templateObject44() {
     return data;
@@ -1827,7 +1874,7 @@ function _templateObject44() {
 }
 
 function _templateObject43() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-right: 39vw;\ntext-align: left;\nwidth: 70vw;\nmargin-left: auto;\nmargin-right: auto;\nfont-size: 2.5vh;\nline-height: 4vh;\n"]);
 
   _templateObject43 = function _templateObject43() {
     return data;
@@ -1837,7 +1884,7 @@ function _templateObject43() {
 }
 
 function _templateObject42() {
-  var data = _taggedTemplateLiteral(["\nmargin-right: 39vw;\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-top: 3vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 2.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
 
   _templateObject42 = function _templateObject42() {
     return data;
@@ -1847,7 +1894,7 @@ function _templateObject42() {
 }
 
 function _templateObject41() {
-  var data = _taggedTemplateLiteral(["\nmargin-top: 3vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 2.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-top: 2.1vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 4.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\nfont-weight: bold;\n"]);
 
   _templateObject41 = function _templateObject41() {
     return data;
@@ -1857,7 +1904,7 @@ function _templateObject41() {
 }
 
 function _templateObject40() {
-  var data = _taggedTemplateLiteral(["\nmargin-top: 0.1vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 4.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nmargin-left: auto;\ntext-align: center;\nmargin-right: auto;\nbottom: 0;\nz-index: -1;\nmargin-top: 5vh;\n", "\n", "\n", "\n", "\n"]);
 
   _templateObject40 = function _templateObject40() {
     return data;
@@ -1867,7 +1914,7 @@ function _templateObject40() {
 }
 
 function _templateObject39() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nmargin-left: auto;\ntext-align: center;\nmargin-right: auto;\nbottom: 0;\nz-index: -1;\nmargin-top: 5vh;\n", "\n", "\n", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
 
   _templateObject39 = function _templateObject39() {
     return data;
@@ -1877,7 +1924,7 @@ function _templateObject39() {
 }
 
 function _templateObject38() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
 
   _templateObject38 = function _templateObject38() {
     return data;
@@ -1887,7 +1934,7 @@ function _templateObject38() {
 }
 
 function _templateObject37() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nfont-size: 2.2vh;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\nmargin-bottom: 8vh;\nwidth: 37vw;\npadding-left: 3vw;\nmargin-top: 3vh;\ntext-align: left;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
 
   _templateObject37 = function _templateObject37() {
     return data;
@@ -1897,7 +1944,7 @@ function _templateObject37() {
 }
 
 function _templateObject36() {
-  var data = _taggedTemplateLiteral(["\nwidth: 49vw;\nheight: 59vh;\ndisplay: block;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
 
   _templateObject36 = function _templateObject36() {
     return data;
@@ -1907,7 +1954,7 @@ function _templateObject36() {
 }
 
 function _templateObject35() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nbottom: 0;\nz-index: -1;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n  margin-top: 4vh;\n"]);
 
   _templateObject35 = function _templateObject35() {
     return data;
@@ -1917,7 +1964,7 @@ function _templateObject35() {
 }
 
 function _templateObject34() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 4.5vh;\ncolor: DimGray;\nposition: relative;\nmargin-top: 4vh;\nmargin-bottom: 5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.5vw;\n  font-family: 'Open Sans', sans-serif;\n  color: #808080;\n  margin: auto;\n  padding-top: 1vh;\n  &:hover {\n    color: grey;\n  "]);
 
   _templateObject34 = function _templateObject34() {
     return data;
@@ -1927,7 +1974,7 @@ function _templateObject34() {
 }
 
 function _templateObject33() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 2.6vh;\ncolor: DimGray;\nposition: relative;\nmargin-bottom: 0.5vh;\nmargin-top: 3vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  color: #696969;\n  margin: auto;\n  ", "\n"]);
 
   _templateObject33 = function _templateObject33() {
     return data;
@@ -1937,7 +1984,7 @@ function _templateObject33() {
 }
 
 function _templateObject32() {
-  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 26vw;\n  height: 25vh;\n  margin-top: 1vh;\n  object-fit: none;\n"]);
 
   _templateObject32 = function _templateObject32() {
     return data;
@@ -1947,7 +1994,7 @@ function _templateObject32() {
 }
 
 function _templateObject31() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: rgba(255, 255, 255, 0.7);\n  text-align: center;\n  width: 26vw;\n  height: 34vh;\n"]);
 
   _templateObject31 = function _templateObject31() {
     return data;
@@ -1957,7 +2004,7 @@ function _templateObject31() {
 }
 
 function _templateObject30() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100vw;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: grid;\n  overflow: hidden;\n  float: right;\n  margin-top: 18vh;\n  z-index: -1;\n  grid-template-columns: auto auto auto;\n  justify-content: space-evenly;\n  padding-top: 8vh;\n  padding-bottom: 8vh;\n  grid-gap: 4vw;\n  background: #e9e9e9;\n"]);
 
   _templateObject30 = function _templateObject30() {
     return data;
@@ -1967,7 +2014,7 @@ function _templateObject30() {
 }
 
 function _templateObject29() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  height: 5vh;\n  background-color: white;\n  margin-bottom: 5vh;\n  padding-top: 1vh;\n  postiton: fixed;\n"]);
 
   _templateObject29 = function _templateObject29() {
     return data;
@@ -1977,7 +2024,7 @@ function _templateObject29() {
 }
 
 function _templateObject28() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n  margin-top: 4vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.1vw;\n  font-family: 'Open Sans', sans-serif;\n  color: #626262;\n  &:hover {\n    color: grey;\n  }\n  "]);
 
   _templateObject28 = function _templateObject28() {
     return data;
@@ -1987,7 +2034,7 @@ function _templateObject28() {
 }
 
 function _templateObject27() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  float: right;\n  margin-top: 9vh;\n  bottom: 0;\n  z-index: -1;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 9;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject27 = function _templateObject27() {
     return data;
@@ -1997,7 +2044,7 @@ function _templateObject27() {
 }
 
 function _templateObject26() {
-  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  height: 5vh;\n  background-color: white;\n  margin-bottom: 5vh;\n  padding-top: 1vh;\n  postiton: fixed;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 8;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject26 = function _templateObject26() {
     return data;
@@ -2007,7 +2054,7 @@ function _templateObject26() {
 }
 
 function _templateObject25() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.1vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #999999;\n&:hover {\n  color: grey;\n}\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 7;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject25 = function _templateObject25() {
     return data;
@@ -2017,7 +2064,7 @@ function _templateObject25() {
 }
 
 function _templateObject24() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 9;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 6;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject24 = function _templateObject24() {
     return data;
@@ -2027,7 +2074,7 @@ function _templateObject24() {
 }
 
 function _templateObject23() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 8;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 5;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject23 = function _templateObject23() {
     return data;
@@ -2037,7 +2084,7 @@ function _templateObject23() {
 }
 
 function _templateObject22() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 7;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 4;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject22 = function _templateObject22() {
     return data;
@@ -2047,7 +2094,7 @@ function _templateObject22() {
 }
 
 function _templateObject21() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 6;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 3;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject21 = function _templateObject21() {
     return data;
@@ -2057,7 +2104,7 @@ function _templateObject21() {
 }
 
 function _templateObject20() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 5;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 2;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject20 = function _templateObject20() {
     return data;
@@ -2067,7 +2114,7 @@ function _templateObject20() {
 }
 
 function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 4;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -2077,7 +2124,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 3;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  width: 3.7vw;\n  height: 6.3vh;\n  opacity: 0.4;\n  margin-left: 0.5vw;\n  "]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -2087,7 +2134,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 2;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  float: left;\n  padding-left: 1.2vw;\n  background: white;\n  opacity: 1.0;\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  justify-content: space-evenly;\n  height: 1vh;\n  ", "\n  ", "\n  ", "", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -2097,7 +2144,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 2;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  width: 101vw;\n  position: fixed;\n  text-decoration: none;\n  display: grid;\n  grid-gap: 0;  \n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  height: 16vh;\n  padding-top: 2vh;\n  margin-left: -1vw;\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -2107,7 +2154,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  width: 3.7vw;\n  height: 6.3vh;\n  opacity: 0.7;\n  margin-left: 0.5vw;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n  padding-left: 0.5vw;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -2117,7 +2164,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  float: left;\n  padding-left: 1.2vw;\n  background: white;\n  opacity: 1.0;\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  justify-content: space-evenly;\n  height: 1vh;\n  ", "\n  ", "\n  ", "", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 2vw;\nwidth: 85.3%;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -2127,7 +2174,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  width: 95%;\n  position: fixed;\n  text-decoration: none;\n  display: grid;\n  grid-gap: 0;  \n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  height: 16vh;\n  padding-top: 2vh;\n  margin-left: 1vw;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: 19.9vw;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -2137,7 +2184,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 9.1vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\ncolor: #808080;\nmargin-top: 0vh;\nmargin-left: -5vw;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 4.7vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-top: -15vh;\nmargin-left: 23vw;\ncolor: #808080;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -2147,7 +2194,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: -5.9vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 9vw;\n  height: 12vh;\n  padding-top: 2vh;\n  margin-bottom: -2vh;\n  margin-top: -1vh;\n  opacity: 0.7;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -2157,7 +2204,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  width: 9vw;\n  height: 12vh;\n  padding-top: 2vh;\n  margin-bottom: -2vh;\n  margin-top: -1vh;\n  opacity: 0.7;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 5vw;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\ncolor: #808080;\nmargin-top: 0vh;\nmargin-left: -13vw;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -2167,7 +2214,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  width: 43vw;\n  height: 23vh;\n  margin-rught: 0vw; \n  margin-top: 0.5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 41.5vw;\n  height: 16vh;\n  margin-top: 1.5vh;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -2177,7 +2224,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 4.7vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-top: -1vh;\nmargin-left: -2.9vw;\ncolor: #808080;\n"]);
+  var data = _taggedTemplateLiteral(["\nwidth: 49vw;\nheight: 59vh;\ndisplay: block;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -2187,7 +2234,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.3vh;\n  font-family: 'Open Sans', sans-serif;\n  margin-bottom: 0.5vh;\n  margin-top: 3.5vh;\n  color: #808080;\n  margin-left: -7.6vw;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Playfair Display', serif;\nfont-size: 2vw;\ncolor: DimGray;\nposition: relative;\nmargin-bottom: 1.5vh;\nmargin-top: 3vh;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -2197,7 +2244,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n  padding-left: 0.5vw;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nfont-size: 1.1vw;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\nmargin-bottom: 8vh;\nwidth: 37vw;\npadding-left: 4vw;\nmargin-top: 3vh;\ntext-align: left;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -2207,7 +2254,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\ngrid-column: 2;\ngrid-row: 2;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\ngrid-column: 2;\ngrid-row: 1;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n", "\n", "\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -2217,7 +2264,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\ngrid-column: 2;\ngrid-row: 1;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 3vw;\n  color: DimGray;\n  position: relative;\n  margin-top: 4vh;\n  margin-bottom: 5vh;\n  display: block;\n  float: none;\n  "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -2227,7 +2274,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\ngrid-column: 1;\ngrid-row: 2;\ngrid-auto-columns: min-content;\ngrid-auto-rows: min-content;\ntext-decoration: none;\ntext-align: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  overflow: hidden;\n  bottom: 0;\n  z-index: -1;\n  "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -2237,7 +2284,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  float: left;\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  float: left;\n  display: grid;\n  ", "\n  ", "\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -2258,66 +2305,78 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+ // Home page styles
 
 var HomeContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject());
-var HomeRowCol1 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2());
-var HomeRowCol2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3());
-var HomeRowCol3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4());
-var HomeRowCol4 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5());
-var Icon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject6());
-var Date = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject7());
-var City = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject8());
+var HomeRowCol1 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2(), function (props) {
+  return props.APODBodyContainer && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject3());
+}, function (props) {
+  return props.APODImageTitle && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject4());
+});
+var HomeRowCol2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5(), function (props) {
+  return props.APODDescriptionContainer && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject6());
+}, function (props) {
+  return props.APODDescriptionTitle && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject7());
+});
+var APODImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject8()); // weather styles
+
 var WeatherContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject9());
-var WeatherIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject10());
-var WeatherText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject11());
-var Temperature = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject12());
-var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject13());
-var NavCategoryContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject14(), function (props) {
-  return props.icon && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject15());
+var Temperature = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject10());
+var WeatherIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject11());
+var City = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject12());
+var WeatherText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject13());
+var WeatherHr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject14()); // Nav bar styles
+
+var Icon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject15());
+var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject16());
+var NavCategoryContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject17(), function (props) {
+  return props.icon && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject18());
 }, function (props) {
-  return props.row1 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject16());
+  return props.row1 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject19());
 }, function (props) {
-  return props.row2 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject17());
+  return props.row2 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject20());
 }, function (props) {
-  return props.row3 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject18());
+  return props.row3 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject21());
 }, function (props) {
-  return props.row4 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject19());
+  return props.row4 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject22());
 }, function (props) {
-  return props.row5 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject20());
+  return props.row5 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject23());
 }, function (props) {
-  return props.row6 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject21());
+  return props.row6 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject24());
 }, function (props) {
-  return props.row7 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject22());
+  return props.row7 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject25());
 }, function (props) {
-  return props.row8 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject23());
+  return props.row8 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject26());
 }, function (props) {
-  return props.row9 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject24());
+  return props.row9 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject27());
+}, function (props) {
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject28());
 });
-var NavCategories = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject25());
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject26());
-var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject27());
-var NewsFeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject28());
-var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject29());
-var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject30());
-var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject31());
-var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject32());
-var APODDescriptionTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject33());
-var APODImageTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject34());
-var APODBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject35());
-var APODImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject36());
-var APODDescriptionContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject37());
-var NewsTitleH2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject38());
-var SingleContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject39(), function (props) {
-  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject40());
-}, function (props) {
-  return props.authorDateUpvotes && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject41());
-}, function (props) {
-  return props.imageAndBody && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject42());
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject29()); // news feed styles
+
+var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject30());
+var TitlesGridItem = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject31());
+var GridItemImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject32());
+var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject33(), function (props) {
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject34());
 });
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject43());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject44());
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject45());
-var WeatherHr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject46());
+var NewsFeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject35()); // single post styles
+
+var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject36());
+var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject37());
+var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject38());
+var NewsTitleH2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject39());
+var SingleContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject40(), function (props) {
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject41());
+}, function (props) {
+  return props.authorDateUpvotes && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject42());
+}, function (props) {
+  return props.image && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject43());
+}, function (props) {
+  return props.body && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject44());
+});
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject45());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject46());
 
 /***/ }),
 
@@ -47416,7 +47475,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
