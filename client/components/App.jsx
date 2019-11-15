@@ -10,7 +10,6 @@ import QuantumComputingFeed from './QuantumComputingFeed'
 import SpaceFeed from './SpaceFeed'
 import NZGeneralFeed from './NZGeneralFeed'
 import AstronomyPicOfTheDay from './AstronomyPicOfTheDay'
-import { TitlesContainer } from '../styles'
 
 const App = () => {
   const [categorySelected, setCategorySelected] = useGlobal('categorySelected')
@@ -19,17 +18,15 @@ const App = () => {
   if (categorySelected || titleSelected) {
     return <>
       <Nav/>
-      <TitlesContainer>
-        <Route exact path='/' component={AstronomyPicOfTheDay} />
-        <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
-        <Route path='/rjsFeed' component={ReactjsRedditFeed} />
-        <Route path='/cgpFeed' component={CoolGithubProjectsRedditFeed} />
-        <Route path='/jsFeed' component={JavascriptRedditFeed} />
-        <Route path='/qpFeed' component={QuantumPhysicsFeed} />
-        <Route path='/qcFeed' component={QuantumComputingFeed} />
-        <Route path='/spaceFeed' component={SpaceFeed} />
-        <Route path='/nzgFeed' component={NZGeneralFeed} />
-      </TitlesContainer>
+          <Route exact path='/' component={AstronomyPicOfTheDay} />
+          <Route path='/phFeed' component={ProgrammerHumorRedditFeed} />
+          <Route path='/rjsFeed' component={ReactjsRedditFeed} />
+          <Route path='/cgpFeed' component={CoolGithubProjectsRedditFeed} />
+          <Route path='/jsFeed' component={JavascriptRedditFeed} />
+          <Route path='/qpFeed' component={QuantumPhysicsFeed} />
+          <Route path='/qcFeed' component={QuantumComputingFeed} />
+          <Route path='/spaceFeed' component={SpaceFeed} />
+          <Route path='/nzgFeed' component={NZGeneralFeed} />
     </>
   } else {
     return <div>
