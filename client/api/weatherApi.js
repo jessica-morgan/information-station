@@ -9,7 +9,6 @@ export function getCurrentWeather () {
         weatherArray.push(res)
         let newWeatherArray = []
         newWeatherArray.push({
-          time: weatherArray[0].body.time,
           temp: weatherArray[0].body.temperature,
           summary: weatherArray[0].body.summary,
           icon: weatherArray[0].body.icon,

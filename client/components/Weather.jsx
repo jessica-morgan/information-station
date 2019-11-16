@@ -1,7 +1,7 @@
 import React from 'reactn'
 import { useState, useEffect } from 'react'
 import { getCurrentWeather } from '../api/weatherApi'
-import { WeatherContainer, WeatherText, WeatherIcon, City, Temperature, WeatherHr } from '../styles'
+import { WeatherContainer, WeatherIcon, Temperature, WeatherHr } from '../styles'
 
 const Home = () => {
   const [weather, setWeather] = useState()
@@ -35,11 +35,10 @@ const Home = () => {
       <WeatherContainer>
         <Temperature >
           <WeatherIcon src={image}></WeatherIcon>
-          {Math.round(celcius)}°C <p style={{ fontSize: '3.7vw', marginLeft: '23vw', marginTop: '-11.3vh' }}>|</p>
+          {Math.round(celcius)}°C
         </Temperature >
-        <City> Auckland</City><WeatherText> {weather.data[0].summary}</WeatherText>
       </WeatherContainer>
-      <WeatherHr />
+      <WeatherHr/>
       </>
     )
   } else {
