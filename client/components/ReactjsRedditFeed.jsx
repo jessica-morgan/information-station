@@ -33,7 +33,13 @@ const ReactjsRedditFeed = () => {
         return (
           <TitlesGridItem key={idx}>
             <FeedTitles key={idx}>
-              <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>{singlePost.title.substr(0, 30)}...</FeedTitles>
+              {singlePost.title.length > 23
+                ? <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>
+                  {singlePost.title.substr(0, 20)}...
+                </FeedTitles>
+                : <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>
+                  {singlePost.title}
+                </FeedTitles>}
               <GridItemImage src={singlePost.url} />
             </FeedTitles>
           </TitlesGridItem>

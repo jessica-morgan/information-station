@@ -34,9 +34,9 @@ const ProgrammerHumorRedditFeed = () => {
         return (
           <TitlesGridItem key={idx}>
             <FeedTitles key={idx}>
-              {singlePost.title.length > 30
+              {singlePost.title.length > 23
                 ? <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>
-                  {singlePost.title.substr(0, 34)}...
+                  {singlePost.title.substr(0, 20)}...
                 </FeedTitles>
                 : <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>
                   {singlePost.title}

@@ -85,14 +85,13 @@ export const WeatherContainer = styled.div`
   height: 16vh;
   margin-top: 1.5vh;
 `
+
 export const Temperature = styled.h3`
 text-decoration: none;
 font-size: 5vw;
 font-family: 'Open Sans', sans-serif;
-margin-bottom: 0.5vh;
 color: #808080;
 margin-top: 0vh;
-margin-left: -13vw;
 `
 
 export const WeatherIcon = styled.img`
@@ -102,15 +101,6 @@ export const WeatherIcon = styled.img`
   margin-bottom: -2vh;
   margin-top: -1vh;
   opacity: 0.7;
-`
-
-export const City = styled.h3`
-text-decoration: none;
-font-size: 4.7vh;
-font-family: 'Open Sans', sans-serif;
-margin-top: -15vh;
-margin-left: 23vw;
-color: #808080;
 `
 
 export const WeatherText = styled.h3`
@@ -151,6 +141,7 @@ export const NavContainer = styled.div`
   height: 16vh;
   padding-top: 2vh;
   margin-left: -1vw;
+  box-shadow: 0.2vh 0.2vh 1vh lightgrey;
 `
 export const NavCategoryContainer = styled.div`
   float: left;
@@ -253,14 +244,12 @@ export const TitlesContainer = styled.div`
   justify-content: space-evenly;
   padding-top: 8vh;
   padding-bottom: 8vh;
-  grid-gap: 4vw;
-  background: #e9e9e9;
+  grid-gap: 5.5vw;
 `
 
 export const TitlesGridItem = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  width: 26vw;
+  width: 25.9vw;
   height: 34vh;
 `
 
@@ -278,9 +267,9 @@ export const FeedTitles = styled.div`
   margin: auto;
   ${props => props.title && css`
   text-decoration: none;
-  font-size: 1.5vw;
-  font-family: 'Open Sans', sans-serif;
-  color: #808080;
+  font-size: 2.1vw;
+  font-family: 'Playfair Display', serif;
+  color: #777777;
   margin: auto;
   padding-top: 1vh;
   &:hover {

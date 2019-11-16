@@ -284,7 +284,6 @@ function getCurrentWeather() {
     weatherArray.push(res);
     var newWeatherArray = [];
     newWeatherArray.push({
-      time: weatherArray[0].body.time,
       temp: weatherArray[0].body.temperature,
       summary: weatherArray[0].body.summary,
       icon: weatherArray[0].body.icon,
@@ -543,7 +542,7 @@ var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+      }, singlePost.title.length > 23 ? reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         title: "true",
         style: {
           textDecoration: 'none'
@@ -553,7 +552,17 @@ var CoolGithubProjectsRedditFeed = function CoolGithubProjectsRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title.substr(0, 30), "..."), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
+      }, singlePost.title.substr(0, 20), "...") : reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        title: "true",
+        style: {
+          textDecoration: 'none'
+        },
+        key: singlePost.title,
+        onClick: function onClick() {
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
+        }
+      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
         src: singlePost.url
       })));
     }));
@@ -705,7 +714,7 @@ var JavascriptRedditFeed = function JavascriptRedditFeed() {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+      }, singlePost.title.length > 23 ? reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         title: "true",
         style: {
           textDecoration: 'none'
@@ -715,7 +724,17 @@ var JavascriptRedditFeed = function JavascriptRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title.substr(0, 30), "..."), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
+      }, singlePost.title.substr(0, 20), "...") : reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        title: "true",
+        style: {
+          textDecoration: 'none'
+        },
+        key: singlePost.title,
+        onClick: function onClick() {
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
+        }
+      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
         src: singlePost.url
       })));
     }));
@@ -1082,7 +1101,7 @@ var ProgrammerHumorRedditFeed = function ProgrammerHumorRedditFeed() {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
         key: idx
-      }, singlePost.title.length > 30 ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
+      }, singlePost.title.length > 23 ? reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
         title: "true",
         style: {
           textDecoration: 'none'
@@ -1092,7 +1111,7 @@ var ProgrammerHumorRedditFeed = function ProgrammerHumorRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title.substr(0, 34), "...") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
+      }, singlePost.title.substr(0, 20), "...") : reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_4__["FeedTitles"], {
         title: "true",
         style: {
           textDecoration: 'none'
@@ -1429,7 +1448,7 @@ var ReactjsRedditFeed = function ReactjsRedditFeed() {
         key: idx
       }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         key: idx
-      }, reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+      }, singlePost.title.length > 23 ? reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
         title: "true",
         style: {
           textDecoration: 'none'
@@ -1439,7 +1458,17 @@ var ReactjsRedditFeed = function ReactjsRedditFeed() {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
         }
-      }, singlePost.title.substr(0, 30), "..."), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
+      }, singlePost.title.substr(0, 20), "...") : reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["FeedTitles"], {
+        title: "true",
+        style: {
+          textDecoration: 'none'
+        },
+        key: singlePost.title,
+        onClick: function onClick() {
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["selectTitle"])(true);
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["currentTitleSelected"])(singlePost.title);
+        }
+      }, singlePost.title), reactn__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_6__["GridItemImage"], {
         src: singlePost.url
       })));
     }));
@@ -1761,13 +1790,7 @@ var Home = function Home() {
     var image = weather.data[0].icon + '.svg';
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactn__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["Temperature"], null, reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherIcon"], {
       src: image
-    }), Math.round(celcius), "\xB0C ", reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      style: {
-        fontSize: '3.7vw',
-        marginLeft: '23vw',
-        marginTop: '-11.3vh'
-      }
-    }, "|")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["City"], null, " Auckland"), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherText"], null, " ", weather.data[0].summary)), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherHr"], null));
+    }), Math.round(celcius), "\xB0C")), reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherHr"], null));
   } else {
     return reactn__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["WeatherContainer"], null);
   }
@@ -1811,7 +1834,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /*!**************************!*\
   !*** ./client/styles.js ***!
   \**************************/
-/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, APODImage, WeatherContainer, Temperature, WeatherIcon, City, WeatherText, WeatherHr, Icon, NavContainer, NavCategoryContainer, Header, TitlesContainer, TitlesGridItem, GridItemImage, FeedTitles, NewsFeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, NewsTitleH2, SingleContainer, H2, H3 */
+/*! exports provided: HomeContainer, HomeRowCol1, HomeRowCol2, APODImage, WeatherContainer, Temperature, WeatherIcon, WeatherText, WeatherHr, Icon, NavContainer, NavCategoryContainer, Header, TitlesContainer, TitlesGridItem, GridItemImage, FeedTitles, NewsFeedTitles, SinglePostTitle, PostBodyContainer, PostImageContainer, NewsTitleH2, SingleContainer, H2, H3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1823,7 +1846,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherContainer", function() { return WeatherContainer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Temperature", function() { return Temperature; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherIcon", function() { return WeatherIcon; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "City", function() { return City; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherText", function() { return WeatherText; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WeatherHr", function() { return WeatherHr; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Icon", function() { return Icon; });
@@ -1843,18 +1865,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject46() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1em;\n  font-family: 'Open Sans', sans-serif;\n  color: #808080;\n  margin: auto;\n  padding-top: 1vh;\n  &:hover {\n    color: grey;\n  }\n"]);
-
-  _templateObject46 = function _templateObject46() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject45() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.5em;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n  margin: auto;\n  padding-top: 1.6vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1em;\n  font-family: 'Open Sans', sans-serif;\n  color: #808080;\n  margin: auto;\n  padding-top: 1vh;\n  &:hover {\n    color: grey;\n  }\n"]);
 
   _templateObject45 = function _templateObject45() {
     return data;
@@ -1864,7 +1876,7 @@ function _templateObject45() {
 }
 
 function _templateObject44() {
-  var data = _taggedTemplateLiteral(["\nmargin-right: 39vw;\ntext-align: left;\nwidth: 70vw;\nmargin-left: auto;\nmargin-right: auto;\nfont-size: 2.5vh;\nline-height: 4vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.5em;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n  margin: auto;\n  padding-top: 1.6vh;\n"]);
 
   _templateObject44 = function _templateObject44() {
     return data;
@@ -1884,7 +1896,7 @@ function _templateObject43() {
 }
 
 function _templateObject42() {
-  var data = _taggedTemplateLiteral(["\nmargin-top: 3vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 2.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-right: 39vw;\ntext-align: left;\nwidth: 70vw;\nmargin-left: auto;\nmargin-right: auto;\nfont-size: 2.5vh;\nline-height: 4vh;\n"]);
 
   _templateObject42 = function _templateObject42() {
     return data;
@@ -1894,7 +1906,7 @@ function _templateObject42() {
 }
 
 function _templateObject41() {
-  var data = _taggedTemplateLiteral(["\nmargin-top: 2.1vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 4.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\nfont-weight: bold;\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-top: 3vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 2.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\n"]);
 
   _templateObject41 = function _templateObject41() {
     return data;
@@ -1904,7 +1916,7 @@ function _templateObject41() {
 }
 
 function _templateObject40() {
-  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nmargin-left: auto;\ntext-align: center;\nmargin-right: auto;\nbottom: 0;\nz-index: -1;\nmargin-top: 5vh;\n", "\n", "\n", "\n", "\n"]);
+  var data = _taggedTemplateLiteral(["\nmargin-top: 2.1vh;\nmargin-bottom: 1vh;\ntext-decoration: none;\nfont-size: 4.5vh;\nfont-family: 'Open Sans', sans-serif;\ncolor: #707070;\nfont-weight: bold;\n"]);
 
   _templateObject40 = function _templateObject40() {
     return data;
@@ -1914,7 +1926,7 @@ function _templateObject40() {
 }
 
 function _templateObject39() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
+  var data = _taggedTemplateLiteral(["\nfont-family: 'Open Sans', sans-serif;\nposition: relative;\ntext-decoration: none;\ndisplay: block;\noverflow: hidden;\nmargin-left: auto;\ntext-align: center;\nmargin-right: auto;\nbottom: 0;\nz-index: -1;\nmargin-top: 5vh;\n", "\n", "\n", "\n", "\n"]);
 
   _templateObject39 = function _templateObject39() {
     return data;
@@ -1924,7 +1936,7 @@ function _templateObject39() {
 }
 
 function _templateObject38() {
-  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-top: 0.1vh;\n  margin-bottom: 1vh;\n  text-decoration: none;\n  font-size: 2.5vh;\n  font-family: 'Open Sans', sans-serif;\n  text-decoration: underline;\n  color: #707070;\n"]);
 
   _templateObject38 = function _templateObject38() {
     return data;
@@ -1934,7 +1946,7 @@ function _templateObject38() {
 }
 
 function _templateObject37() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 50vw;\n  height: 65vh;\n  display: block;\n  margin-left: 21.2vw;\n"]);
 
   _templateObject37 = function _templateObject37() {
     return data;
@@ -1944,7 +1956,7 @@ function _templateObject37() {
 }
 
 function _templateObject36() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 2.7vh;\n  position: relative;\n  text-decoration: none;\n  display: block;\n  width: 59vw;\n  margin-left: 17vw;\n  margin-bottom: 5vh;\n"]);
 
   _templateObject36 = function _templateObject36() {
     return data;
@@ -1954,7 +1966,7 @@ function _templateObject36() {
 }
 
 function _templateObject35() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n  margin-top: 4vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Playfair Display', serif;\n  font-size: 4.5vh;\n  color: DimGray;\n  position: arelative;\n  margin-left: 25vw;\n"]);
 
   _templateObject35 = function _templateObject35() {
     return data;
@@ -1964,7 +1976,7 @@ function _templateObject35() {
 }
 
 function _templateObject34() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.5vw;\n  font-family: 'Open Sans', sans-serif;\n  color: #808080;\n  margin: auto;\n  padding-top: 1vh;\n  &:hover {\n    color: grey;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  padding-bottom: 0.5vh;\n  color: #696969;\n  padding-left: 4vw;\n  margin-top: 4vh;\n"]);
 
   _templateObject34 = function _templateObject34() {
     return data;
@@ -1974,7 +1986,7 @@ function _templateObject34() {
 }
 
 function _templateObject33() {
-  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  color: #696969;\n  margin: auto;\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 2.1vw;\n  font-family: 'Playfair Display', serif;\n  color: #777777;\n  margin: auto;\n  padding-top: 1vh;\n  &:hover {\n    color: grey;\n  "]);
 
   _templateObject33 = function _templateObject33() {
     return data;
@@ -1984,7 +1996,7 @@ function _templateObject33() {
 }
 
 function _templateObject32() {
-  var data = _taggedTemplateLiteral(["\n  width: 26vw;\n  height: 25vh;\n  margin-top: 1vh;\n  object-fit: none;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.7vh;\n  color: #696969;\n  margin: auto;\n  ", "\n"]);
 
   _templateObject32 = function _templateObject32() {
     return data;
@@ -1994,7 +2006,7 @@ function _templateObject32() {
 }
 
 function _templateObject31() {
-  var data = _taggedTemplateLiteral(["\n  background-color: rgba(255, 255, 255, 0.7);\n  text-align: center;\n  width: 26vw;\n  height: 34vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 26vw;\n  height: 25vh;\n  margin-top: 1vh;\n  object-fit: none;\n"]);
 
   _templateObject31 = function _templateObject31() {
     return data;
@@ -2004,7 +2016,7 @@ function _templateObject31() {
 }
 
 function _templateObject30() {
-  var data = _taggedTemplateLiteral(["\n  width: 100vw;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: grid;\n  overflow: hidden;\n  float: right;\n  margin-top: 18vh;\n  z-index: -1;\n  grid-template-columns: auto auto auto;\n  justify-content: space-evenly;\n  padding-top: 8vh;\n  padding-bottom: 8vh;\n  grid-gap: 4vw;\n  background: #e9e9e9;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: rgba(255, 255, 255, 0.7);\n  width: 25.9vw;\n  height: 34vh;\n"]);
 
   _templateObject30 = function _templateObject30() {
     return data;
@@ -2014,7 +2026,7 @@ function _templateObject30() {
 }
 
 function _templateObject29() {
-  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  height: 5vh;\n  background-color: white;\n  margin-bottom: 5vh;\n  padding-top: 1vh;\n  postiton: fixed;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100vw;\n  font-family: 'Open Sans', sans-serif;\n  position: relative;\n  text-decoration: none;\n  display: grid;\n  overflow: hidden;\n  float: right;\n  margin-top: 18vh;\n  z-index: -1;\n  grid-template-columns: auto auto auto;\n  justify-content: space-evenly;\n  padding-top: 8vh;\n  padding-bottom: 8vh;\n  grid-gap: 5.5vw;\n"]);
 
   _templateObject29 = function _templateObject29() {
     return data;
@@ -2024,7 +2036,7 @@ function _templateObject29() {
 }
 
 function _templateObject28() {
-  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.1vw;\n  font-family: 'Open Sans', sans-serif;\n  color: #626262;\n  &:hover {\n    color: grey;\n  }\n  "]);
+  var data = _taggedTemplateLiteral(["\n  display: block; \n  width: 100%;\n  height: 5vh;\n  background-color: white;\n  margin-bottom: 5vh;\n  padding-top: 1vh;\n  postiton: fixed;\n"]);
 
   _templateObject28 = function _templateObject28() {
     return data;
@@ -2034,7 +2046,7 @@ function _templateObject28() {
 }
 
 function _templateObject27() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 9;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 1.1vw;\n  font-family: 'Open Sans', sans-serif;\n  color: #626262;\n  &:hover {\n    color: grey;\n  }\n  "]);
 
   _templateObject27 = function _templateObject27() {
     return data;
@@ -2044,7 +2056,7 @@ function _templateObject27() {
 }
 
 function _templateObject26() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 8;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 9;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject26 = function _templateObject26() {
     return data;
@@ -2054,7 +2066,7 @@ function _templateObject26() {
 }
 
 function _templateObject25() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 7;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 8;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject25 = function _templateObject25() {
     return data;
@@ -2064,7 +2076,7 @@ function _templateObject25() {
 }
 
 function _templateObject24() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 6;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 7;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject24 = function _templateObject24() {
     return data;
@@ -2074,7 +2086,7 @@ function _templateObject24() {
 }
 
 function _templateObject23() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 5;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 6;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject23 = function _templateObject23() {
     return data;
@@ -2084,7 +2096,7 @@ function _templateObject23() {
 }
 
 function _templateObject22() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 4;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 5;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject22 = function _templateObject22() {
     return data;
@@ -2094,7 +2106,7 @@ function _templateObject22() {
 }
 
 function _templateObject21() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 3;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 4;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject21 = function _templateObject21() {
     return data;
@@ -2104,7 +2116,7 @@ function _templateObject21() {
 }
 
 function _templateObject20() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 2;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 3;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject20 = function _templateObject20() {
     return data;
@@ -2114,7 +2126,7 @@ function _templateObject20() {
 }
 
 function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 2;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -2124,7 +2136,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  width: 3.7vw;\n  height: 6.3vh;\n  opacity: 0.4;\n  margin-left: 0.5vw;\n  "]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 2;\n  margin-top: 3vh;\n  "]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -2134,7 +2146,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  float: left;\n  padding-left: 1.2vw;\n  background: white;\n  opacity: 1.0;\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  justify-content: space-evenly;\n  height: 1vh;\n  ", "\n  ", "\n  ", "", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  grid-column: 1;\n  grid-row: 1;\n  width: 3.7vw;\n  height: 6.3vh;\n  opacity: 0.4;\n  margin-left: 0.5vw;\n  "]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -2144,7 +2156,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  width: 101vw;\n  position: fixed;\n  text-decoration: none;\n  display: grid;\n  grid-gap: 0;  \n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  height: 16vh;\n  padding-top: 2vh;\n  margin-left: -1vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  float: left;\n  padding-left: 1.2vw;\n  background: white;\n  opacity: 1.0;\n  grid-column: 1;\n  grid-row: 1;\n  grid-auto-columns: min-content;\n  grid-auto-rows: min-content;\n  text-decoration: none;\n  text-align: center;\n  justify-content: space-evenly;\n  height: 1vh;\n  ", "\n  ", "\n  ", "", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -2154,7 +2166,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n  padding-left: 0.5vw;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 101vw;\n  position: fixed;\n  text-decoration: none;\n  display: grid;\n  grid-gap: 0;  \n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  height: 16vh;\n  padding-top: 2vh;\n  margin-left: -1vw;\n  box-shadow: 0.2vh 0.2vh 1vh lightgrey;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -2164,7 +2176,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 2vw;\nwidth: 85.3%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 3.7vw;\n  height: 6.3vh;\n  margin-left: 0.5vw;\n  opacity: 0.6;\n  float: left;\n  padding-left: 0.5vw;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -2174,7 +2186,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: 19.9vw;\n"]);
+  var data = _taggedTemplateLiteral(["\nborder-width: 0.5px;\nopacity: 90%;\nmargin-right: 2vw;\nwidth: 85.3%;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -2184,7 +2196,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 4.7vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-top: -15vh;\nmargin-left: 23vw;\ncolor: #808080;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 2.2vh;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\nmargin-top: -5.4vh;\ncolor: #808080;\nmargin-left: 19.9vw;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -2204,7 +2216,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 5vw;\nfont-family: 'Open Sans', sans-serif;\nmargin-bottom: 0.5vh;\ncolor: #808080;\nmargin-top: 0vh;\nmargin-left: -13vw;\n"]);
+  var data = _taggedTemplateLiteral(["\ntext-decoration: none;\nfont-size: 5vw;\nfont-family: 'Open Sans', sans-serif;\ncolor: #808080;\nmargin-top: 0vh;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -2323,60 +2335,59 @@ var APODImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_t
 var WeatherContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject9());
 var Temperature = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject10());
 var WeatherIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject11());
-var City = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject12());
-var WeatherText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject13());
-var WeatherHr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject14()); // Nav bar styles
+var WeatherText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject12());
+var WeatherHr = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr(_templateObject13()); // Nav bar styles
 
-var Icon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject15());
-var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject16());
-var NavCategoryContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject17(), function (props) {
-  return props.icon && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject18());
+var Icon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject14());
+var NavContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject15());
+var NavCategoryContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject16(), function (props) {
+  return props.icon && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject17());
 }, function (props) {
-  return props.row1 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject19());
+  return props.row1 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject18());
 }, function (props) {
-  return props.row2 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject20());
+  return props.row2 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject19());
 }, function (props) {
-  return props.row3 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject21());
+  return props.row3 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject20());
 }, function (props) {
-  return props.row4 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject22());
+  return props.row4 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject21());
 }, function (props) {
-  return props.row5 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject23());
+  return props.row5 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject22());
 }, function (props) {
-  return props.row6 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject24());
+  return props.row6 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject23());
 }, function (props) {
-  return props.row7 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject25());
+  return props.row7 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject24());
 }, function (props) {
-  return props.row8 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject26());
+  return props.row8 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject25());
 }, function (props) {
-  return props.row9 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject27());
+  return props.row9 && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject26());
 }, function (props) {
-  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject28());
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject27());
 });
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject29()); // news feed styles
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header(_templateObject28()); // news feed styles
 
-var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject30());
-var TitlesGridItem = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject31());
-var GridItemImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject32());
-var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject33(), function (props) {
-  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject34());
+var TitlesContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject29());
+var TitlesGridItem = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject30());
+var GridItemImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject31());
+var FeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject32(), function (props) {
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject33());
 });
-var NewsFeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject35()); // single post styles
+var NewsFeedTitles = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject34()); // single post styles
 
-var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject36());
-var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject37());
-var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject38());
-var NewsTitleH2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject39());
-var SingleContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject40(), function (props) {
-  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject41());
+var SinglePostTitle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject35());
+var PostBodyContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject36());
+var PostImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject37());
+var NewsTitleH2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject38());
+var SingleContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject39(), function (props) {
+  return props.title && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject40());
 }, function (props) {
-  return props.authorDateUpvotes && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject42());
+  return props.authorDateUpvotes && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject41());
 }, function (props) {
-  return props.image && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject43());
+  return props.image && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject42());
 }, function (props) {
-  return props.body && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject44());
+  return props.body && Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["css"])(_templateObject43());
 });
-var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject45());
-var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject46());
+var H2 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h2(_templateObject44());
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3(_templateObject45());
 
 /***/ }),
 
