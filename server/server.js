@@ -11,12 +11,7 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 server.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin: *')
-  res.header('Access-Control-Allow-Headers: *')
-  res.header('Access-Control-Allow-Methods: *')
-  res.header('Access-Control-Allow-Credentials: true')
-  req.header('Access-Control-Request-Headers: origin, content-type, accept')
   req.header('Access-Control-Request-Methods: *')
-  res.header('Access-Control-Max-Age: 1728000')
   next()
 })
 
