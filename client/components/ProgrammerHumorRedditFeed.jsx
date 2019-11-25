@@ -2,7 +2,7 @@ import React, { useGlobal } from 'reactn'
 import { useState, useEffect } from 'react'
 import { getProgrammerHumorFeed } from '../api/redditApi'
 import { selectTitle, currentTitleSelected } from '../utils'
-import { TitlesContainer, FeedTitles, TitlesGridItem, GridItemImage } from '../styles'
+import { TitlesContainer, FeedTitles, TitlesGridItem, GridItemImage, GridItemText } from '../styles'
 import SingleRedditPost from './SingleRedditPost'
 import LoadingIndicator from './LoadingIndicator'
 
@@ -34,14 +34,21 @@ const ProgrammerHumorRedditFeed = () => {
         return (
           <TitlesGridItem key={idx}>
             <FeedTitles key={idx}>
-              {singlePost.title.length > 23
+
+              {singlePost.title.length > 30
                 ? <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>
-                  {singlePost.title.substr(0, 20)}...
+                  {singlePost.title.substr(0, 28).toLowerCase()}...
                 </FeedTitles>
                 : <FeedTitles title="true" style={{ textDecoration: 'none' }} key={singlePost.title} onClick={() => { selectTitle(true); currentTitleSelected(singlePost.title) }}>
-                  {singlePost.title}
+                  {singlePost.title.toLowerCase()}
                 </FeedTitles>}
-              <GridItemImage src={singlePost.url} />
+
+              {singlePost.url.match(/\.(jpeg|jpg|gif|png|bmp|svg)$/)
+                ? <GridItemImage src={singlePost.url} />
+                : <GridItemText>
+                  {singlePost.body.substr(0, 330).toLowerCase()}...
+                </GridItemText>}
+                
             </FeedTitles>
           </TitlesGridItem>
         )
