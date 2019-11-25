@@ -1,9 +1,10 @@
-import { getApod } from '../api/nasaApi'
 import { useState, useEffect } from 'react'
 import React from 'reactn'
 import LoadingIndicator from './LoadingIndicator'
 import Weather from './Weather'
-import { HomeContainer, HomeRowCol1, HomeRowCol2, APODDescriptionTitle, APODImage, APODDescriptionContainer } from '../styles'
+import { HomeContainer, HomeRowCol1, HomeRowCol2, APODImage, APODVideo } from '../styles'
+import { getApod } from '../api/nasaApi'
+import { isImageFile } from '../utils'
 
 const AstronomyPicOfTheDay = () => {
   const [apod, setApod] = useState()
@@ -14,7 +15,7 @@ const AstronomyPicOfTheDay = () => {
       .then(apodInfo => {
         setApod({
           title: apodInfo.title,
-          image: apodInfo.url,
+          url: apodInfo.url,
           description: apodInfo.explanation,
           date: apodInfo.date
         })
@@ -23,6 +24,7 @@ const AstronomyPicOfTheDay = () => {
       abortController.abort()
     }
   }, [])
+
   return apod ? (
     <HomeContainer>
       <HomeRowCol1>
@@ -31,7 +33,9 @@ const AstronomyPicOfTheDay = () => {
             {apod.title}
           </HomeRowCol1>
         </HomeRowCol1>
-        <APODImage src={apod.image}></APODImage>
+        {apod.url.match(/\.(jpeg|jpg|gif|png|bmp|svg)$/)
+          ? <APODImage src={apod.url}></APODImage>
+          : <APODVideo src={apod.url}></APODVideo>}
       </HomeRowCol1>
       <HomeRowCol2>
         <Weather/>

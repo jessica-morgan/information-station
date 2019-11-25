@@ -46,37 +46,44 @@ export const HomeRowCol1 = styled.div`
 `
 
 export const HomeRowCol2 = styled.div`
-grid-column: 2;
-grid-row: 1;
-grid-auto-columns: min-content;
-grid-auto-rows: min-content;
-text-decoration: none;
-text-align: center;
+  grid-column: 2;
+  grid-row: 1;
+  grid-auto-columns: min-content;
+  grid-auto-rows: min-content;
+  text-decoration: none;
+  text-align: center;
 ${props => props.APODDescriptionContainer && css`
-font-family: 'Open Sans', sans-serif;
-font-size: 1.1vw;
-position: relative;
-text-decoration: none;
-display: block;
-margin-bottom: 8vh;
-width: 37vw;
-padding-left: 4vw;
-margin-top: 3vh;
-text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1vw;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8vh;
+  width: 37vw;
+  padding-left: 4vw;
+  margin-top: 3vh;
+  text-align: left;
 `}
 ${props => props.APODDescriptionTitle && css`
-font-family: 'Playfair Display', serif;
-font-size: 2vw;
-color: DimGray;
-position: relative;
-margin-bottom: 1.5vh;
-margin-top: 3vh;
+  font-family: 'Playfair Display', serif;
+  font-size: 2vw;
+  color: DimGray;
+  position: relative;
+  margin-bottom: 1.5vh;
+  margin-top: 3vh;
 `}
 `
 export const APODImage = styled.img`
-width: 49vw;
-height: 59vh;
-display: block;
+  width: 49vw;
+  height: 59vh;
+  display: block;
+`
+
+export const APODVideo = styled.iframe`
+  width: 49vw;
+  height: 59vh;
+  display: block;
+  border: 0;
 `
 
 // weather styles
@@ -87,11 +94,11 @@ export const WeatherContainer = styled.div`
 `
 
 export const Temperature = styled.h3`
-text-decoration: none;
-font-size: 5vw;
-font-family: 'Open Sans', sans-serif;
-color: #808080;
-margin-top: 0vh;
+  text-decoration: none;
+  font-size: 5vw;
+  font-family: 'Open Sans', sans-serif;
+  color: #808080;
+  margin-top: 0vh;
 `
 
 export const WeatherIcon = styled.img`
@@ -104,20 +111,20 @@ export const WeatherIcon = styled.img`
 `
 
 export const WeatherText = styled.h3`
-text-decoration: none;
-font-size: 2.2vh;
-font-family: 'Open Sans', sans-serif;
-margin-bottom: 0.5vh;
-margin-top: -5.4vh;
-color: #808080;
-margin-left: 19.9vw;
+  text-decoration: none;
+  font-size: 2.2vh;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.5vh;
+  margin-top: -5.4vh;
+  color: #808080;
+  margin-left: 19.9vw;
 `
 
 export const WeatherHr = styled.hr`
-border-width: 0.5px;
-opacity: 90%;
-margin-right: 2vw;
-width: 85.3%;
+  border-width: 0.5px;
+  opacity: 90%;
+  margin-right: 2vw;
+  width: 85.3%;
 `
 
 // Nav bar styles
@@ -254,26 +261,35 @@ export const TitlesGridItem = styled.div`
 `
 
 export const GridItemImage = styled.img`
-  width: 26vw;
-  height: 25vh;
+  width: 25vw;
+  height: 27vh;
   margin-top: 1vh;
   object-fit: none;
 `
 
+export const GridItemText = styled.div`
+  width: 25vw;
+  height: 24.1vh;
+  margin-top: 2vh;
+  padding: 2vh 0.5vw 0 1.3vw;
+  font-size: 2.2vh;
+  background: #f1f1f1;
+  color: #535353;
+`
+
 export const FeedTitles = styled.div`
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.7vh;
-  color: #696969;
   margin: auto;
   ${props => props.title && css`
   text-decoration: none;
-  font-size: 2.1vw;
+  font-size: 1.7vw;
   font-family: 'Playfair Display', serif;
   color: #777777;
   margin: auto;
   padding-top: 1vh;
   &:hover {
     color: grey;
+    cursor: grab;
   `}
 `
 
@@ -323,51 +339,51 @@ export const NewsTitleH2 = styled.h2`
 `
 
 export const SingleContainer = styled.div`
-font-family: 'Open Sans', sans-serif;
-position: relative;
-text-decoration: none;
-display: block;
-overflow: hidden;
-margin-left: auto;
-text-align: center;
-margin-right: auto;
-bottom: 0;
-z-index: -1;
-margin-top: 5vh;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  bottom: 0;
+  z-index: -1;
+  margin-top: 5vh;
 ${props => props.title && css`
-margin-top: 2.1vh;
-margin-bottom: 1vh;
-text-decoration: none;
-font-size: 4.5vh;
-font-family: 'Open Sans', sans-serif;
-color: #707070;
-font-weight: bold;
+  margin-top: 2.1vh;
+  margin-bottom: 1vh;
+  text-decoration: none;
+  font-size: 4.5vh;
+  font-family: 'Open Sans', sans-serif;
+  color: #707070;
+  font-weight: bold;
 `}
 ${props => props.authorDateUpvotes && css`
-margin-top: 3vh;
-margin-bottom: 1vh;
-text-decoration: none;
-font-size: 2.5vh;
-font-family: 'Open Sans', sans-serif;
-color: #707070;
+  margin-top: 3vh;
+  margin-bottom: 1vh;
+  text-decoration: none;
+  font-size: 2.5vh;
+  font-family: 'Open Sans', sans-serif;
+  color: #707070;
 `}
 ${props => props.image && css`
-margin-right: 39vw;
-text-align: left;
-width: 70vw;
-margin-left: auto;
-margin-right: auto;
-font-size: 2.5vh;
-line-height: 4vh;
+  margin-right: 39vw;
+  text-align: left;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5vh;
+  line-height: 4vh;
 `}
 ${props => props.body && css`
-margin-right: 39vw;
-text-align: left;
-width: 70vw;
-margin-left: auto;
-margin-right: auto;
-font-size: 2.5vh;
-line-height: 4vh;
+  margin-right: 39vw;
+  text-align: left;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5vh;
+  line-height: 4vh;
 `}
 `
 
