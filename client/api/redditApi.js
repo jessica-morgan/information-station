@@ -42,7 +42,7 @@ export function getReactJsFeed () {
             likes: post.data.likes,
             link: post.data.permalink,
             upVotes: post.data.ups,
-            media: JSON.parse(post.data.media)
+            media: post.data.media
           })
           return newRjsPostsArray
         })

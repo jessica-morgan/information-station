@@ -2434,7 +2434,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "currentTitleSelected", function() { return currentTitleSelected; });
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
 /* harmony import */ var reactn__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(reactn__WEBPACK_IMPORTED_MODULE_0__);
- // global state functions
 
 var selectCategory = function selectCategory(category) {
   Object(reactn__WEBPACK_IMPORTED_MODULE_0__["setGlobal"])({
